@@ -274,7 +274,7 @@
 		(thermal_bridge_angle 45)
 		(uuid "57fb9b79-2ef0-4904-8520-5740f2b99c1d")
 	)
-	(model "${KIPRJMOD}/components/SKRTLBE010.stp"
+	(model "${KIPRJMOD}/3dmodels/SKRTLBE010.stp"
 		(offset
 			(xyz 0 -1.1 1.7)
 		)
