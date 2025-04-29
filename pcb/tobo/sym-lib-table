@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "tobo-components")(type "KiCad")(uri "${KIPRJMOD}/tobo-components.kicad_sym")(options "")(descr ""))
+)

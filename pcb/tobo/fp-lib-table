@@ -1,0 +1,5 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "tobo-footprints")(type "KiCad")(uri "${KIPRJMOD}/tobo-footprints.pretty")(options "")(descr ""))
+  (lib (name "components")(type "KiCad")(uri "${KIPRJMOD}/components.pretty")(options "")(descr ""))
+)
