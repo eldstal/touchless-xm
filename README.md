@@ -24,17 +24,23 @@ Not even started yet. Will likely be implemented using the Arduino bootloader. U
 ### Compatibility
 I only have a pair of XM4 to test with, so the design is made to fit them.
 
-#### WH1000-XM3
+#### WH1000-XM2 (Not compatible!)
+The service manual suggests that the XM2 uses a 12-pin cable for its touch board. As such, the touchless design won't be directly compatible.
+If you're *really* lucky, there may be an offset placement in the XM4 connector that happens to work, but I wouldn't want to test it.
+
+If you have an XM2 and would like to help me figure out the pinout of the touch board, let me know!
+
+#### WH1000-XM3 (Probably compatible)
 The XM3 touch board and battery connector appear to be electrically identical to XM4, so the PCB should be compatible. A different case design may be needed.
 
 
-#### WH1000-XM4
+#### WH1000-XM4 (Compatible)
 The project is designed for these, so these will be the ones primarily tested. The OEM touch board has a flat cable which Touchlæss is designed to reuse.
 
 The battery uses a 2-pin JST ZH series connector. There is no vertical space inside the case for a matching connector on the board, so I've resorted to soldering a Y-connector onto the Touchlæss pcb. Separate from the PCB BOM, you'll need one male and one female JST ZH-2 connector and some red/black cables.
 
 
-#### WH1000-XM5
+#### WH1000-XM5 (Possibly compatible)
 Experimental support is included in the initial board design, but I **do not** own a pair of XM5 and cannot test them. The XM5 connector is entirely based on reverse-engineering of incomplete photos, so I may have made a mistake! The Touchless board shouldn't be able to do any damage to the headphones. If you have a pair of XM5s and would like to help me test the compatibility, feel free to reach out!
 
 At a minimum, the XM5 has a different connector (24-pin FPC instead of 22-pin FFC), and the OEM design doesn't include a loose cable for us to reuse. You will need a suitable flat cable, which is 24-pin FFC with 0.5mm pitch and same-side connectors. [This Würth 687624050002](https://eu.mouser.com/ProductDetail/Wurth-Elektronik/687624050002?qs=P%2FTEqz%252BQfndQFFKLalvVUA%3D%3D) should work, but may not be the proper length.
@@ -45,7 +51,7 @@ The battery connector for XM5 is also different, a 3-pin of unknown design. If y
 ### Modifications
 
 #### Will this work for other headphones from other manufacturers?
-**Highly** unlikely. At the very least, you'll need to figure out the pinout for the touch sensor board. Most likely there will be other things that need tuning as well. If you want to make something like touchless for a different headset, take a look at the [technical documentation](doc/) for some pointers on how Touchless works.
+**Highly** unlikely. At the very least, you'll need to figure out the pinout for the touch sensor board. Most likely there will be other things that need tuning as well. If you want to make something like touchless for a different headset, take a look at the [technical documentation](doc/README.md) for some pointers on how Touchless works.
 
 #### I don't want another USB port
 That's OK, it's only needed for development (reprogramming the Touchless board without disassembling the headphones). Simply snap the USB connector off from the main board (see perforations) and print yourself a case without a USB block. Set `with_usb=false` in `xm4-cap.scad` to get a case that's closed at the bottom.
