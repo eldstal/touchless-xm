@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   height="6.8358479"
+   width="7.5590539"
+   version="1.1"
+   id="Capa_1"
+   viewBox="0 0 1.8155525 1.641851"
+   xml:space="preserve"
+   sodipodi:docname="warning.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs13" /><sodipodi:namedview
+   id="namedview11"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   showgrid="false"
+   showguides="true"
+   inkscape:guide-bbox="true"
+   inkscape:document-units="mm"
+   inkscape:zoom="69.84"
+   inkscape:cx="5.7416953"
+   inkscape:cy="6.5506873"
+   inkscape:window-width="1884"
+   inkscape:window-height="1401"
+   inkscape:window-x="811"
+   inkscape:window-y="0"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="Capa_1"
+   fit-margin-top="0"
+   fit-margin-left="0"
+   fit-margin-right="0"
+   fit-margin-bottom="0"><sodipodi:guide
+     position="1.8155528,21.874161"
+     orientation="-1,0"
+     id="guide910"
+     inkscape:label=""
+     inkscape:locked="false"
+     inkscape:color="rgb(0,0,255)" /></sodipodi:namedview>
+<g
+   id="g8"
+   transform="matrix(0.00944885,0,0,0.00944885,-6.4671986e-6,-0.08686328)"
+   style="stroke-width:105.833">
+	<g
+   id="g6"
+   style="stroke-width:105.833">
+		<g
+   id="g4"
+   style="stroke-width:105.833">
+			<path
+   style="fill:#010002;stroke-width:105.833"
+   d="m 108.186,144.372 c 0,7.054 -4.729,12.32 -12.037,12.32 h -0.254 c -7.054,0 -11.92,-5.266 -11.92,-12.32 0,-7.298 5.012,-12.31 12.174,-12.31 7.162,0 11.91,4.992 12.037,12.31 z M 88.44,125.301 h 15.447 l 2.951,-61.298 H 85.46 Z m 101.932,51.733 c -2.237,3.664 -6.214,5.921 -10.493,5.921 H 12.282 c -4.426,0 -8.51,-2.384 -10.698,-6.233 -2.159,-3.849 -2.11,-8.549 0.147,-12.349 L 85.842,15.153 c 2.208,-3.722 6.204,-5.96 10.522,-5.96 h 0.332 c 4.445,0.107 8.441,2.618 10.513,6.546 l 83.515,149.229 c 1.993,3.8 1.905,8.363 -0.352,12.066 z m -10.493,-6.4 -83.525,-149.18 -84.062,149.18 z"
+   id="path2" />
+		</g>
+	</g>
+</g>
+</svg>
