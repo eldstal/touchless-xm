@@ -1,9 +1,16 @@
-all: have_vrml2scad vrml scad
+all: have_vrml2scad vrml step scad
 
 vrml:
 	for PCB in */*.kicad_pcb; do \
 		VRML=$$(basename $$PCB .kicad_pcb).vrml; \
 		kicad-cli pcb export vrml --units mm -f --output $$VRML $$PCB; \
+	done
+
+
+step:
+	for PCB in */*.kicad_pcb; do \
+		STEP=$$(basename $$PCB .kicad_pcb).step; \
+		kicad-cli pcb export step --grid-origin -f --output $$STEP $$PCB; \
 	done
 
 have_vrml2scad:

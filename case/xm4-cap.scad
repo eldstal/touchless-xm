@@ -295,7 +295,7 @@ module rounded_cube(w, h, d, center=true, radius=0.2) {
     }
 }
 
-module grill(cc, diameter, thickness, hole_r=1, hole_cc=1) {
+module grill(cc, diameter, thickness, hole_r=2.3, hole_cc=1.6) {
 
     n_w = round((cc+diameter) / hole_cc) + 1;
     n_h = round(diameter / hole_cc) + 1;
@@ -589,10 +589,10 @@ module radial_button(cut=false, angle=180, cap_type=0, distance=32.25, vertical_
         translate([peg_length, 0, 0])
         rotate([0, 90, 0])
         if (!cut) {
-            cylinder(guide_length, 2.7, 2.6);
+            cylinder(guide_length, 2.4, 2.3);
         } else {
             translate([0, 0, -3*guide_length])
-            cylinder(4*guide_length, 3, 2.6);
+            cylinder(4*guide_length, 2.7, 2.3);
         }
         
         
@@ -829,7 +829,7 @@ module pcb_clips() {
         }
         
         // Rear edge
-        for (a=[-15, -40]) {
+        for (a=[-25, -40]) {
             rotate([0, 0, a])
             translate([-25.5, 0, 0])
             rotate([0, 0, -90])
