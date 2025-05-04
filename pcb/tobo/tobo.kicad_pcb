@@ -12657,7 +12657,7 @@
 			(at -0.249999 -2.5 80)
 			(unlocked yes)
 			(layer "F.SilkS")
-			(uuid "8464a235-feba-489f-95eb-499e7fbd14e0")
+			(uuid "573c1d22-83f4-4bc2-8afa-bb6664a22820")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12670,7 +12670,7 @@
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "8e10e3d4-d6cb-48be-95c9-e7360a858561")
+			(uuid "3c1a86fa-6023-44ad-bd5e-f206deedc1e9")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12683,7 +12683,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "7743bb02-0ad4-4b51-b29a-2f380705981f")
+			(uuid "aead275d-c8b5-4d9f-af71-34ce90269729")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12695,7 +12695,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "62a20914-a6ef-44c9-9485-5bc92459bb8a")
+			(uuid "43a35c74-f204-46e8-af3e-d72305b1505d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12707,7 +12707,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "14d52eda-894e-4a3d-b253-9b2659bc5719")
+			(uuid "47fa73ae-7f2e-43fe-97ac-ba681a7ad06d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12780,18 +12780,16 @@
 			)
 		)
 		(path "/e2b01b46-50b0-4aff-a887-bcb5b92e0323")
-		(sheetname "Root")
-		(sheetfile "tobo.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -2.25 -1.65)
-			(end -2.250003 0.5)
+			(end -2.250001 0.5)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "734b5bef-44c4-4894-8036-98446d19f30d")
+			(uuid "0949d161-3ccc-4958-92dd-0160246171f3")
 		)
 		(fp_line
 			(start -2 -1.65)
@@ -12801,7 +12799,7 @@
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "a3f91d53-0621-48c4-a9c7-cc0d92707011")
+			(uuid "a165a3df-b7c8-46e0-af80-5bceff79ec96")
 		)
 		(fp_line
 			(start 1.125 -2.1)
@@ -12811,17 +12809,17 @@
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "8e5a1192-a3fe-4e55-9d36-d15c90503633")
+			(uuid "b7da51cf-02c3-4dd3-aa84-70b47a1f0db7")
 		)
 		(fp_line
-			(start 1.325 -2.099998)
-			(end 1.325 -2.099998)
+			(start 1.325 -2.099999)
+			(end 1.325 -2.099999)
 			(stroke
 				(width 0.2)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "08647d6c-0c3b-4d4b-ab3d-15bd47b8ee61")
+			(uuid "189c34b9-8b91-40e9-82b7-16d3056b7ffb")
 		)
 		(fp_line
 			(start 2 -1.65)
@@ -12831,7 +12829,7 @@
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "fd742b44-5946-4e52-921d-2918db17e139")
+			(uuid "378353c9-31df-4fcf-a619-605c4b1927f6")
 		)
 		(fp_line
 			(start 2.25 -1.65)
@@ -12841,7 +12839,7 @@
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "fce8e9be-d72c-4716-9039-6785a81ef821")
+			(uuid "bf9a0a2b-0638-42fa-927e-ad7fe7375f57")
 		)
 		(fp_line
 			(start -1 1.65)
@@ -12851,29 +12849,29 @@
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "ed826e4a-3ee8-4823-8bbd-78a88459045b")
+			(uuid "0f36d1a8-73b3-47e6-8c92-c9392fe68926")
 		)
 		(fp_arc
 			(start 1.125 -2.1)
 			(mid 1.225001 -2.2)
-			(end 1.325 -2.099998)
+			(end 1.325 -2.099999)
 			(stroke
 				(width 0.2)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "e93098ee-942e-42ff-9e33-3ba3ac05e9b7")
+			(uuid "6a7d81ff-02b1-4d6a-ad43-89a219fa4514")
 		)
 		(fp_arc
-			(start 1.325 -2.099998)
-			(mid 1.224999 -2)
+			(start 1.325 -2.099999)
+			(mid 1.225 -2.000001)
 			(end 1.125 -2.1)
 			(stroke
 				(width 0.2)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "3eb96305-3a7e-4590-bd82-5bbd05a1c076")
+			(uuid "cc012e05-99fd-4c84-b3f7-cc823c1c2f86")
 		)
 		(fp_line
 			(start -3.5 -3.2)
@@ -12883,7 +12881,7 @@
 				(type solid)
 			)
 			(layer "Dwgs.User")
-			(uuid "00b2d40f-8fba-4c97-a433-d4850a737a28")
+			(uuid "0eaad96d-f4fd-44a0-9411-36c3f7c467c0")
 		)
 		(fp_line
 			(start 3.5 -3.2)
@@ -12893,7 +12891,7 @@
 				(type solid)
 			)
 			(layer "Dwgs.User")
-			(uuid "f7757170-173b-4c5c-a554-21aee5e56030")
+			(uuid "79b2044c-0eb6-46d9-b311-bd3139ca6fdd")
 		)
 		(fp_line
 			(start -2.25 -1.65)
@@ -12903,7 +12901,7 @@
 				(type solid)
 			)
 			(layer "Dwgs.User")
-			(uuid "676892cf-f122-4b5b-9bcf-cd749722cca1")
+			(uuid "614b0968-de46-4f1c-aa0c-a6a1d6eaf64d")
 		)
 		(fp_line
 			(start 2.25 -1.65)
@@ -12913,7 +12911,7 @@
 				(type solid)
 			)
 			(layer "Dwgs.User")
-			(uuid "929a321b-ba8d-4128-98e0-f6897c41cd49")
+			(uuid "5375f619-41b7-4e3c-9c7a-7dc597b4bc91")
 		)
 		(fp_line
 			(start -2.25 1.65)
@@ -12923,7 +12921,7 @@
 				(type solid)
 			)
 			(layer "Dwgs.User")
-			(uuid "cdab39c8-716b-4322-b4d3-7098d36fbf79")
+			(uuid "d8cb0b24-ccbe-450e-9df9-6bc84060bb7f")
 		)
 		(fp_line
 			(start -3.5 2.65)
@@ -12933,7 +12931,7 @@
 				(type solid)
 			)
 			(layer "Dwgs.User")
-			(uuid "269dfccf-1694-4c00-9b03-293f6cd61a22")
+			(uuid "65c0efe8-e3e3-40f2-80bc-b8295254fbf6")
 		)
 		(fp_line
 			(start 2.25 1.65)
@@ -12943,7 +12941,7 @@
 				(type solid)
 			)
 			(layer "Dwgs.User")
-			(uuid "affd7f82-6225-44bd-b601-04cd6ef28a5b")
+			(uuid "cb98971a-45a3-4c5a-a9e5-ebd900afc4f8")
 		)
 		(fp_line
 			(start 3.5 2.65)
@@ -12953,7 +12951,7 @@
 				(type solid)
 			)
 			(layer "Dwgs.User")
-			(uuid "8667c172-9c81-445b-ab85-73d4389bcf1c")
+			(uuid "0166bfe3-2751-458f-bed4-36eca82efaad")
 		)
 		(pad "1" smd rect
 			(at 1.225 -0.75 80)
@@ -12963,7 +12961,7 @@
 			(pinfunction "COM_1")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "0d77b7d2-0172-43c5-9417-3297e528a846")
+			(uuid "e929b68b-2b03-4427-92fd-7895baf94f6e")
 		)
 		(pad "2" smd rect
 			(at 0 -0.75 80)
@@ -12973,7 +12971,7 @@
 			(pinfunction "NO")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "5722762e-75e6-4a2e-8831-12bcf7263147")
+			(uuid "de216c6c-448f-4902-a505-3914d13c6ef1")
 		)
 		(pad "3" smd rect
 			(at -1.225 -0.75 80)
@@ -12983,7 +12981,7 @@
 			(pinfunction "COM_2")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "6717c848-a668-4ed6-80fa-0aca355c6dc5")
+			(uuid "5f4afde9-c473-4b1a-938a-cb3ea12b53b7")
 		)
 		(pad "4" smd rect
 			(at -1.85 1.2 170)
@@ -12993,7 +12991,7 @@
 			(pinfunction "4")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "6f7745e4-c4a3-46fb-9450-c5bf44ffcef3")
+			(uuid "33a3ec9f-f0a1-4e1c-95f4-24c97a7299c4")
 		)
 		(pad "5" smd rect
 			(at 1.85 1.199999 170)
@@ -13003,7 +13001,7 @@
 			(pinfunction "5")
 			(pintype "passive")
 			(thermal_bridge_angle 45)
-			(uuid "5c019092-a4b2-42d6-868b-95f26af68fdc")
+			(uuid "462d3f3c-16fe-4611-8b48-77418d5cf5c4")
 		)
 		(model "${KIPRJMOD}/3dmodels/SKRTLBE010.stp"
 			(offset
