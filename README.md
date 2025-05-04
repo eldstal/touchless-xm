@@ -97,7 +97,7 @@ When you have a fresh board with a factory-stock microcontroller, you'll have to
 
 ...or anything else supported by avrdude or [platform.io](https://platformio.org/). Install the platform.io tools [installed](https://platformio.org/install/cli), and let's go!
 
-1. Connect your programmer to MISO, MOSI, SCK, GND and RESET.
+1. Connect your programmer to MISO, MOSI, SCK, GND and RST.
 2. Connect **either** the battery or the VCC terminal
 
 Add the needed environment to `firmware/tobo/platformio.ini` to use your programmer.
