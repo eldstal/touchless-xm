@@ -85,6 +85,16 @@ That's great! I won't ask for any royalties or whatever. If you do set something
 
 ⚠️**WARNING**⚠️ The VCC loop on the PCB is directly connected to the headphone battery. **Do not** connect an external supply to this hook while the battery is connected. It is only needed in order to program and test the board without a headset connected.
 
+### Step 1: Bootloader
+When you have a fresh board with a factory-stock microcontroller, you'll have to start with the Arduino bootloader. An image is included in this repo, but you need a hardware programmer, such as:
+
+- AVRISPmk2 (tested, works)
+- An Arduino (TODO: Link to documentation)
+- A Bus Pirate set up for AVR programming
+- An [USBAsp](https://www.fischl.de/usbasp/)
+
+and if you've got the [platform.io] tools installed 
+
 
 ## License
 Touchlæss XM © 2025 by Albin Eldstål-Ahrens is licensed under Creative Commons BY-SA 4.0 
