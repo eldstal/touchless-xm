@@ -86,15 +86,53 @@ That's great! I won't ask for any royalties or whatever. If you do set something
 ⚠️**WARNING**⚠️ The VCC loop on the PCB is directly connected to the headphone battery. **Do not** connect an external supply to this hook while the battery is connected. It is only needed in order to program and test the board without a headset connected.
 
 ### Step 1: Bootloader
-When you have a fresh board with a factory-stock microcontroller, you'll have to start with the Arduino bootloader. An image is included in this repo, but you need a hardware programmer, such as:
+**This only needs to be done once per board**
+
+When you have a fresh board with a factory-stock microcontroller, you'll have to start with the Arduino bootloader. An image is included in this repo, but you need a hardware AVR programmer, for example:
 
 - AVRISPmk2 (tested, works)
-- An Arduino (TODO: Link to documentation)
-- A Bus Pirate set up for AVR programming
+- An Arduino ([Instructions](https://docs.arduino.cc/built-in-examples/arduino-isp/ArduinoISP/#how-to-wire-your-boards))
+- A [Bus Pirate](http://www.dangerousprototypes.com/docs/Bus_Pirate_AVR_Programming)
 - An [USBAsp](https://www.fischl.de/usbasp/)
 
-and if you've got the [platform.io] tools installed 
+Or anything else supported by avrdude or [platform.io](https://platformio.org/), and you have the platform.io tools installed, you're good to go!
 
+1. Connect your programmer to MISO, MOSI, SCK, GND and RESET.
+2. Connect **either** the battery or the VCC terminal
+
+Add the needed environment to `firmware/tobo/platformio.ini` to use your programmer.
+
+**Warning** Ensure that the environment extends `tobo`, so that the frequency and fuses are programmed properly. If you do not, you may need to do hardware surgery to recover your board with an external crystal.
+
+```
+cd firmware/tobo
+pio run --environment avrispv2 --target bootloader
+```
+
+If there are no errors, congratulations! Your tobo board is an Arduino! You're ready for the next step.
+
+### Step 2: Firmware
+**If you've made changes to the code and want to update your board, this step is the only one you need to repeat**
+
+If your board has the bootloader installed, you can put your ISP programmer away and use either the on-board USB port or your own serial adapter. This can be an FTDI cable, a different USB-to-serial adapter, or an arduino board with no microcontroller.
+
+Hook up your serial cable to the tobo:
+
+| tobo | serial adapter |
+|------|----------------|
+| RX | TX |
+| TX | RX |
+| GND | GND |
+| RST | DTR |
+| VCC  | VCC **Only if you don't have the battery plugged in**|
+
+
+```
+cd firmware/tobo
+pio run --target upload
+```
+
+If all went well, you're ready to go!
 
 ## License
 Touchlæss XM © 2025 by Albin Eldstål-Ahrens is licensed under Creative Commons BY-SA 4.0 
