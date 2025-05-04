@@ -8931,7 +8931,7 @@
 		)
 		(uuid "ff2033d8-9843-4606-aa78-5a10c42db1e0")
 	)
-	(label "BTN8"
+	(label "BTN7"
 		(at 102.87 186.69 0)
 		(fields_autoplaced yes)
 		(effects
@@ -8975,7 +8975,7 @@
 		)
 		(uuid "0d676e08-72bc-474f-8f45-52285bf23878")
 	)
-	(label "BTN5"
+	(label "BTN4"
 		(at 95.25 194.31 0)
 		(fields_autoplaced yes)
 		(effects
@@ -8986,7 +8986,7 @@
 		)
 		(uuid "1adde70e-f1e6-4f46-a902-8419ec853c74")
 	)
-	(label "BTN3"
+	(label "BTN2"
 		(at 104.14 179.07 0)
 		(fields_autoplaced yes)
 		(effects
@@ -9008,7 +9008,7 @@
 		)
 		(uuid "26b31168-c2cf-4b1d-9752-da9fb764ffc7")
 	)
-	(label "BTN1"
+	(label "BTN0"
 		(at 99.06 184.15 0)
 		(fields_autoplaced yes)
 		(effects
@@ -9019,7 +9019,7 @@
 		)
 		(uuid "320037f9-4cec-4757-9dc9-ecf19dcf6d10")
 	)
-	(label "BTN4"
+	(label "BTN3"
 		(at 92.71 196.85 0)
 		(fields_autoplaced yes)
 		(effects
@@ -9052,7 +9052,7 @@
 		)
 		(uuid "388a0d7f-6c4b-49b0-af96-8e775577df6c")
 	)
-	(label "BTN6"
+	(label "BTN5"
 		(at 97.79 191.77 0)
 		(fields_autoplaced yes)
 		(effects
@@ -9096,7 +9096,7 @@
 		)
 		(uuid "43db5a6d-5385-49d7-8294-c8d8651b54e8")
 	)
-	(label "BTN2"
+	(label "BTN1"
 		(at 101.6 181.61 0)
 		(fields_autoplaced yes)
 		(effects
@@ -9283,7 +9283,7 @@
 		)
 		(uuid "bc32d6f5-bcb2-4502-8ba1-93b82be0cf22")
 	)
-	(label "BTN7"
+	(label "BTN6"
 		(at 100.33 189.23 0)
 		(fields_autoplaced yes)
 		(effects
