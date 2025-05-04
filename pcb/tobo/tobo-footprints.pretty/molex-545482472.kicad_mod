@@ -67,6 +67,18 @@
 		)
 	)
 	(attr smd)
+	(fp_poly
+		(pts
+			(xy -5.75 -0.5) (xy -6.25 -0.75) (xy -6.25 -0.25)
+		)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill solid)
+		(layer "F.SilkS")
+		(uuid "bd80cbd3-f20e-4bd2-9800-7b60106d829c")
+	)
 	(fp_rect
 		(start -7.5 0.1)
 		(end 8.5 3.95)

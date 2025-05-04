@@ -17,7 +17,7 @@ The design is ready for the first prototype production run, based on a benchtop 
 Boards will not be fabricated before the case is known to be compatible. Once I've made a first production run, I'll also upload all the files you need to order your own board from a vendor such as PCBWay.
 
 ### Firmware
-Not even started yet. Will likely be implemented using the Arduino bootloader. USB support (only for programming) is already included in the main board.
+Not even started yet. USB support (only for programming) is already included in the main board. The current plan is to use platform.io for the firmware and an arduino bootloader.
 
 
 
@@ -80,6 +80,11 @@ That will be an adventure. Touchlæss interfaces with the board in the right cup
 
 #### I want to make and sell these
 That's great! I won't ask for any royalties or whatever. If you do set something up, I'm happy to include a link here so people can buy from you.
+
+## How to program
+
+⚠️**WARNING**⚠️ The VCC loop on the PCB is directly connected to the headphone battery. **Do not** connect an external supply to this hook while the battery is connected. It is only needed in order to program and test the board without a headset connected.
+
 
 ## License
 Touchlæss XM © 2025 by Albin Eldstål-Ahrens is licensed under Creative Commons BY-SA 4.0 

@@ -673,13 +673,13 @@ module button_box(outer_radius=34, height=7, top_angle=180-5.5, bottom_angle=180
             // Outside face
             translate([0, 0, case_thickness-rounding-0.1]) {
             
-                // Bottom edge
+                // Cap edge
                 rotate_extrude(angle=bottom_angle - top_angle) {
                     translate([outer_radius - rounding, 0, 0])    
                     circle(rounding);
                 }
                 
-                // Top edge
+                // Inside edge
                 translate([0, 0, -height-rounding])
                 rotate_extrude(angle=bottom_angle - top_angle) {
                     translate([outer_radius - rounding, 0, 0])    
@@ -691,10 +691,10 @@ module button_box(outer_radius=34, height=7, top_angle=180-5.5, bottom_angle=180
         
 
         // Imaginary corners inside the case, to make it less boxy
-        rotate([0, 0, top_angle-10])
+        #rotate([0, 0, top_angle-10])
         {      
             
-            // Bottom edge
+            // Cap edge
             rotate([0, 0, -5])
             translate([0, 0, case_thickness-rounding-0.1])
             rotate_extrude(angle=bottom_angle - top_angle+25) {
@@ -703,13 +703,28 @@ module button_box(outer_radius=34, height=7, top_angle=180-5.5, bottom_angle=180
             }
 
 
-            // Top edge
+            // Inside edge
             rotate([0, 16, 0])
             translate([0, 0, -height-rounding])
-            rotate_extrude(angle=bottom_angle - top_angle+30) {
+            rotate_extrude(angle=bottom_angle - top_angle+15) {
                 translate([outer_radius-5 - rounding, 0, 0])    
                 circle(rounding);
             }
+            
+            // Bottom ball cap
+            //rotate([0, 0, bottom_angle - top_angle+30])
+            //translate([outer_radius-10, 0, -5])
+            //sphere(5.5);
+            rotate([0, 0, bottom_angle - top_angle+30])
+            translate([30, 0, -10])
+            rotate([0, -20, 0])
+            linear_extrude(10)
+                circle(0.5);
+            
+            // Top ball cap
+            rotate([0, 0, 0])
+            translate([outer_radius-10, 0, -5])
+            sphere(5.5);
 
         }
     }
