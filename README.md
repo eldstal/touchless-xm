@@ -95,7 +95,7 @@ When you have a fresh board with a factory-stock microcontroller, you'll have to
 - A [Bus Pirate](http://www.dangerousprototypes.com/docs/Bus_Pirate_AVR_Programming)
 - An [USBAsp](https://www.fischl.de/usbasp/)
 
-Or anything else supported by avrdude or [platform.io](https://platformio.org/), and you have the platform.io tools installed, you're good to go!
+...or anything else supported by avrdude or [platform.io](https://platformio.org/). Install the platform.io tools [installed](https://platformio.org/install/cli), and let's go!
 
 1. Connect your programmer to MISO, MOSI, SCK, GND and RESET.
 2. Connect **either** the battery or the VCC terminal

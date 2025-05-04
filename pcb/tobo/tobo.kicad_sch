@@ -5454,6 +5454,12 @@
 		(uuid "ebdbc84d-ed88-4db0-9bcf-62173caea71e")
 	)
 	(junction
+		(at 124.46 110.49)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ec1a2b37-fb9b-44fa-8c56-35d27710e120")
+	)
+	(junction
 		(at 189.23 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5732,6 +5738,16 @@
 			(type default)
 		)
 		(uuid "0bfd081e-5def-4da4-9395-ad6abe78dad0")
+	)
+	(wire
+		(pts
+			(xy 124.46 110.49) (xy 124.46 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0df9be9b-64cd-472c-a7f6-f974f23ce269")
 	)
 	(wire
 		(pts
@@ -6445,7 +6461,7 @@
 	)
 	(wire
 		(pts
-			(xy 90.17 110.49) (xy 127 110.49)
+			(xy 90.17 110.49) (xy 124.46 110.49)
 		)
 		(stroke
 			(width 0)
@@ -6662,6 +6678,16 @@
 			(type default)
 		)
 		(uuid "502ecadb-d894-4e7e-8804-33a9c335a554")
+	)
+	(wire
+		(pts
+			(xy 124.46 110.49) (xy 127 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "504e42c3-36b4-48f9-a1ab-7a5aafd8397e")
 	)
 	(wire
 		(pts
@@ -8925,6 +8951,16 @@
 	)
 	(wire
 		(pts
+			(xy 124.46 50.8) (xy 97.79 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ff1307d9-eb61-47e9-8673-18802db7d22e")
+	)
+	(wire
+		(pts
 			(xy 115.57 204.47) (xy 111.76 204.47)
 		)
 		(stroke
@@ -8955,7 +8991,7 @@
 		)
 		(uuid "05076863-481c-49ae-a795-a9c8a1d22f97")
 	)
-	(label "RST"
+	(label "DTR"
 		(at 39.37 177.8 180)
 		(fields_autoplaced yes)
 		(effects
@@ -9339,6 +9375,17 @@
 			(justify left bottom)
 		)
 		(uuid "c1d34cf3-5e4d-456f-9d68-b78de9f97a94")
+	)
+	(label "RESET"
+		(at 106.68 50.8 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d0ca2ed3-4a90-4c5d-976c-0cbedd362f29")
 	)
 	(label "RX"
 		(at 36.83 165.1 0)
@@ -15010,6 +15057,143 @@
 			(project "tobo"
 				(path "/ce2fc4a9-618f-4cc1-898a-224ffa79d770"
 					(reference "X7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "tobo-components:5015")
+		(at 97.79 50.8 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8bf1444c-6b99-4d08-833d-9843ba84bb7e")
+		(property "Reference" "U16"
+			(at 80.772 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "5015"
+			(at 86.868 51.054 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "tobo-footprints:5015"
+			(at 81.28 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.keyelco.com/product-pdf.cfm?p=1353"
+			(at 81.28 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "Conn Test Point 1 POS Solder ST SMD 1 Port T/R"
+			(at 81.28 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Height" "1.52"
+			(at 81.28 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Keystone Electronics"
+			(at 81.28 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "5015"
+			(at 81.28 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "534-5015"
+			(at 81.28 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Keystone-Electronics/5015?qs=qOqV1E1P08ShW56PtUq2FA%3D%3D"
+			(at 81.28 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" "5015"
+			(at 81.28 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/5015/keystone-electronics?utm_currency=USD&region=europe"
+			(at 81.28 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2c64e042-8dab-4d4c-b915-f33ea68ad699")
+		)
+		(instances
+			(project "tobo"
+				(path "/ce2fc4a9-618f-4cc1-898a-224ffa79d770"
+					(reference "U16")
 					(unit 1)
 				)
 			)
