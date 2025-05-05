@@ -1,6 +1,7 @@
 #include <Arduino.h>
 
 #include "pinmap.h"
+#include "gestures.h"
 
 
 // Set LED_BUILTIN if undefined or not pin 13
