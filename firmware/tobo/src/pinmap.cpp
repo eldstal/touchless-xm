@@ -1,6 +1,6 @@
-#include <pinmap.h>
+#include <pinmap.hpp>
 
-unsigned char BTN_PIN[N_BTNS] = {
+const unsigned char BTN_PIN[N_BTNS] = {
     10, // PB2
     9,  // PB1
     8,  // PB0
@@ -11,7 +11,7 @@ unsigned char BTN_PIN[N_BTNS] = {
     20  // PB6
 };
 
-unsigned char BTN_INT[N_BTNS] {
+const unsigned char BTN_INT[N_BTNS] {
     2,  // PB2
     1,  // PB1
     0,  // PB0
@@ -23,17 +23,19 @@ unsigned char BTN_INT[N_BTNS] {
 };
 
 
-unsigned char TOUCH_X_PIN[N_TOUCH_X] {
-    2,  // PD2
-    17, // PC3
-    19, // PC5
-    16  // PC2
+// Touch points across different X values
+const unsigned char TOUCH_X_PIN[N_TOUCH_X] {
+    2,  // PD2, 5,4,  rear
+    17, // PC3, 6,4
+    19, // PC5, 7,4
+    16  // PC2, 8,4,  front
 };
 
 
-unsigned char TOUCH_Y_PIN[N_TOUCH_Y] {
-    19, // PC5
-    18, // PC4
-    15, // PC1
-    14 // PC0
+// Touch points which have a common Y
+const unsigned char TOUCH_Y_PIN[N_TOUCH_Y] {
+    19, // PC5,  7,4,  bottom
+    18, // PC4,  7,5
+    15, // PC1,  7,6
+    14  // PC0,  7,7,  top
 };
