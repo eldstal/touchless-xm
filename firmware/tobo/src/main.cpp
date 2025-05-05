@@ -23,22 +23,23 @@ void setup_pins() {
 
 void setup()
 {
-  // Initialize LED pin as an output.
-  pinMode(7, OUTPUT);
+   setup_pins();
 
 }
 
 void loop()
 {
   // Set the LED HIGH
-  digitalWrite(TOUCH_X_PIN[0], HIGH);
+  //digitalWrite(TOUCH_X_PIN[0], HIGH);
 
   // Wait for a second
-  delay(1000);
+  //delay(1000);
 
   // Set the LED LOW
-  digitalWrite(TOUCH_X_PIN[0], LOW);
+  //digitalWrite(TOUCH_X_PIN[0], LOW);
 
-   // Wait for a second
+  gesture_perform(&GESTURE_SWIPE_BWD, BTN_PIN[0]);
+
+  // Wait for a second
   delay(1000);
 }

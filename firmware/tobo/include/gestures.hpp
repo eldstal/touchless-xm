@@ -1,26 +1,34 @@
 #pragma once
 
-typedef enum _gesture_type : unsigned char {
-    tap_and_hold = 0,
-    double_tap = 1,
-    swipe_repeat = 2,
-    swipe_and_hold = 3,
-    long_press = 4
-} gesture_type_t;
+#include <stdint.h>
+
+
+struct gesture;
+typedef struct gesture gesture_t;
 
 // A state machine implementing a gesture
 // Returns -1 when the gesture is completed
-typedef int (*gesture_func_t)(gesture_type_t* gesture, bool trigger, int state);
+typedef int16_t (*gesture_func_t)(const gesture_t* gesture, bool trigger, int16_t state);
 
-typedef struct {
+struct gesture {
     gesture_func_t func;
-    unsigned char n_pins;
-    unsigned char pin[4];
-} gesture_t;
+    uint8_t n_pins;
+    uint8_t pin[4];
+};
+
+
+
+/*
+ * Perform a gesture
+ */
+extern void gesture_perform(const gesture_t* gesture, uint8_t trigger_pin);
 
 /*
  * Predefined gestures which we can trigger
  */ 
+
+// Nothing, probably
+extern const gesture_t GESTURE_TAP;
 
 // Play/pause
 extern const gesture_t GESTURE_DOUBLE_TAP;
