@@ -11,7 +11,7 @@ void gesture_perform(const gesture_t* gesture, uint8_t trigger_pin) {
     
     while (true) {
 
-        bool trigger_state = digitalRead(trigger_pin);
+        bool trigger_state = digitalRead(trigger_pin) == BUTTON_ACTIVE;
 
         state = gesture->func(gesture, trigger_state, state);
 
@@ -32,7 +32,7 @@ static int16_t gesture_tap(const gesture_t* gesture, bool trigger, int16_t state
         case 0:
             {
                 for (uint8_t i=0; i<gesture->n_pins; ++i) {
-                    digitalWrite(gesture->pin[i], HIGH);
+                    digitalWrite(gesture->pin[i], TOUCH_ACTIVE);
                 }
                 delay(100);
                 return 1;
@@ -41,7 +41,7 @@ static int16_t gesture_tap(const gesture_t* gesture, bool trigger, int16_t state
         case 1:
             {
                 for (uint8_t i=0; i<gesture->n_pins; ++i) {
-                    digitalWrite(gesture->pin[i], LOW);
+                    digitalWrite(gesture->pin[i], TOUCH_INACTIVE);
                 }
                 return -1;
             }
@@ -54,20 +54,20 @@ static int16_t gesture_swipe_and_repeat(const gesture_t* gesture, bool trigger, 
     int16_t done_state = gesture->n_pins;
 
     if (state < done_state) {
-        digitalWrite(gesture->pin[state], HIGH);
+        digitalWrite(gesture->pin[state], TOUCH_ACTIVE);
 
         // Overlap
         delay(10);
 
         if (state > 0) {
-            digitalWrite(gesture->pin[state-1], LOW);
+            digitalWrite(gesture->pin[state-1], TOUCH_INACTIVE);
         }
         delay(60);
         return state + 1;
     } else {
 
         for (uint8_t i=0; i<gesture->n_pins; ++i) {
-            digitalWrite(gesture->pin[i], LOW);
+            digitalWrite(gesture->pin[i], TOUCH_INACTIVE);
         }
 
         if (trigger) {

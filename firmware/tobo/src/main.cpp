@@ -1,15 +1,19 @@
 #include <Arduino.h>
 
+#include <LowPower.h>
+#include <PinChangeInterrupt.h>
+
 #include "pinmap.hpp"
 #include "gestures.hpp"
 
 
-// Set LED_BUILTIN if undefined or not pin 13
-// #define LED_BUILTIN 13
+
+void btn_interrupt() {
+}
 
 void setup_pins() {
   for (unsigned char p=0; p<N_BTNS; ++p) {
-    pinMode(BTN_PIN[p], INPUT);
+    pinMode(BTN_PIN[p], INPUT_PULLUP);
   }
 
   for (unsigned char p=0; p<N_TOUCH_X; ++p) {
@@ -21,25 +25,24 @@ void setup_pins() {
   }
 }
 
+
+
+void setup_interrupts() {
+  attachPCINT(digitalPinToPCINT(BTN_PIN[0]), btn_interrupt, CHANGE);
+}
+
 void setup()
 {
    setup_pins();
+   setup_interrupts();
 
 }
 
 void loop()
 {
-  // Set the LED HIGH
-  //digitalWrite(TOUCH_X_PIN[0], HIGH);
 
-  // Wait for a second
-  //delay(1000);
-
-  // Set the LED LOW
-  //digitalWrite(TOUCH_X_PIN[0], LOW);
-
+  // Sleep until an interrupt
+  LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);
   gesture_perform(&GESTURE_SWIPE_BWD, BTN_PIN[0]);
-
-  // Wait for a second
-  delay(1000);
+  //delay(1000);
 }
