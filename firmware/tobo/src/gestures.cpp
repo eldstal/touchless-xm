@@ -51,7 +51,8 @@ static int16_t gesture_tap(const gesture_t* gesture, bool trigger, int16_t state
 }
 
 static int16_t gesture_swipe_and_repeat(const gesture_t* gesture, bool trigger, int16_t state) {
-    int16_t done_state = gesture->n_pins;
+    const int16_t done_state = gesture->n_pins;
+    const int16_t loop_state = done_state + 1;
 
     if (state < done_state) {
         digitalWrite(gesture->pin[state], TOUCH_ACTIVE);
@@ -64,16 +65,21 @@ static int16_t gesture_swipe_and_repeat(const gesture_t* gesture, bool trigger, 
         }
         delay(60);
         return state + 1;
-    } else {
+    } else if (state == done_state) {
 
         for (uint8_t i=0; i<gesture->n_pins; ++i) {
             digitalWrite(gesture->pin[i], TOUCH_INACTIVE);
         }
 
+        delay(200);
+        return loop_state;
+    
+    } else if (state == loop_state) {
+
         if (trigger) {
             // Go again!
-            delay(200);
             return 0;
+
         } else {
 
             // Done!
@@ -84,6 +90,53 @@ static int16_t gesture_swipe_and_repeat(const gesture_t* gesture, bool trigger, 
     return -1;
 }
 
+
+static int16_t gesture_swipe_and_hold(const gesture_t* gesture, bool trigger, int16_t state) {
+    int16_t hold_state = gesture->n_pins;
+
+    if (state < hold_state) {
+        digitalWrite(gesture->pin[state], TOUCH_ACTIVE);
+
+        // Overlap
+        delay(10);
+
+        if (state > 0) {
+            digitalWrite(gesture->pin[state-1], TOUCH_INACTIVE);
+        }
+        delay(60);
+        return state + 1;
+    
+    } else if (state == hold_state) {
+
+        if (trigger) {
+            // Just hold the "finger"
+            delay(50);
+            return hold_state;
+        } else {
+
+            return hold_state + 1;
+        }
+
+    } else {
+
+        for (uint8_t i=0; i<gesture->n_pins; ++i) {
+            digitalWrite(gesture->pin[i], TOUCH_INACTIVE);
+        }
+
+        // Done!
+        return -1;
+
+    }
+
+    return -1;
+}
+
+
+const gesture_t GESTURE_NOP = {
+    .func = gesture_nop,
+    .n_pins = 0,
+    .pin = {  }
+};
 
 const gesture_t GESTURE_TAP = {
     .func = gesture_tap,
@@ -103,7 +156,6 @@ const gesture_t GESTURE_TAP_AND_HOLD = {
     .pin = { TOUCH_X_PIN[0] }
 };
 
-// Toggle speak-to-chat
 const gesture_t GESTURE_TWO_FINGER_LONG = {
     .func = gesture_nop,
     .n_pins = 2,
@@ -123,13 +175,13 @@ const gesture_t GESTURE_SWIPE_BWD = {
 };
 
 const gesture_t GESTURE_SWIPE_UP = {
-    .func = gesture_nop,
+    .func = gesture_swipe_and_hold,
     .n_pins = 4,
     .pin = { TOUCH_Y_PIN[0], TOUCH_Y_PIN[1], TOUCH_Y_PIN[2], TOUCH_Y_PIN[3] }
 };
 
 const gesture_t GESTURE_SWIPE_DOWN = {
-    .func = gesture_nop,
+    .func = gesture_swipe_and_hold,
     .n_pins = 4,
     .pin = { TOUCH_Y_PIN[3], TOUCH_Y_PIN[2], TOUCH_Y_PIN[1], TOUCH_Y_PIN[0] }
 };

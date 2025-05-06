@@ -27,6 +27,9 @@ extern void gesture_perform(const gesture_t* gesture, uint8_t trigger_pin);
  * Predefined gestures which we can trigger
  */ 
 
+// Do nothing
+extern const gesture_t GESTURE_NOP;
+
 // Nothing, probably
 extern const gesture_t GESTURE_TAP;
 
