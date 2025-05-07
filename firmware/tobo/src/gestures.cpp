@@ -50,6 +50,40 @@ static int16_t gesture_tap(const gesture_t* gesture, bool trigger, int16_t state
     return -1;
 }
 
+
+static int16_t gesture_hold(const gesture_t* gesture, bool trigger, int16_t state) {
+    switch (state) {
+        case 0:
+            {
+                for (uint8_t i=0; i<gesture->n_pins; ++i) {
+                    digitalWrite(gesture->pin[i], TOUCH_ACTIVE);
+                }
+                delay(100);
+                return 1;
+            }
+
+        case 1:
+            {
+                if (trigger) {
+                    delay(10);
+                    return 1;
+                } else {
+                    return 2;
+                }
+            }
+        
+        case 2:
+            {
+                for (uint8_t i=0; i<gesture->n_pins; ++i) {
+                    digitalWrite(gesture->pin[i], TOUCH_INACTIVE);
+                }
+                return -1;
+            }
+    }
+
+    return -1;
+}
+
 static int16_t gesture_swipe_and_repeat(const gesture_t* gesture, bool trigger, int16_t state) {
     const int16_t done_state = gesture->n_pins;
     const int16_t loop_state = done_state + 1;
@@ -151,9 +185,15 @@ const gesture_t GESTURE_DOUBLE_TAP = {
 };
 
 const gesture_t GESTURE_TAP_AND_HOLD = {
-    .func = gesture_nop,
+    .func = gesture_hold,
     .n_pins = 1,
     .pin = { TOUCH_X_PIN[0] }
+};
+
+const gesture_t GESTURE_PALM = {
+    .func = gesture_hold,
+    .n_pins = 4,
+    .pin = { TOUCH_X_PIN[0], TOUCH_X_PIN[2], TOUCH_Y_PIN[1], TOUCH_Y_PIN[3] }
 };
 
 const gesture_t GESTURE_TWO_FINGER_LONG = {

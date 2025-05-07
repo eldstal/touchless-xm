@@ -19,10 +19,10 @@ To support swiping motions, Touchless attaches to four horizontal and four verti
 ```
 -     -     -     -     -     -
 -     -     -     -     -     -
--   (5,4) (6,4) (7,4) (8,4)   -
--     -     -   (7,5)   -     -
--     -     -   (7,6)   -     -
--     -     -   (7,7)   -     -
+-   (1,4) (2,4) (3,4) (4,4)   -
+-     -     -   (3,5)   -     -
+-     -     -   (3,6)   -     -
+-     -     -   (3,7)   -     -
 -     -     -     -     -     - 
 -     -     -     -     -     -
 ```
@@ -31,9 +31,43 @@ Prototype testing indicates that three points are enough for a working swipe on 
 
 
 ## Original hardware
+### WH1000-XM2
+
+
+#### Battery connector
+Battery appears to be a cellphone-type with no cables attached to it. It sits in a cradle which *does* have a cable+connector to the board, though.
+
+![XM2 battery from FCC filing](wh2-battery.png)
+
+It's a 3-pin, likely JST but does not match the XM4 or XM5.
+
+
+#### Touch board connector
+FCC filing contains an OK shot of the touch board. The connector is at the front!
+
+Pin 12 toward the top of the PCB/cap
+
+| Pin  | Name |
+|------|------|
+|  12  |  ?   |
+|  11  |  X4  |
+|  10  |  X3  |
+|   9  |  X2  |
+|   8  |  X1  |
+|   7  |  X0  |
+|   6  |  NC  |
+|   5  |  Y3  |
+|   4  |  Y2  |
+|   3  |  Y1  |
+|   2  |  Y0  |
+|   1  |  ?   |
+
+Because the headphones have their connector at the front and tobo has its connector at the rear, you'll need a cable with **opposite side** connectors (i.e. exposed connectors on the front on one end and on the back on the other end). The cable also needs to be a bit longer than the OEM one.
+
 ### WH1000-XM3
 
 Connectors (based on photos) appear to be identical to WH1000-XM4.
+
 
 ### WH1000-XM4
 
@@ -81,6 +115,13 @@ A compatible-ish part with a low profile is [Molex 545482272](https://www.molex.
 
 #### Battery connector
 3-pin of unknown model. For sure not compatible with the XM4.
+
+Inserted part seems to be ~7.3mm wide and inserted to 4mm depth.
+The outer terminals are about 4mm apart, and there's a single smaller pin for the temp sensor.
+
+It's labeled JST, and the closest I've been able to find is the [LBT-A](https://www.jst.com/products/crimp-style-connectors-wire-to-board-type/lbt-connector-a-type/), probably model `LBTAR-03V-2K-K(HF)`
+
+![XM5 battery connector closeup](xm5-bat-connector.jpg)
 
 #### Touch board connector
 24-pin 0.5mm pitch FPC integrated in the touch board (no connector on that end).

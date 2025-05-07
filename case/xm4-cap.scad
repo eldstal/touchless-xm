@@ -691,7 +691,7 @@ module button_box(outer_radius=34, height=7, top_angle=180-5.5, bottom_angle=180
         
 
         // Imaginary corners inside the case, to make it less boxy
-        rotate([0, 0, top_angle-10])
+         rotate([0, 0, top_angle-10])
         {      
             
             // Cap edge

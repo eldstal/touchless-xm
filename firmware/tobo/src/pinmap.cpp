@@ -1,4 +1,5 @@
-#include <pinmap.hpp>
+#include "pinmap.hpp"
+#include "headsets.hpp"
 
 const unsigned char BTN_PIN[N_BTNS] = {
     10, // PB2
@@ -23,19 +24,32 @@ const unsigned char BTN_INT[N_BTNS] {
 };
 
 
+
 // Touch points across different X values
 const unsigned char TOUCH_X_PIN[N_TOUCH_X] {
-    2,  // PD2, 5,4,  rear
-    17, // PC3, 6,4
-    19, // PC5, 7,4
-    16  // PC2, 8,4,  front
+    16,  // PC2, 1,4   rear
+    19,  // PC5, 2,4
+    2,   // PD2, 3,4
+    17,  // PC3, 4,4   front
 };
 
 
 // Touch points which have a common Y
-const unsigned char TOUCH_Y_PIN[N_TOUCH_Y] {
-    19, // PC5,  7,4,  bottom
-    18, // PC4,  7,5
-    15, // PC1,  7,6
-    14  // PC0,  7,7,  top
-};
+#ifdef IS_XM2
+    // The XM2 has its Y pins in a different order
+    // in the cable, so we correct for that here
+    const unsigned char TOUCH_Y_PIN[N_TOUCH_Y] {
+        14, // PC0,  3,0,  bottom
+        15, // PC1,  3,1
+        18, // PC4,  3,2
+        19  // PC5,  3,3,  top
+    };
+
+#else
+    const unsigned char TOUCH_Y_PIN[N_TOUCH_Y] {
+        19, // PC5,  3,4,  bottom
+        18, // PC4,  3,5
+        15, // PC1,  3,6
+        14  // PC0,  3,7,  top
+    };
+#endif

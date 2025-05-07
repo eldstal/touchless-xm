@@ -39,6 +39,9 @@ extern const gesture_t GESTURE_DOUBLE_TAP;
 // Voice assistant
 extern const gesture_t GESTURE_TAP_AND_HOLD;
 
+// Listen to surroundings
+extern const gesture_t GESTURE_PALM;
+
 // Toggle speak-to-chat
 extern const gesture_t GESTURE_TWO_FINGER_LONG;
 

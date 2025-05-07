@@ -1,6 +1,12 @@
 # Touchlæss XM
 
-A mod for Sony WH1000-XM3, WH1000-XM4 and WH1000-XM5 (experimental) headphones to remove the gesture-based touch controls and add physical buttons.
+A mod for Sony WH1000-XM2 (experimental), WH1000-XM3, WH1000-XM4 and WH1000-XM5 (experimental) headphones to remove the gesture-based touch controls and add physical buttons.
+
+- [Project Status](#Status)
+- [Compatible headsets](#compatibility)
+- [Modifications](#modifications)
+- [How to program your board](#how-to-program)
+- [License](#license)
 
 ![Outside view](doc/preview_outside.png)
 ![Inside view](doc/preview_inside.png)
@@ -24,11 +30,17 @@ Not even started yet. USB support (only for programming) is already included in 
 ## Compatibility
 I only have a pair of XM4 to test with, so the design is made to fit them.
 
-### 🔴 Sony WH1000-XM2 (Not compatible!)
-The service manual suggests that the XM2 uses a 12-pin cable for its touch board. As such, the touchless design won't be directly compatible.
-If you're *really* lucky, there may be an offset placement in the XM4 connector that happens to work, but I wouldn't want to test it.
+### 🟡 Sony WH1000-XM2 (Experimental)
+I've laid out the board for experimental support for the XM2. These are the most different out of the bunch, so there are caveats.
 
-If you have an XM2 and would like to help me figure out the pinout of the touch board, let me know!
+⚠️**WARNING**⚠️
+The OEM cable will not work, because the XM2 has the touch board's connector at the front. Either turn your Touchlæss upside down or get a slightly longer cable **with opposite side contacts**. Possibly [This Würth 687712100002](https://eu.mouser.com/ProductDetail/Wurth-Elektronik/687712100002?qs=PhR8RmCirEbjmYLiy2w9eg%3D%3D) is suitable.
+
+There is no bespoke connector for the XM2, you need to very carefully position it in the XM4 or XM5 connector using the lines on the PCB.
+
+It's also necessary to modify the firmware pin map slightly, since the Y pins are in the opposite order. Use `--environment xm2` when you compile the firmware.
+
+If you've got a pair of XM2s and want to help me tune the compatibility, let me know!
 
 ### 🟡 Sony WH1000-XM3 (Probably compatible)
 The XM3 touch board and battery connector appear to be electrically identical to XM4, so the PCB should be compatible. A different case design may be needed.
@@ -47,14 +59,18 @@ At a minimum, the XM5 has a different connector (24-pin FPC instead of 22-pin FF
 
 The battery connector for XM5 is also different, a 3-pin of unknown design. If you have more information about this, let me know!
 
+### 🟡 Sony WH1000-XM6 (Not even released yet)
+With any luck, the XM6 touch board will be similar to the XM5. It will be a while before I get my hands on a new high-end headset to test it, though.
+
+If you're getting a pair of XM6 and would like to send me some nice photos of the internals, I'll be very grateful!
 
 ### 🔴 Other manufacturers/headsets
 **Highly** unlikely. At the very least, you'll need to figure out the pinout for the touch sensor board. Most likely there will be other things that need tuning as well. If you want to make something like touchless for a different headset, take a look at the [technical documentation](doc/README.md) for some pointers on how Touchless works.
 
 
-### Modifications
+## Modifications
 
-#### I don't want another USB port
+#### I don't want another USB port on my headset
 That's OK, it's only needed for development (reprogramming the Touchless board without disassembling the headphones). Simply snap the USB connector off from the main board (see perforations) and print yourself a case without a USB block. Set `with_usb=false` in `xm4-cap.scad` to get a case that's closed at the bottom.
 
 
@@ -67,7 +83,7 @@ No problem! If you remove the buttons and the USB addition (see above), the touc
 
 
 #### The case is fine, but I want to reconfigure the buttons
-Easiest way to do this is in the firmware. This will be documented once there is firmware. You'll need the (free) Arduino IDE and either the included USB port or a serial cable to program the board after you've made your modifications.
+Easiest way to do this is in the firmware. This will be documented once there is firmware. Take a look at [buttonmap.cpp](firmware/tobo/src/buttonmap.cpp) to switch and swap however you like. You'll need the included USB port or a serial cable to program the board after you've made your modifications. See "Step 2: Firmware" down below for instructions.
 
 
 #### I want buttons for other features

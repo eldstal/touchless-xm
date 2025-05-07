@@ -7,6 +7,7 @@
 #include "pinmap.hpp"
 #include "gestures.hpp"
 #include "debounce.hpp"
+#include "buttonmap.hpp"
 
 int QUEUED_BTN = -1;
 
@@ -19,7 +20,6 @@ void btn_int_##idx() { \
     debounce_interrupt(&debounce[idx]); \
 }
 
-
 GENERIC_BUTTON_INTERRUPT(0)
 GENERIC_BUTTON_INTERRUPT(1)
 GENERIC_BUTTON_INTERRUPT(2)
@@ -30,14 +30,6 @@ GENERIC_BUTTON_INTERRUPT(6)
 GENERIC_BUTTON_INTERRUPT(7)
 
 
-void btn_interrupt() {
-    QUEUED_BTN = -1;
-    for (unsigned char p=0; p<N_BTNS; ++p) {
-        if (digitalRead(BTN_PIN[p]) == BUTTON_ACTIVE) {
-            QUEUED_BTN = p;
-        }
-    }
-}
 
 void setup_pins() {
     for (unsigned char p=0; p<N_BTNS; ++p) {
@@ -82,26 +74,31 @@ void loop()
     // Sleep until an interrupt
     LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);
 
-    // Allow buttons to settle
-    delay(DEBOUNCE_MS);
+    bool any_triggered = true;
 
-    long now = millis();
-
-    for (uint8_t p=0; p<N_BTNS; p++) {
+    // Handle any queued up interrupts
+    while (any_triggered) {
         
-        bool pin_triggered = false;
-        ATOMIC() {
-            pin_triggered = debounced_check(&debounce[p], now, BUTTON_ACTIVE);
+        // Allow buttons to settle
+        delay(DEBOUNCE_MS);
+        long now = millis();
+
+        any_triggered = false;
+
+        for (uint8_t p=0; p<N_BTNS; p++) {
+            
+            bool pin_triggered = false;
+            ATOMIC() {
+                pin_triggered = debounced_check(&debounce[p], now, BUTTON_ACTIVE);
+            }
+
+            if (!pin_triggered) continue;
+
+            any_triggered = true;
+
+            gesture_perform(BTN_ACTION[p], BTN_PIN[0]); 
+
         }
-
-        if (!pin_triggered) continue;
-
-        if (p == 0) {
-            gesture_perform(&GESTURE_SWIPE_BWD, BTN_PIN[0]);
-        } else {
-            gesture_perform(&GESTURE_SWIPE_FWD, BTN_PIN[1]);
-        } 
-
     }
 
     //delay(1000);
