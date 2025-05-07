@@ -53,7 +53,7 @@ The battery uses a 2-pin JST ZH series connector. There is no vertical space ins
 
 
 ### 🟡 Sony WH1000-XM5 (Possibly compatible)
-Experimental support is included in the initial board design, but I **do not** own a pair of XM5 and cannot test them. The XM5 connector is entirely based on reverse-engineering of incomplete photos, so I may have made a mistake! The Touchless board shouldn't be able to do any damage to the headphones. If you have a pair of XM5s and would like to help me test the compatibility, feel free to reach out!
+Experimental support is included in the initial board design, but I **do not** own a pair of XM5 and cannot test them. The XM5 connector is entirely based on reverse-engineering of photos, so I may have made a mistake! The Touchless board shouldn't be able to do any damage to the headphones. If you have a pair of XM5s and would like to help me test the compatibility, feel free to reach out!
 
 At a minimum, the XM5 has a different connector (24-pin FPC instead of 22-pin FFC), and the OEM design doesn't include a loose cable for us to reuse. You will need a suitable flat cable, which is 24-pin FFC with 0.5mm pitch and same-side connectors. [This Würth 687624050002](https://eu.mouser.com/ProductDetail/Wurth-Elektronik/687624050002?qs=P%2FTEqz%252BQfndQFFKLalvVUA%3D%3D) should work, but may not be the proper length.
 
@@ -111,7 +111,7 @@ When you have a fresh board with a factory-stock microcontroller, you'll have to
 - A [Bus Pirate](http://www.dangerousprototypes.com/docs/Bus_Pirate_AVR_Programming)
 - An [USBAsp](https://www.fischl.de/usbasp/)
 
-...or anything else supported by avrdude or [platform.io](https://platformio.org/). Install the platform.io tools [installed](https://platformio.org/install/cli), and let's go!
+...or anything else supported by avrdude or [platform.io](https://platformio.org/). Install [the platform.io tools](https://platformio.org/install/cli) and let's go!
 
 1. Connect your programmer to MISO, MOSI, SCK, GND and RST.
 2. Connect **either** the battery or the VCC terminal
