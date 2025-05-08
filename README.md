@@ -34,7 +34,7 @@ I only have a pair of XM4 to test with, so the design is made to fit them.
 I've laid out the board for experimental support for the XM2. These are the most different out of the bunch, so there are caveats.
 
 ⚠️**WARNING**⚠️
-The OEM cable will not work, because the XM2 has the touch board's connector at the front. Either turn your Touchlæss upside down or get a slightly longer cable **with opposite side contacts**. Possibly [This Würth 687712100002](https://eu.mouser.com/ProductDetail/Wurth-Elektronik/687712100002?qs=PhR8RmCirEbjmYLiy2w9eg%3D%3D) is suitable.
+The OEM cable will not work, because the XM2 has the touch board's connector at the front. You will need a slightly longer cable **with opposite side contacts**. Possibly [This Würth 687712100002](https://eu.mouser.com/ProductDetail/Wurth-Elektronik/687712100002?qs=PhR8RmCirEbjmYLiy2w9eg%3D%3D) is suitable, but too long of a cable will cause interference. If you can trim it to length, that will improve the chances of success.
 
 There is no bespoke connector for the XM2, you need to very carefully position it in the XM4 or XM5 connector using the lines on the PCB.
 
