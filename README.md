@@ -110,7 +110,7 @@ That's great! I won't ask for any royalties or whatever. If you do set something
 ### Step 1: Bootloader
 **This only needs to be done once per board**
 
-When you have a fresh board with a factory-stock microcontroller, you'll have to start with the Arduino bootloader. An image is included in this repo, but you need a hardware AVR programmer, for example:
+When you have a fresh board with a factory-stock microcontroller, you'll have to start with the bootloader. For this step you need a hardware AVR programmer, for example:
 
 - AVRISPmk2 (tested, works)
 - An Arduino ([Instructions](https://docs.arduino.cc/built-in-examples/arduino-isp/ArduinoISP/#how-to-wire-your-boards))

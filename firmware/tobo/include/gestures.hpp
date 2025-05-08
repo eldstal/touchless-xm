@@ -3,6 +3,24 @@
 #include <stdint.h>
 
 
+/* These are tweaks to the gesture timing
+ * If the swipes don't work on your headset,
+ * try tweaking these. The values are all milliseconds.
+ */
+
+#define MS_HOLD_CHECK 10
+
+#define MS_TAP_DOWN 100
+#define MS_TAP_UP 100
+#define MS_TAP_LONG 2500
+
+#define MS_SWIPE_OVERLAP 10
+#define MS_SWIPE_PASS 60
+#define MS_SWIPE_REPEAT 200
+
+
+
+
 struct gesture;
 typedef struct gesture gesture_t;
 

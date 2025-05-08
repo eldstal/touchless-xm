@@ -9,9 +9,6 @@
 #include "debounce.hpp"
 #include "buttonmap.hpp"
 
-int QUEUED_BTN = -1;
-
-
 
 pin_debounce debounce[N_BTNS] = { };
 
@@ -61,7 +58,7 @@ void setup_interrupts() {
     attachPCINT(digitalPinToPCINT(BTN_PIN[4]), btn_int_4, CHANGE);
     attachPCINT(digitalPinToPCINT(BTN_PIN[5]), btn_int_5, CHANGE);
     attachPCINT(digitalPinToPCINT(BTN_PIN[6]), btn_int_6, CHANGE);
-    attachPCINT(digitalPinToPCINT(BTN_PIN[7]), btn_int_6, CHANGE);
+    attachPCINT(digitalPinToPCINT(BTN_PIN[7]), btn_int_7, CHANGE);
 }
 
 void setup()
@@ -73,6 +70,7 @@ void setup()
 
 void loop()
 {
+
     // Sleep until an interrupt
     LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);
 
@@ -98,7 +96,7 @@ void loop()
 
             any_triggered = true;
 
-            gesture_perform(BTN_ACTION[p], BTN_PIN[0]); 
+            gesture_perform(BTN_ACTION[p], BTN_PIN[p]); 
 
         }
     }

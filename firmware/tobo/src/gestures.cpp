@@ -33,7 +33,7 @@ static int16_t gesture_tap(const gesture_t* gesture, bool trigger, int16_t state
                 for (uint8_t i=0; i<gesture->n_pins; ++i) {
                     digitalWrite(gesture->pin[i], TOUCH_ACTIVE);
                 }
-                delay(100);
+                delay(MS_TAP_DOWN);
                 return 1;
             }
         
@@ -50,6 +50,71 @@ static int16_t gesture_tap(const gesture_t* gesture, bool trigger, int16_t state
 }
 
 
+static int16_t gesture_tap_long(const gesture_t* gesture, bool trigger, int16_t state) {
+    switch (state) {
+        case 0:
+            {
+                for (uint8_t i=0; i<gesture->n_pins; ++i) {
+                    digitalWrite(gesture->pin[i], TOUCH_ACTIVE);
+                }
+                delay(MS_TAP_LONG);
+                return 1;
+            }
+        
+        case 1:
+            {
+                for (uint8_t i=0; i<gesture->n_pins; ++i) {
+                    digitalWrite(gesture->pin[i], TOUCH_INACTIVE);
+                }
+                return -1;
+            }
+    }
+
+    return -1;
+}
+
+static int16_t gesture_double_tap(const gesture_t* gesture, bool trigger, int16_t state) {
+    switch (state) {
+        case 0:
+            {
+                for (uint8_t i=0; i<gesture->n_pins; ++i) {
+                    digitalWrite(gesture->pin[i], TOUCH_ACTIVE);
+                }
+                delay(MS_TAP_DOWN);
+                return 1;
+            }
+        
+        case 1:
+            {
+                for (uint8_t i=0; i<gesture->n_pins; ++i) {
+                    digitalWrite(gesture->pin[i], TOUCH_INACTIVE);
+                }
+                delay(MS_TAP_UP);
+                return 2;
+            }
+        case 2:
+            {
+                for (uint8_t i=0; i<gesture->n_pins; ++i) {
+                    digitalWrite(gesture->pin[i], TOUCH_ACTIVE);
+                }
+                delay(MS_TAP_DOWN);
+                return 3;
+            }
+        
+        case 3:
+            {
+                for (uint8_t i=0; i<gesture->n_pins; ++i) {
+                    digitalWrite(gesture->pin[i], TOUCH_INACTIVE);
+                }
+                return -1;
+            }
+    }
+
+    return -1;
+}
+
+
+
 static int16_t gesture_hold(const gesture_t* gesture, bool trigger, int16_t state) {
     switch (state) {
         case 0:
@@ -57,14 +122,14 @@ static int16_t gesture_hold(const gesture_t* gesture, bool trigger, int16_t stat
                 for (uint8_t i=0; i<gesture->n_pins; ++i) {
                     digitalWrite(gesture->pin[i], TOUCH_ACTIVE);
                 }
-                delay(100);
+                delay(MS_TAP_DOWN);
                 return 1;
             }
 
         case 1:
             {
                 if (trigger) {
-                    delay(10);
+                    delay(MS_HOLD_CHECK);
                     return 1;
                 } else {
                     return 2;
@@ -90,13 +155,15 @@ static int16_t gesture_swipe_and_repeat(const gesture_t* gesture, bool trigger, 
     if (state < done_state) {
         digitalWrite(gesture->pin[state], TOUCH_ACTIVE);
 
-        // Overlap
-        delay(10);
+        // The time while two points are active
+        delay(MS_SWIPE_OVERLAP);
 
         if (state > 0) {
             digitalWrite(gesture->pin[state-1], TOUCH_INACTIVE);
         }
-        delay(60);
+
+        // The time while this point is active on its own
+        delay(MS_SWIPE_PASS);
         return state + 1;
     } else if (state == done_state) {
 
@@ -104,7 +171,7 @@ static int16_t gesture_swipe_and_repeat(const gesture_t* gesture, bool trigger, 
             digitalWrite(gesture->pin[i], TOUCH_INACTIVE);
         }
 
-        delay(200);
+        delay(MS_SWIPE_REPEAT);
         return loop_state;
     
     } else if (state == loop_state) {
@@ -131,19 +198,19 @@ static int16_t gesture_swipe_and_hold(const gesture_t* gesture, bool trigger, in
         digitalWrite(gesture->pin[state], TOUCH_ACTIVE);
 
         // Overlap
-        delay(10);
+        delay(MS_SWIPE_OVERLAP);
 
         if (state > 0) {
             digitalWrite(gesture->pin[state-1], TOUCH_INACTIVE);
         }
-        delay(60);
+        delay(MS_SWIPE_PASS);
         return state + 1;
     
     } else if (state == hold_state) {
 
         if (trigger) {
             // Just hold the "finger"
-            delay(50);
+            delay(MS_HOLD_CHECK);
             return hold_state;
         } else {
 
@@ -178,7 +245,7 @@ const gesture_t GESTURE_TAP = {
 };
 
 const gesture_t GESTURE_DOUBLE_TAP = {
-    .func = gesture_nop,
+    .func = gesture_double_tap,
     .n_pins = 1,
     .pin = { TOUCH_X_PIN[0] }
 };
@@ -196,9 +263,9 @@ const gesture_t GESTURE_PALM = {
 };
 
 const gesture_t GESTURE_TWO_FINGER_LONG = {
-    .func = gesture_nop,
+    .func = gesture_tap_long,
     .n_pins = 2,
-    .pin = { TOUCH_X_PIN[0], TOUCH_X_PIN[3] }
+    .pin = { TOUCH_X_PIN[0], TOUCH_X_PIN[2] }
 };
 
 const gesture_t GESTURE_SWIPE_FWD = {

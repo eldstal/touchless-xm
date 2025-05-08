@@ -19,10 +19,10 @@ To support swiping motions, Touchless attaches to four horizontal and four verti
 ```
 -     -     -     -     -     -
 -     -     -     -     -     -
--   (1,4) (2,4) (3,4) (4,4)   -
--     -   (2,5)   -     -     -
--     -   (2,6)   -     -     -
 -     -   (2,7)   -     -     -
+-     -   (2,6)   -     -     -
+-     -   (2,5)   -     -     -
+-   (1,4) (2,4) (3,4) (4,4)   -
 -     -     -     -     -     - 
 -     -     -     -     -     -
 ```
@@ -37,7 +37,7 @@ Prototype testing indicates that three points are enough for a working swipe on 
 #### Battery connector
 Battery appears to be a cellphone-type with no cables attached to it. It sits in a cradle which *does* have a cable+connector to the board, though.
 
-![XM2 battery from FCC filing](wh2-battery.png)
+![XM2 battery from FCC filing](xm2-battery.png)
 
 It's a 3-pin, likely JST but does not match the XM4 or XM5.
 
