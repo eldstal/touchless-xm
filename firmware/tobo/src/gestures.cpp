@@ -2,7 +2,6 @@
 #include <stdint.h>
 
 #include "gestures.hpp"
-
 #include "pinmap.hpp"
 
 void gesture_perform(const gesture_t* gesture, uint8_t trigger_pin) {

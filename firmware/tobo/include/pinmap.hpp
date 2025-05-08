@@ -4,8 +4,9 @@
 #define BUTTON_ACTIVE LOW
 #define BUTTON_INACTIVE HIGH
 
-#define TOUCH_ACTIVE HIGH
-#define TOUCH_INACTIVE LOW
+#define TOUCH_ACTIVE LOW
+#define TOUCH_INACTIVE HIGH
+
 
 #define N_BTNS 8
 extern const unsigned char BTN_PIN[N_BTNS];   // Arduino pin numbers

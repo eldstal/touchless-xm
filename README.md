@@ -23,7 +23,7 @@ The design is ready for the first prototype production run, based on a benchtop 
 Boards will not be fabricated before the case is known to be compatible. Once I've made a first production run, I'll also upload all the files you need to order your own board from a vendor such as PCBWay.
 
 ### Firmware
-Not even started yet. USB support (only for programming) is already included in the main board. The current plan is to use platform.io for the firmware and an arduino bootloader.
+Mostly ready for testing. USB support (only for programming) is already included in the main board. The project uses platform.io and OptiBoot to run an Arduino-based firmware.
 
 
 
@@ -75,19 +75,25 @@ That's OK, it's only needed for development (reprogramming the Touchless board w
 
 
 #### I don't like how you've placed the buttons
-That's no problem! Snap them off of the main board (see perforations) and use the solder points on the front or back to connect your own buttons placed wherever you want them. If you're keen on PCB design, it's not that hard to redesign the PCB for button placement (or add/remove buttons as needed).
+That's no problem! Snap the button portion off of the main board (see perforations) and use the solder points on the front or back to connect your own buttons placed wherever you want them. If you're keen on PCB design, it's not that hard to redesign the PCB for button placement (or add/remove buttons as needed).
+
+There is no need for external resistors etc, just connect a switch between one button contact and the COM and you're good to go.
 
 
 #### I don't have a 3D printer
-No problem! If you remove the buttons and the USB addition (see above), the touchless board should fit inside the OEM ear cup (you have to remove the original touch board first, which may be destructive). Make cuts as needed to mount buttons where you want them, and wire them up to the exposed button solder points on the front or back of the PCB.
+No problem! If you remove the buttons and the USB addition (see above), the touchless board should fit inside the OEM ear cup (you have to remove the original touch board first, which may be destructive). Make cuts in the case as needed to mount buttons where you want them, and wire them up to the exposed button solder points on the front or back of the PCB.
 
 
 #### The case is fine, but I want to reconfigure the buttons
-Easiest way to do this is in the firmware. This will be documented once there is firmware. Take a look at [buttonmap.cpp](firmware/tobo/src/buttonmap.cpp) to switch and swap however you like. You'll need the included USB port or a serial cable to program the board after you've made your modifications. See "Step 2: Firmware" down below for instructions.
+Easiest way to do this is in the firmware. Take a look at [buttonmap.cpp](firmware/tobo/src/buttonmap.cpp) to switch and swap however you like. You'll need the included USB port or a serial cable to program the board after you've made your modifications. Instructions are [down below](#step-2-firmware).
 
 
 #### I want buttons for other features
 That won't be possible, sorry. Touchlæss only works by simulating touches and swipes, so it can only do what the headphones allow you to do with the touch panel.
+
+
+#### The buttons are too slow!
+Yes. There is a significant delay between pushing a button and the headset responding. This isn't something we can control, since Touchlæss simulates touch gestures. If a swipe takes 120ms to perform, the headset can't react sooner than that.
 
 
 #### I want the buttons on the left cup
@@ -118,7 +124,7 @@ When you have a fresh board with a factory-stock microcontroller, you'll have to
 
 Add the needed environment to `firmware/tobo/platformio.ini` to use your programmer.
 
-**Warning** Ensure that the environment extends `tobo`, so that the frequency and fuses are programmed properly. If you do not, you may need to do hardware surgery to recover your board with an external crystal.
+**Warning** Ensure that your new environment extends `env:tobo`, so that the frequency and fuses are programmed properly. If you do not, you may need to temporarily connect an external crystal (see PCB markings) in order to recover the board.
 
 ```
 cd firmware/tobo

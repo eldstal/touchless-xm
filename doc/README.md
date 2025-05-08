@@ -20,9 +20,9 @@ To support swiping motions, Touchless attaches to four horizontal and four verti
 -     -     -     -     -     -
 -     -     -     -     -     -
 -   (1,4) (2,4) (3,4) (4,4)   -
--     -     -   (3,5)   -     -
--     -     -   (3,6)   -     -
--     -     -   (3,7)   -     -
+-     -   (2,5)   -     -     -
+-     -   (2,6)   -     -     -
+-     -   (2,7)   -     -     -
 -     -     -     -     -     - 
 -     -     -     -     -     -
 ```

@@ -38,10 +38,12 @@ void setup_pins() {
 
     for (unsigned char p=0; p<N_TOUCH_X; ++p) {
         pinMode(TOUCH_X_PIN[p], OUTPUT);
+        digitalWrite(TOUCH_X_PIN[p], TOUCH_INACTIVE);
     }
 
     for (unsigned char p=0; p<N_TOUCH_Y; ++p) {
         pinMode(TOUCH_Y_PIN[p], OUTPUT);
+        digitalWrite(TOUCH_Y_PIN[p], TOUCH_INACTIVE);
     }
 }
 
