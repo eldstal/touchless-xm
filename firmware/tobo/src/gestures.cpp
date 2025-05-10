@@ -270,25 +270,25 @@ const gesture_t GESTURE_TWO_FINGER_LONG = {
 
 const gesture_t GESTURE_SWIPE_FWD = {
     .func = gesture_swipe_and_repeat,
-    .n_pins = 4,
-    .pin = { TOUCH_X_PIN[0], TOUCH_X_PIN[1], TOUCH_X_PIN[2], TOUCH_X_PIN[3] }
+    .n_pins = 3,
+    .pin = { TOUCH_X_PIN[0], TOUCH_X_PIN[1], TOUCH_X_PIN[2] }
 };
 
 const gesture_t GESTURE_SWIPE_BWD = {
     .func = gesture_swipe_and_repeat,
-    .n_pins = 4,
-    .pin = { TOUCH_X_PIN[3], TOUCH_X_PIN[2], TOUCH_X_PIN[1], TOUCH_X_PIN[0] }
+    .n_pins = 3,
+    .pin = { TOUCH_X_PIN[2], TOUCH_X_PIN[1], TOUCH_X_PIN[0] }
 };
 
 const gesture_t GESTURE_SWIPE_UP = {
     .func = gesture_swipe_and_hold,
-    .n_pins = 4,
-    .pin = { TOUCH_Y_PIN[0], TOUCH_Y_PIN[1], TOUCH_Y_PIN[2], TOUCH_Y_PIN[3] }
+    .n_pins = 3,
+    .pin = { TOUCH_Y_PIN[0], TOUCH_Y_PIN[1], TOUCH_Y_PIN[2] }
 };
 
 const gesture_t GESTURE_SWIPE_DOWN = {
     .func = gesture_swipe_and_hold,
-    .n_pins = 4,
-    .pin = { TOUCH_Y_PIN[3], TOUCH_Y_PIN[2], TOUCH_Y_PIN[1], TOUCH_Y_PIN[0] }
+    .n_pins = 3,
+    .pin = { TOUCH_Y_PIN[2], TOUCH_Y_PIN[1], TOUCH_Y_PIN[0] }
 };
 
