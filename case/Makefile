@@ -1,4 +1,4 @@
-MODELS:=xm4-usb xm4-nousb xm4-testfit
+MODELS:=xm4-usb xm4-nousb xm4-testfit xm4-buttons
 OUTDIR:=$(PWD)/../dist/case
 
 all: $(MODELS)

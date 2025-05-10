@@ -5,8 +5,11 @@
 $fa = 1;
 $fs = 0.2;
 
+// Render the main body
+show_cap = true;
+
 // No custom additions, an OEM-adjacent design
-oem_cup = false;
+oem_cap = false;
 
 // Expose USB port
 with_usb = true;
@@ -969,22 +972,27 @@ module custom_cup() {
     // Added features
     cup_mod_interior_features();
     
-                
-    // The buttons
-    if (show_buttons) {
-        buttons(cut=false, mounted=mounted_buttons);
-    }
-
 }
 
 
 
 intersection() {
-    if (oem_cup) {
-        standard_cup();
-    } else {
-        custom_cup();
+
+    union() {
+        if (show_cap) {
+            if (oem_cap) {
+                standard_cup();
+            } else {
+                custom_cup();
+            }
+        }
+                  
+        // The buttons
+        if (show_buttons) {
+            buttons(cut=false, mounted=mounted_buttons);
+        }
     }
+    
     
     {
         if (test_fit_print) {
