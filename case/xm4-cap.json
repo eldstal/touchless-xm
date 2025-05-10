@@ -1,7 +1,7 @@
 {
     "fileFormatVersion": "1",
     "parameterSets": {
-        "oem": {
+        "xm4-oem": {
             "$fa": "1",
             "$fs": "0.20000000000000001",
             "button_clearance": "0.10000000000000001",
@@ -40,7 +40,7 @@
             "usb_board_h": "4.5",
             "with_usb": "false"
         },
-        "preview": {
+        "xm4-preview": {
             "$fa": "1",
             "$fs": "0.20000000000000001",
             "button_clearance": "0.10000000000000001",
@@ -157,7 +157,7 @@
             "usb_board_h": "4.5",
             "with_usb": "false"
         },
-        "testfit": {
+        "xm4-testfit": {
             "$fa": "1",
             "$fs": "0.20000000000000001",
             "button_clearance": "0.10000000000000001",
