@@ -20,7 +20,9 @@ show_pcb = true;
 // Render buttons
 show_buttons = true;
 
-gasket_thickness=0.8;
+// Maybe we can just stick a length of TPU filament in there?
+
+gasket_thickness=1.75;
 
 
 case_thickness = 0.9;
