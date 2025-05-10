@@ -5,6 +5,9 @@
 $fa = 1;
 $fs = 0.2;
 
+// No custom additions, an OEM-adjacent design
+oem_cup = false;
+
 // Expose USB port
 with_usb = true;
 
@@ -19,10 +22,14 @@ show_pcb = true;
 
 // Render buttons
 show_buttons = true;
+mounted_buttons = false;
 
 // Maybe we can just stick a length of TPU filament in there?
 
 gasket_thickness=1.75;
+
+// mm between the button and the button hole
+button_clearance = 0.1;
 
 
 case_thickness = 0.9;
@@ -536,10 +543,9 @@ module standard_cup() {
 
 }
 
-module keycap(cut=false, type=0, radius=2, depth=2) {
+module keycap(cut=false, type=0, radius=2, depth=2, clearance=0.1) {
 
     pill_rot = [ -15, -10, 0, 10, 15 ];
-    clearance = 0.1;
 
     rotate([pill_rot[type], 0, 0])
     translate([0, 0, -1])
@@ -549,7 +555,7 @@ module keycap(cut=false, type=0, radius=2, depth=2) {
         difference() {
             // Basic pill shape
             linear_extrude(depth)
-            flat_pill(7.2-(radius-clearance), radius-clearance);
+            flat_pill(7.2-(radius), radius-clearance);
             
             
             // Some sort of texture
@@ -573,15 +579,18 @@ module keycap(cut=false, type=0, radius=2, depth=2) {
 
 }
 
-module radial_button(cut=false, angle=180, cap_type=0, distance=32.25, vertical_center=pcb_thickness + 1.7) {
+module radial_button(cut=false, angle=180, cap_type=0, distance=32.25, vertical_center=pcb_thickness + 1.7, tipped_down=false) {
 
     peg_length=0.5;
     guide_length=0.7;
     cap_length = 1.5;
     
+    tip_angle = tipped_down ? -90: 0;
+    
 
-    rotate(angle)
+    rotate([0, 0, angle])
     translate([distance, 0, -vertical_center])
+    rotate([0, tip_angle, 0 ])
     {
         // Peg touching the actual switch
         translate([0, -1, -1])
@@ -601,26 +610,40 @@ module radial_button(cut=false, angle=180, cap_type=0, distance=32.25, vertical_
         if (!cut) {
             // The visible button itself
             translate([peg_length+guide_length, 0, 0])
-            keycap(false, cap_type, depth=cap_length);
+            keycap(false, cap_type, depth=cap_length, clearance=button_clearance);
 
 
         } else {
             translate([peg_length+guide_length, 0, 0])
             //rotate([0, 90, 0])
-            keycap(true, cap_type);
+            keycap(true, cap_type, clearance=button_clearance);
         }
     }    
 }
 
-module buttons(cut=false) {
-     inside_top_center()
-     {
+module buttons(cut=false, mounted=false, distance=32.25, vertical_center=pcb_thickness+1.7) {
 
-        radial_button(cut, angle=180,    cap_type=0);
-        radial_button(cut, angle=180+10, cap_type=1);
-        radial_button(cut, angle=180+20, cap_type=2);
-        radial_button(cut, angle=180+30, cap_type=3);
-        radial_button(cut, angle=180+40, cap_type=4);
+    btn_angle = [ 180, 180+10, 180+20, 180+30, 180+40 ];
+
+    inside_top_center()
+    {
+    
+        if (mounted || cut) {
+            
+            // The buttons in their proper places
+            for (i=[0:1:4]) {
+                radial_button(cut, angle=btn_angle[i],    cap_type=i, distance=distance, vertical_center=vertical_center);
+            }
+
+        } else {
+        
+            if (!cut) {
+                // The same buttons, but off to the side for printing
+                for (i=[0:1:4]) {
+                    radial_button(false, angle=btn_angle[i], cap_type=i, distance=distance + 8, tipped_down=true);
+                }
+            }
+        }
     }
 }
 
@@ -926,7 +949,7 @@ module cup_mod_cuts() {
     button_box_cut();
             
     // Holes for the buttons
-    buttons(true);
+    buttons(cut=true, mounted=mounted_buttons);
 }
 
 
@@ -949,7 +972,7 @@ module custom_cup() {
                 
     // The buttons
     if (show_buttons) {
-        buttons(false);
+        buttons(cut=false, mounted=mounted_buttons);
     }
 
 }
@@ -957,8 +980,11 @@ module custom_cup() {
 
 
 intersection() {
-    //standard_cup();
-    custom_cup();
+    if (oem_cup) {
+        standard_cup();
+    } else {
+        custom_cup();
+    }
     
     {
         if (test_fit_print) {
