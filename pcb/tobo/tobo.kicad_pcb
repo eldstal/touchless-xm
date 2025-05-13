@@ -14996,7 +14996,7 @@
 		(descr "Capacitor SMD 0201 (0603 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.vishay.com/docs/20052/crcw0201e3.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C7"
-			(at 1.49 -0.02 0)
+			(at 0 -0.89 0)
 			(layer "F.SilkS")
 			(uuid "e49e88bf-a510-4034-8a43-dc1ede474cd9")
 			(effects
@@ -19850,7 +19850,7 @@
 		(descr "Capacitor SMD 0201 (0603 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.vishay.com/docs/20052/crcw0201e3.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C8"
-			(at -1.5 -0.02 180)
+			(at 0 -0.96 180)
 			(layer "F.SilkS")
 			(uuid "3bee1e36-0028-48e0-bbbc-963ee352f92f")
 			(effects
@@ -21437,6 +21437,16 @@
 		(layer "F.SilkS")
 		(uuid "035e761f-be09-4928-a0a0-21d5ade06636")
 	)
+	(gr_line
+		(start 145.98 87.875)
+		(end 146.18 88.095)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "1288cb42-7dd1-4b55-98f7-5164032cc7a2")
+	)
 	(gr_poly
 		(pts
 			(xy 146.877494 72.611825) (xy 146.352694 72.611825) (xy 146.421494 72.845425) (xy 146.829494 72.845425)
@@ -21638,6 +21648,16 @@
 		(layer "F.SilkS")
 		(uuid "4ad5e163-9feb-474c-8e7e-ea890094e74d")
 	)
+	(gr_line
+		(start 145.98 89.96)
+		(end 144.47 89.96)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "567ad911-c823-49e6-962d-b233a3b3ab23")
+	)
 	(gr_poly
 		(pts
 			(xy 145.063095 73.269425) (xy 145.533494 73.269425) (xy 145.533494 73.464624) (xy 144.835895 73.464624)
@@ -21650,6 +21670,26 @@
 		(fill solid)
 		(layer "F.SilkS")
 		(uuid "5900b1fe-0ea2-496f-9cac-fcd00d872278")
+	)
+	(gr_line
+		(start 145.979999 92.034999)
+		(end 146.179997 91.815001)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "6922137a-a406-457d-bb64-cc73e8831275")
+	)
+	(gr_line
+		(start 145.98 89.485)
+		(end 145.98 87.875)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "73af8579-f176-4c0b-b178-99a4ae330457")
 	)
 	(gr_poly
 		(pts
@@ -22336,6 +22376,16 @@
 		(layer "F.SilkS")
 		(uuid "abcddc9a-e5b6-4ab3-aaae-a1a61e297e19")
 	)
+	(gr_line
+		(start 145.98 90.425)
+		(end 145.979999 92.034999)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "b3ef68e5-2158-49ab-8fac-d1dcc8312e34")
+	)
 	(gr_poly
 		(pts
 			(xy 119.441349 81.184218) (xy 119.280565 81.184218) (xy 119.249547 80.546181) (xy 119.472066 80.546181)
@@ -22663,6 +22713,16 @@
 		(layer "F.SilkS")
 		(uuid "cb4bef83-9816-4eec-b244-68d1409601c3")
 	)
+	(gr_line
+		(start 145.979999 92.034999)
+		(end 145.779995 91.815001)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "cdd2e6da-655f-4537-a1f6-03dbb63e978b")
+	)
 	(gr_poly
 		(pts
 			(xy 140.399103 72.621425) (xy 140.075903 72.621425) (xy 140.075903 73.464624) (xy 139.848704 73.464624)
@@ -22751,6 +22811,16 @@
 		)
 		(layer "F.SilkS")
 		(uuid "f2124dbd-7a21-4842-9bd7-be925cafcbd1")
+	)
+	(gr_line
+		(start 145.98 87.875)
+		(end 145.78 88.095)
+		(stroke
+			(width 0.15)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "fbca3884-f619-46cb-b66a-edfbefdb122f")
 	)
 	(gr_circle
 		(center 140 90)
@@ -24003,6 +24073,19 @@
 			(justify right bottom)
 		)
 	)
+	(gr_text "Y"
+		(at 144.5 91.73 0)
+		(layer "F.SilkS")
+		(uuid "9ac9289f-7319-4f08-bed9-f6f9a7746d57")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
 	(gr_text "-"
 		(at 138.1 111.6 0)
 		(layer "F.SilkS")
@@ -24170,6 +24253,19 @@
 				(bold yes)
 			)
 			(justify bottom)
+		)
+	)
+	(gr_text "X"
+		(at 144.5 89.34 0)
+		(layer "F.SilkS")
+		(uuid "e2e5595b-d4d2-445a-8c6d-f3cb5790799a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left bottom)
 		)
 	)
 	(gr_text "B0"
@@ -32689,8 +32785,20 @@
 		)
 	)
 	(group ""
+		(uuid "53d9eb6e-447c-4461-966c-87daa42b7930")
+		(members "1288cb42-7dd1-4b55-98f7-5164032cc7a2" "73af8579-f176-4c0b-b178-99a4ae330457"
+			"fbca3884-f619-46cb-b66a-edfbefdb122f"
+		)
+	)
+	(group ""
 		(uuid "ae37f0c0-ffb0-49b7-8766-89883ba4c3bb")
 		(members "bfad1081-c491-4d78-af68-7ecf6abc70af")
+	)
+	(group ""
+		(uuid "bfc75aa0-146c-496d-b87e-db766d6946e8")
+		(members "6922137a-a406-457d-bb64-cc73e8831275" "b3ef68e5-2158-49ab-8fac-d1dcc8312e34"
+			"cdd2e6da-655f-4537-a1f6-03dbb63e978b"
+		)
 	)
 	(group ""
 		(uuid "d7486d92-b5d4-489b-a093-310f83cceddf")
