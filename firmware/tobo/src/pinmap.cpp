@@ -34,7 +34,7 @@ const unsigned char TOUCH_X_PIN[N_TOUCH_X] {
 };
 
 
-// Touch points which have a common Y
+// Touch points across different Y values
 #ifdef IS_XM2
     // The XM2 has its Y pins in a different order
     // in the cable, so we correct for that here
