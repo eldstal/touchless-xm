@@ -743,16 +743,19 @@ module button_box(outer_radius=34, height=7, top_angle=180-5.5, bottom_angle=180
             //rotate([0, 0, bottom_angle - top_angle+30])
             //translate([outer_radius-10, 0, -5])
             //sphere(5.5);
+            /*
             rotate([0, 0, bottom_angle - top_angle+30])
             translate([30, 0, -10])
             rotate([0, -20, 0])
             linear_extrude(10)
                 circle(0.5);
-            
+            */
+            /*
             // Top ball cap
             rotate([0, 0, 0])
             translate([outer_radius-10, 0, -5])
             sphere(5.5);
+            */
 
         }
     }
@@ -768,12 +771,12 @@ module usb_box(cut=false) {
 
     if (!cut) {
     
-        translate([0, 0, -8/2])
+        translate([0, 0, -9/2])
         translate([0, -top_circle_diameter/2, 0])
         translate([0, 0, case_thickness])        // Align to the cup on the outside
         rounded_cube(13.5 + 2*case_thickness,
                      18,
-                     8,
+                     9,
                      center=true, radius=0.5);
     
     } else {
