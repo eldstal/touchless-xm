@@ -6,5 +6,5 @@ all: $(MODELS)
 .PHONY: $(MODELS)
 $(MODELS):
 	mkdir -p $(OUTDIR)
-	openscad -o $(OUTDIR)/$@.stl -p xm4-cap.json -P $@ xm4-cap.scad
+	openscad --backend=manifold -o $(OUTDIR)/$@.stl -p xm4-cap.json -P $@ xm4-cap.scad
 	
