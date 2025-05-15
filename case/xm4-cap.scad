@@ -283,14 +283,14 @@ module screw_posts_and_pegs() {
         screw_post(3.5, outside_max_depth, false, 0, 0);
         
         // Top rear post
-        translate([-16.85, 29.4, 0])
-        rotate([0, 0, 00])
+        translate([-16.6, 29.2, 0])
+        rotate([0, 0, 10])
         screw_post(3.5, outside_max_depth, false, 0, 0);
         
         // Top rear peg
-        translate([-19.69, 26.54, 0.1])
-        rotate([0, 0, -40])
-        peg(support=3);
+        translate([-20.5, 26.54, 0.1])
+        rotate([0, 0, -52])
+        peg(support=3.2);
         
     }
 }
