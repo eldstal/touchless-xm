@@ -17,6 +17,9 @@ with_usb = true;
 // Print only bottom ring
 test_fit_print = false;
 
+// Cut away part of the endcap for internal visibility
+test_clearance_print = false;
+
 // Cutaway view
 half_view = false;
 
@@ -39,7 +42,7 @@ case_thickness = 0.9;
 rim_width = 2.6;
 
 
-outside_width = 67.9;
+outside_width = 69;
 outside_height = 80;
 outside_max_depth = 17.1;
 top_circle_diameter = 57.5;
@@ -118,19 +121,23 @@ module edge_with_rounding(radius) {
 }
 
 
-module bottom_gasket(thickness=gasket_thickness, center_width=outside_width - (rim_width)) {
+module bottom_gasket(thickness=gasket_thickness,
+                     center_width=outside_width - (rim_width),
+                     center_height=outside_height - rim_width) {
 
     // Give the cutout it a little bit of a lip, to maybe hold on to the rubber gasket
     translate([0, 0, thickness/5])
     minkowski() {
         // A thin, flat sliver of the proper shape
         difference() {
-            resize([center_width+0.01, 0, 0.01], true)
+            
             linear_extrude(0.01, center=true)
+            resize([center_width+0.01, center_height+0.01, 0], true)
                 bottom_outer_edge();
                 
-            resize([center_width-0.01, 0, 0.1], true)
+            
             linear_extrude(0.1, center=true)
+            resize([center_width-0.01, center_height-0.01, 0], true)
                 bottom_outer_edge();
         }
         
@@ -219,7 +226,7 @@ module screw_post(diameter, height, do_inner_support, inner_support_clearance, i
         translate([0, 0, height/2])
         difference() {
                 cylinder(h=height, r=diameter/2, center=true);
-                cylinder(h=height*2, r=1.2/2, center=true);
+                cylinder(h=height*2, r=1.5/2, center=true);
         }
         
         // Outside support
@@ -256,29 +263,29 @@ module screw_posts_and_pegs() {
     translate([0, 0, 2.9])
     union() {
         // Bottom front post
-        translate([22.85, -19.34, 0])
+        translate([23.1, -20.2, 0])
         rotate([0, 0, 240])
-        screw_post(3.2, outside_max_depth, true, 4.1, 1.2);
+        screw_post(3.5, outside_max_depth, true, 4.1, 1.2);
         
         // Bottom front peg
-        translate([27.38, -11.29, 0.1])
+        translate([27.8, -12.1, 0.1])
         rotate([0, 0, -110])
         peg(support=4);
         
         // Bottom rear post
-        translate([-19.79, -22.98, 0])
+        translate([-19.5, -23.2, 0])
         rotate([0, 0, 130])
-        screw_post(3.2, outside_max_depth, true, 7.2, 3);
+        screw_post(3.5, outside_max_depth, true, 7.2, 3);
         
         // Top front post
-        translate([17.34, 28.03, 0])
+        translate([18.4, 27.9, 0])
         rotate([0, 0, -30])
-        screw_post(3.2, outside_max_depth, false, 0, 0);
+        screw_post(3.5, outside_max_depth, false, 0, 0);
         
         // Top rear post
-        translate([-16.85, 29.67, 0])
+        translate([-16.85, 29.4, 0])
         rotate([0, 0, 00])
-        screw_post(3.2, outside_max_depth, false, 0, 0);
+        screw_post(3.5, outside_max_depth, false, 0, 0);
         
         // Top rear peg
         translate([-19.69, 26.54, 0.1])
@@ -398,7 +405,7 @@ module fork() {
 
     fork_round_r=0.4;
 
-    translate([29.23, -1.94, 0])
+    translate([30.3, -2.4, 0])
     union() {
     
         
@@ -417,9 +424,9 @@ module fork() {
             cube([1.3, 5, 0.1]);
         }
 
-        translate([0, 0, -3.5])
+        translate([0, 0, -2.7])
         difference() {
-            cube([1.3, 5, 3.5]);
+            cube([1.3, 5, 2.7]);
          
             translate([0, 5/2, -(2 - (3.5-2.8))])
             rotate([0, 90, 0])
@@ -999,7 +1006,16 @@ intersection() {
     
     {
         if (test_fit_print) {
-            cube([outside_width*2, outside_height*2, 20], center=true);
+            cube([outside_width*2, outside_height*2, 17], center=true);
+        }
+        
+        if (test_clearance_print) {
+            difference() {
+                cylinder(h=outside_max_depth*2, r=outside_height*2, center=true);
+             
+                cylinder(h=outside_max_depth*2, r=outside_width/4, center=true);
+                    
+            }
         }
     
         if (half_view) {
