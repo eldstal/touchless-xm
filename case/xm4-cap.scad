@@ -30,6 +30,10 @@ show_pcb = true;
 show_buttons = true;
 mounted_buttons = false;
 
+// Render the microphone grill
+show_grill = true;
+mounted_grill = false;
+
 // Maybe we can just stick a length of TPU filament in there?
 
 gasket_thickness=1.75;
@@ -37,6 +41,8 @@ gasket_thickness=1.75;
 // mm between the button and the button hole
 button_clearance = 0.1;
 
+// Oversize the mic grill to make it stick
+mic_grill_friction_fit = 0.05;
 
 case_thickness = 0.9;
 rim_width = 2.6;
@@ -72,10 +78,13 @@ mic_hole_yc = (mic_hole_y1 + mic_hole_y2) / 2;
 mic_hole_zc = 8;
 
 // Mic hole frame protrusion to meet the mic
-mic_hole_inside_protrude = 0.5;
+mic_hole_inside_protrude = 0.8;
 
 // Actual opening
-mic_hole_height = 2;
+mic_hole_height = 2.5;
+
+// The hole in the case
+mic_hole_cut_height = 4;
 
 // Actual opening
 mic_hole_width = 8;
@@ -88,6 +97,7 @@ mic_hole_angle_x = 31.8;
 mic_hole_angle_z = -1;
 mic_hole_angle_y = -5;
 mic_hole_distance = 36.4;
+mic_grill_alignment = -1.2;
 //mic_hole_angle_z = atan((mic_hole_y2 - mic_hole_y1) / (mic_hole_x2 - mic_hole_x1));
 
 
@@ -341,6 +351,57 @@ module grill(cc, diameter, thickness, hole_r=2.3, hole_cc=1.6) {
     }
 }
 
+module mic_cover() {
+
+    total_depth = 1.2 + mic_hole_inside_protrude;
+    
+    // Print face down
+    translate([0, 0, mic_hole_inside_protrude])
+    rotate([180, 0, 0]) {
+         //translate([0, 0, case_thickness-0.5])
+         grill(mic_hole_cc, mic_hole_cut_height+mic_grill_friction_fit, 0.2);
+         
+
+         
+         difference() {
+         
+                // The frame around the hole
+                difference() {
+                    union() {
+                        linear_extrude(total_depth)
+                        flat_pill(mic_hole_cc, mic_hole_cut_height+mic_grill_friction_fit);
+                        
+                        // A stopper to keep it from falling out of the hole
+                        translate([0, 0, mic_hole_inside_protrude-0.2])
+                        linear_extrude(0.2)
+                        flat_pill(mic_hole_cc, mic_hole_cut_height+0.25);
+                    }
+                    
+                    // Chamfer around the outside opening
+                    translate([0, 0, total_depth-0.2])
+                    hull() {
+                        translate([0, 0, 0.5])
+                        linear_extrude(0.01)
+                        flat_pill(mic_hole_cc, mic_hole_cut_height);
+                        
+                        
+                        linear_extrude(0.01)
+                        flat_pill(mic_hole_cc, mic_hole_height);
+                    }
+                }
+
+                union() {
+                
+               
+                    // The small sound hole through the frame
+                    translate([0, 0, -case_thickness])
+                    linear_extrude(rim_width*3)
+                    flat_pill(mic_hole_cc, mic_hole_height);
+                }
+         }
+    }
+}
+
 module mic_hole(cut=false) {
 
 
@@ -357,48 +418,24 @@ module mic_hole(cut=false) {
          // The big hole in the casing
          translate([0, 0, -case_thickness])
          linear_extrude(rim_width*3)
-         flat_pill(mic_hole_cc, mic_hole_height + 1.5);
+         flat_pill(mic_hole_cc, mic_hole_cut_height);
          
     } else {
     
         if (mic_hole_feeler) {
             // Indicator for mic_hole_distance. This should only just cut the outside of the case. Then comment it out.
             #linear_extrude(0.01)
-            flat_pill(mic_hole_cc, mic_hole_height+2);
+            flat_pill(mic_hole_cc, mic_hole_cut_height+0.5);
         }
     
-    
-         translate([0, 0, case_thickness-0.5])
-         grill(mic_hole_cc, mic_hole_height + 1.6, 0.2);
-         
-         difference() {
-         
-            // The frame around the hole
-            difference() {
-                translate([0, 0, 0.2])
-                linear_extrude(1+mic_hole_inside_protrude)
-                flat_pill(mic_hole_cc, mic_hole_height+1.6);
-                
-                hull() {
-                    linear_extrude(0.01)
-                    flat_pill(mic_hole_cc, mic_hole_height+1.3);
-                    
-                    translate([0, 0, 0.5])
-                    linear_extrude(0.01)
-                    flat_pill(mic_hole_cc, mic_hole_height);
-                }
-            }
+        if (show_grill && mounted_grill) {
+            //rotate([180, 0, 0])
+            translate([0, 0, -mic_grill_alignment])
+            mic_cover();
+        }
 
-            union() {
-            
-           
-                // The small sound hole through the frame
-                translate([0, 0, -case_thickness])
-                linear_extrude(rim_width*3)
-                flat_pill(mic_hole_cc, mic_hole_height);
-            }
-         }
     }
+
 }
 
 module fork() {
@@ -536,9 +573,6 @@ module standard_cup() {
                     mic_hole(true);
                 }
             }
-                                    
-            // Insert the grill and embellishment
-            mic_hole(false);
         }
         
         // Cut anything that fell outside the cup
@@ -550,6 +584,9 @@ module standard_cup() {
         }
     
     }
+                                    
+    // Insert the grill and embellishment
+    mic_hole(false);
 
 }
 
@@ -1000,6 +1037,15 @@ intersection() {
         // The buttons
         if (show_buttons) {
             buttons(cut=false, mounted=mounted_buttons);
+        }
+        
+            
+        // If we're printing the grill outside the cap,
+        // Just flop it down outside where it goes normally
+        if (show_grill && !mounted_grill) {
+        
+            translate([0, outside_height*0.75, 0])
+            mic_cover();
         }
     }
     
