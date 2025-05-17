@@ -519,7 +519,7 @@ module dummy_pcb() {
 
 module cad_pcb() {
     // This is exported from kicad
-    include <../pcb/tobo.scad>
+    include <../dist/pcb/tobo.scad>
 }
 
 
