@@ -365,6 +365,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 70)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "05e0b0c3-4a54-4847-976a-f8d972145f65")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/f3820c13-be02-4384-926d-855f4f3d5b83")
 		(sheetname "Root")
 		(sheetfile "tobo.kicad_sch")
@@ -610,7 +623,7 @@
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C1"
-			(at 1.6625 0.01 180)
+			(at 1.6625 0.08 180)
 			(layer "F.SilkS")
 			(uuid "5e852b79-2f78-46f5-a554-6dc6644a1802")
 			(effects
@@ -673,6 +686,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "43b153a1-0539-40a0-8d9e-7761733319c1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5bc5c4f0-fa32-49c4-9e04-7623af7a368d")
 			(effects
 				(font
 					(size 1 1)
@@ -896,6 +922,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "772a35d3-760f-470e-b949-cdbfd07f94c5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "967566e3-7b5b-407a-8531-77812e854885")
 			(effects
 				(font
 					(size 1 1)
@@ -1797,6 +1836,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "10de5efb-2b52-4db8-9e9c-2a089c6de3b9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/1802e7d5-17d8-4063-9a2c-a76ee9aeaa68")
 		(sheetname "Root")
@@ -2015,6 +2067,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ea496b4f-aca1-4c1b-8708-9ef12c2a538b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/5542c9d2-3ef0-4cde-b034-cde7f2c50af5")
 		(sheetname "Root")
@@ -2216,6 +2281,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "270593d8-1f71-4672-a69c-f216c919e766")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -2593,7 +2671,7 @@
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C15"
-			(at -2.09 0 180)
+			(at -2.09 -0.08 180)
 			(layer "F.SilkS")
 			(uuid "6b6bc829-d8ae-4a18-83b8-2b8484406886")
 			(effects
@@ -2656,6 +2734,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "539fa5e7-56d9-439c-b885-1a1075a6ae71")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "536f4427-8e17-4e49-9be5-c9b6dacb0f54")
 			(effects
 				(font
 					(size 1 1)
@@ -2816,7 +2907,7 @@
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C14"
-			(at 2.255 0 0)
+			(at 2.255 -0.08 0)
 			(layer "F.SilkS")
 			(uuid "f203d0c0-52c9-4608-85be-8a2e46912e75")
 			(effects
@@ -2879,6 +2970,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "60ea2faf-05e8-4036-9a61-ffce05e47b0e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a4b0a77a-4655-4509-bedd-bf66367fa073")
 			(effects
 				(font
 					(size 1 1)
@@ -3039,7 +3143,7 @@
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C6"
-			(at 1.6675 0 180)
+			(at 1.6675 0.07 180)
 			(layer "F.SilkS")
 			(uuid "c76a7aa0-0785-4305-8229-d44013754d55")
 			(effects
@@ -3102,6 +3206,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e28a1ac5-234b-42c7-bfee-4fa295137e85")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cf475e74-fdfe-4440-9f5c-e6d1f2bab35f")
 			(effects
 				(font
 					(size 1 1)
@@ -3359,6 +3476,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a63a069d-976d-4a6c-98c2-61e17c1f1a71")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/b4232531-c77a-4629-8942-04224b15f458")
 		(sheetname "Root")
@@ -3602,6 +3732,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b19f469c-3469-4a97-9800-a20a7bf8ad92")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a0fba728-f032-4a31-9462-f7475c3d363b")
 			(effects
 				(font
 					(size 1 1)
@@ -3875,6 +4018,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "9273d2ad-7684-41b5-80d9-0410ef031fb7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 50)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "16085103-57c6-4669-a4ff-6eff9dc3a0de")
 			(effects
 				(font
 					(size 1 1)
@@ -4185,6 +4341,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "02685a41-c41b-4796-98f3-84d4cb657077")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Pin* Test*")
 		(path "/a912bfc6-0e67-4e57-8842-802dff8af651")
 		(sheetname "Root")
@@ -4304,6 +4473,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c9bd0786-0c09-48d2-a1d2-95cc7d93de9f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "07b7e419-7a65-4736-8c2e-a13d65e5ec89")
 			(effects
 				(font
 					(size 1 1)
@@ -4847,6 +5029,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7018e4ac-c283-487c-b3e0-ddac3c0c3d27")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/bbe9d6ac-a48e-4495-8678-6bf38664ff01")
 		(sheetname "Root")
@@ -5057,6 +5252,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c6ab16ca-5000-4981-8a43-290564c9f4ff")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d7faf7e7-7bf6-4c34-8ff0-c8ce50fef8dd")
 			(effects
 				(font
 					(size 1 1)
@@ -5282,6 +5490,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "526297b7-6e1e-428c-afc5-e073a3205f89")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/15a4b874-b5a0-46b6-a568-f9e3e1dd4883")
 		(sheetname "Root")
@@ -5429,7 +5650,7 @@
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C4"
-			(at 1.775 -0.01 0)
+			(at 1.775 -0.07 0)
 			(layer "F.SilkS")
 			(uuid "91fed7e2-ac4f-4517-92e2-e1882badf806")
 			(effects
@@ -5492,6 +5713,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ed9d992a-a109-485f-b939-3efd15db614e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e66afc7b-8cbb-4576-bee1-c1d8a64b4efe")
 			(effects
 				(font
 					(size 1 1)
@@ -5715,6 +5949,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "fd59d5b8-e129-4286-ad99-a103ba7d9a02")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a2ed02f7-e72e-4b30-8a67-68ce3408b246")
 			(effects
 				(font
 					(size 1 1)
@@ -5988,6 +6235,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "25ee26f0-2799-4308-bcb2-8cc0568842ef")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3aef126a-e239-4a29-8157-aefce4e85706")
 			(effects
 				(font
 					(size 1 1)
@@ -6297,6 +6557,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "666f77ba-69ae-47fa-9c26-daf181a95900")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Pin* Test*")
 		(path "/047a359d-05fb-482b-b08e-9a3cfb6801a6")
 		(sheetname "Root")
@@ -6416,6 +6689,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6b193785-520a-4e54-bce4-f87c4a265e5d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6f8fae20-55be-457a-bf0a-cb8161f8d7d8")
 			(effects
 				(font
 					(size 1 1)
@@ -6628,6 +6914,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1f331ab3-70b9-4722-afef-8018a958bc18")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Pin* Test*")
 		(path "/d414bb4d-668e-4098-9ede-674faf7c0113")
 		(sheetname "Root")
@@ -6747,6 +7046,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ada07702-1246-4149-9021-d444f351b06e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "54e27985-9669-44fe-9f9a-279206a6e76f")
 			(effects
 				(font
 					(size 1 1)
@@ -7278,6 +7590,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cbdf23cd-1452-4e52-949d-cbe13031829c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "SolderJumper*Open*")
 		(path "/ccab4c45-4047-4ede-92c3-e0ac3c229e34")
 		(sheetname "Root")
@@ -7551,6 +7876,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "9708a1a6-e8ef-43bc-a567-53599abd974f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "28804baa-9eea-464c-97d8-8a143b3227be")
 			(effects
 				(font
 					(size 1 1)
@@ -8007,6 +8345,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5ca5b43b-f09e-45dc-800a-30af9c2a9cc2")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/47f3594d-8da7-492c-a5d6-6f045d32f53a")
 		(sheetname "Root")
@@ -8218,6 +8569,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c0752e64-9802-4af9-95cb-87ea62081f7a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7240e5a0-1394-4c99-b48c-d00010d2ee4f")
 			(effects
 				(font
 					(size 1 1)
@@ -8469,6 +8833,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a1241e56-364e-47f7-93d9-b33e9c23bbee")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/6db11fce-87f1-4c17-a9b2-e39fd4695a0a")
 		(sheetname "Root")
@@ -8707,6 +9084,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "25665ee8-3d65-4bdb-afc7-edb2690b7021")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Pin* Test*")
 		(path "/e98a7ff6-80dd-48d4-812c-e78216eaa2c9")
 		(sheetname "Root")
@@ -8762,7 +9152,7 @@
 		(descr "SMD pad as test Point, diameter 1.0mm")
 		(tags "test point SMD pad")
 		(property "Reference" "Y4"
-			(at 1.54 0 0)
+			(at 0.01 -1.28 0)
 			(layer "F.SilkS")
 			(uuid "8333d126-8332-4b4d-8c17-a9e844fb3f7a")
 			(effects
@@ -8816,6 +9206,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "681d53e9-8c00-49f8-ac24-012369665d89")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -8937,6 +9340,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "2dab13c0-6183-4555-9331-d2f5a83d9a40")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a32fbdfe-4009-41f9-aea3-33eb99912580")
 			(effects
 				(font
 					(size 1 1)
@@ -9302,6 +9718,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "40baf0b0-0e7c-46bd-b2bf-ed9441dd74dd")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/f606d41b-483e-4f55-9cdc-ff2478c0a25b")
 		(sheetname "Root")
@@ -9512,6 +9941,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "69e6e411-c837-46b3-83c4-4cb275f0f322")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1098777e-d780-4260-9a1b-7a578c5a6596")
 			(effects
 				(font
 					(size 1 1)
@@ -10684,6 +11126,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0a37cdc9-f749-4a0c-8e51-90c8584157b5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/8487d961-4a8a-447f-8f56-639c9ff8c754")
 		(sheetname "Root")
@@ -10819,7 +11274,7 @@
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C13"
-			(at 2.09 0 0)
+			(at 2.09 -0.09 0)
 			(layer "F.SilkS")
 			(uuid "90775bdd-708a-4b83-b15d-aa3b8da84fcb")
 			(effects
@@ -10882,6 +11337,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c63c4822-f5a3-4506-8162-9e5120d046bd")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "be8b4501-9462-4b67-9638-04af58936802")
 			(effects
 				(font
 					(size 1 1)
@@ -11105,6 +11573,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "969a3255-2573-4f59-9698-fc6da23b8623")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d6a9c039-479a-432a-830b-e4d39ebf9e71")
 			(effects
 				(font
 					(size 1 1)
@@ -11362,6 +11843,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4bd813f8-2801-458f-b70b-08b9b945dd90")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/d39f953f-5767-4d9b-ad64-4ef04493a9d6")
 		(sheetname "Root")
@@ -11605,6 +12099,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c22bac43-6825-48f6-a526-f04c9f1bdb3f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d05d21ea-99ee-46ea-b5be-861a1861edd0")
 			(effects
 				(font
 					(size 1 1)
@@ -11937,6 +12444,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4ee1ec08-2e72-445a-ad79-30398c857f0f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/dcb0eb2a-a041-4373-8826-252d1063b214")
 		(sheetname "Root")
@@ -12172,6 +12692,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fe77b636-d704-4b08-8575-ba89fe484b67")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -12482,6 +13015,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5a575a02-ed68-4b5d-80c6-c59131456e18")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/f9705435-f2a4-4af2-a8bc-ff61bdb99236")
 		(sheetname "Root")
@@ -12781,6 +13327,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a7e97c26-e8b2-49c5-9054-522a85bb73f4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 80)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5fece35e-1ee0-454b-b6a1-58b2b4714939")
 			(effects
 				(font
 					(size 1 1)
@@ -13130,6 +13689,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fcf74426-db65-484d-a2bf-6e7e66001538")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/44c70f5d-f1fc-401d-80be-992ff20b2967")
 		(sheetname "Root")
@@ -13368,6 +13940,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5f1e4a52-d3a6-49c3-b071-9ef168bedea7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Pin* Test*")
 		(path "/465e8bd2-9713-4ad5-8c74-ceea1750641d")
 		(sheetname "Root")
@@ -13477,6 +14062,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8f30bbd8-8428-4b1d-adcc-de150e9c4f1b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3ab2e0ba-8892-4047-9507-c115ce3f2225")
 			(effects
 				(font
 					(size 1 1)
@@ -13594,6 +14192,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "7b0061b4-1b33-451f-9a23-5c0c469e34b6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8c8acd2e-468a-4a0d-a7da-1b9aee179e03")
 			(effects
 				(font
 					(size 1 1)
@@ -13812,6 +14423,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "59434012-8dbf-4d57-a02a-33cbbd020fde")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Pin* Test*")
 		(path "/1dfa182f-be70-4fc5-8cab-385c0b9c5a00")
 		(sheetname "Root")
@@ -13867,7 +14491,7 @@
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C11"
-			(at -0.4625 0.99 180)
+			(at 0.106547 1.01 180)
 			(layer "F.SilkS")
 			(uuid "f6651bfd-3baf-41a0-aa04-4072bdaaa64e")
 			(effects
@@ -13930,6 +14554,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a84f05f3-f789-447e-ac63-d57743fa5a5f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "00ae3bad-441f-4b9f-8cd6-af8361e68454")
 			(effects
 				(font
 					(size 1 1)
@@ -14161,6 +14798,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8b98098d-e64d-4004-81b6-3552fe68c706")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/8022a9ff-324f-40c4-9655-52c9a4089de1")
 		(sheetname "Root")
@@ -14366,6 +15016,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6dd14de9-f7cf-4a70-8e84-5c769e10a732")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Pin* Test*")
 		(path "/20b1c270-27b6-40b7-b6e7-a406dce765f6")
 		(sheetname "Root")
@@ -14485,6 +15148,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "4796e5d7-6535-41bf-9348-4465703dea06")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "533f6618-f65d-42ed-ba29-fdf524e47f24")
 			(effects
 				(font
 					(size 1 1)
@@ -14693,6 +15369,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8a38e7e0-055a-4546-a1af-ca2ae0a88b52")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -15358,6 +16047,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "094b8a66-f1dd-4e24-b4bf-c73b83ded065")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/17c409cf-67d6-44ca-9ee9-08e010ce8c9d")
 		(sheetname "Root")
@@ -15568,6 +16270,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e4cb69e2-e18c-41c9-a6a4-2277fd5fcc48")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "dd10646c-2d4f-45c1-89ad-4ec47662edf6")
 			(effects
 				(font
 					(size 1 1)
@@ -15798,6 +16513,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2439ef2d-0f40-42d9-a7e1-3adfade1349d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/36ac1a4c-8e54-469e-aab1-fa7b5ab8747d")
 		(sheetname "Root")
@@ -16014,6 +16742,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "9ad83899-5e54-448d-a5ad-8aa5ea87df7a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "10b30e15-690f-44c1-ba2a-6bdea9ba336a")
 			(effects
 				(font
 					(size 1 1)
@@ -16319,6 +17060,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1b5bd9e8-967f-4f7b-8969-ff30892a8935")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/66f9179a-5206-4332-86e4-2dfa74b4228a")
 		(sheetname "Root")
@@ -16466,7 +17220,7 @@
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C3"
-			(at -1.775 0.01 180)
+			(at -1.775 -0.05 180)
 			(layer "F.SilkS")
 			(uuid "bafa4cb6-149f-4863-b970-87ee48d0a871")
 			(effects
@@ -16529,6 +17283,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e99fceb6-2f4e-41a8-bc15-a8886c064d3f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f51b268b-cbca-45da-930b-16fb05678d6c")
 			(effects
 				(font
 					(size 1 1)
@@ -16689,7 +17456,7 @@
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C2"
-			(at -1.6625 0.01 0)
+			(at -1.6625 0.06 0)
 			(layer "F.SilkS")
 			(uuid "9332be22-b7eb-4ddf-9248-67a68f67f414")
 			(effects
@@ -16752,6 +17519,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "04c14f93-73c4-4e26-825a-60e5d9a14e90")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5c28bf39-6ae5-483d-8ce9-e07750119a75")
 			(effects
 				(font
 					(size 1 1)
@@ -16975,6 +17755,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "4b391597-98be-4170-9a01-8400e12cbe3b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0a1c3dcf-dc80-4885-b8bf-c82942d7ba78")
 			(effects
 				(font
 					(size 1 1)
@@ -17280,6 +18073,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "168b8ac1-c5ef-488f-b6c9-f9cfb169b45b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/16662bbe-5ec1-4b94-8405-a67a209a698c")
 		(sheetname "Root")
 		(sheetfile "tobo.kicad_sch")
@@ -17572,6 +18378,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "209d5eed-881e-4eca-aeb9-1959aeb03cfe")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "04ea17af-4082-4adf-94db-f0da0a134e3a")
 			(effects
 				(font
 					(size 1 1)
@@ -18051,7 +18870,7 @@
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C5"
-			(at -1.6675 0 0)
+			(at -1.6675 0.05 0)
 			(layer "F.SilkS")
 			(uuid "d76f48a1-2ca0-453d-bb56-44c5f8c5b68a")
 			(effects
@@ -18114,6 +18933,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "80c6d0c1-6104-45e9-8b0b-45e92dd03cc8")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "02115337-8dda-4d0c-8e5c-2fe85a6187c4")
 			(effects
 				(font
 					(size 1 1)
@@ -18344,6 +19176,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0b23bfde-49aa-4334-93a7-2727b8d183df")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/0fba672f-e18c-47d5-90b7-baf9194bf5e9")
 		(sheetname "Root")
@@ -18557,6 +19402,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "cf434989-0d05-4819-96fe-e7b671ca8997")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "539c0673-4aad-4cd8-8408-0cf4ff504aae")
 			(effects
 				(font
 					(size 1 1)
@@ -19009,6 +19867,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2c6b2bb2-a6fc-4e8b-b18e-5aeb24f21ac7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/9db9120c-9cdb-49bd-83c2-7c9f4592716b")
 		(sheetname "Root")
@@ -19189,7 +20060,7 @@
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C16"
-			(at -2.235 0 180)
+			(at -2.235 -0.07 180)
 			(layer "F.SilkS")
 			(uuid "ec1e960d-2900-4504-92b6-4914e0f903fe")
 			(effects
@@ -19252,6 +20123,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e3d20c9f-eb40-4159-8312-f650d7eca71f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "dfcfe54a-e9a0-4a52-959c-c57a33ae0264")
 			(effects
 				(font
 					(size 1 1)
@@ -19478,6 +20362,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "2c256162-a76d-466f-bee9-a2530917c99d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5c4725ff-d1fe-4286-8e28-a08846f75913")
 			(effects
 				(font
 					(size 1 1)
@@ -20200,6 +21097,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5dfc3cf5-a32c-42a7-a29a-e22f9e23b150")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/84487dc6-a4fd-4eed-9c26-b7a160ca1d31")
 		(sheetname "Root")
@@ -20417,6 +21327,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "02fd5f9b-ad97-441d-bd33-9579d0c1fd99")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/05234114-4420-4acb-89e7-5dcb5375ee1b")
 		(sheetname "Root")
@@ -20627,6 +21550,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "48687cd0-dae3-404d-80df-c6fea519ccf8")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "38075a2f-7f47-49d7-beff-b99ff46a347c")
 			(effects
 				(font
 					(size 1 1)
@@ -20857,6 +21793,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "34a1e075-5fc2-4caa-9703-600182db4408")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/10a159fa-a2bc-4cde-b66c-ec9a6a3d41eb")
 		(sheetname "Root")
@@ -21062,6 +22011,19 @@
 				)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "76d43d1d-c942-421d-8310-93d0ade092f1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "Pin* Test*")
 		(path "/35655fbf-b7b9-45df-9247-effcfc328434")
 		(sheetname "Root")
@@ -21236,6 +22198,19 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3325db82-312e-4b58-a8b8-2b61a33b311f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 60)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0832060c-02c7-48ce-9b6d-b01bf1075870")
 			(effects
 				(font
 					(size 1 1)
@@ -21555,6 +22530,20 @@
 				(justify mirror)
 			)
 		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "e3c01031-0ec7-423d-85b7-b7aa5fb8310d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/02d3facc-dcb8-469a-b86c-1fab899461af")
 		(sheetname "Root")
@@ -21749,6 +22738,20 @@
 			(layer "B.Fab")
 			(hide yes)
 			(uuid "fff954b0-fbc5-440b-b372-b8c282118fdb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Mouser Part Number§" ""
+			(at 0 0 -90)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "0e52c71f-df08-46e3-a5f0-323184a5a014")
 			(effects
 				(font
 					(size 1 1)

@@ -94,24 +94,6 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" "5015"
-			(at 19.05 13.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/5015/keystone-electronics?utm_currency=USD&region=europe"
-			(at 0.254 3.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(symbol "5015_0_1"
 			(rectangle
 				(start 2.54 2.54)

@@ -1,13 +1,14 @@
 OUTDIR:=$(PWD)/../dist/pcb
 
 #
-# make gerbers
+# make bom
+# make gerber
 # make scad
 # make vrml
 # make step
 #
 
-all: gerber
+all: gerber bom
 
 
 gerber:
@@ -23,6 +24,23 @@ gerber:
 			$${PCB}; \
 		(cd "$(OUTDIR)" && zip -r "$${GRBZIP}" "$${GRBDIR}"); \
 	done
+
+bom:
+	for SCH in tobo/tobo*.kicad_sch; do \
+		BOM="$(OUTDIR)/tobo-bom.csv"; \
+		kicad-cli sch export bom -o "$${BOM}" \
+			--preset "PCBway" \
+			$${SCH}; \
+	done
+
+
+
+
+#
+# The rules below are just for the CAD preview of the board
+# They are not needed for fabrication.
+#
+
 
 vrml:
 	mkdir -p $(OUTDIR)

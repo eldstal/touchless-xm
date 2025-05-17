@@ -8,1302 +8,6 @@
 		(title "Touchless Board (TOBO) XM4")
 	)
 	(lib_symbols
-		(symbol "5015_1"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 12.7 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "5015"
-				(at 7.874 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "tobo-footprints:5015"
-				(at 3.048 10.922 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.keyelco.com/product-pdf.cfm?p=1353"
-				(at 1.27 -5.334 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Conn Test Point 1 POS Solder ST SMD 1 Port T/R"
-				(at -0.254 -3.556 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Height" "1.52"
-				(at 24.638 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer Name" "Keystone Electronics"
-				(at 1.524 8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Part_Number" "5015"
-				(at 11.684 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mouser Part Number" "534-5015"
-				(at 1.524 13.462 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Keystone-Electronics/5015?qs=qOqV1E1P08ShW56PtUq2FA%3D%3D"
-				(at -0.508 5.842 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Arrow Part Number" "5015"
-				(at 19.05 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/5015/keystone-electronics?utm_currency=USD&region=europe"
-				(at 0.254 3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "5015_1_0_1"
-				(rectangle
-					(start 2.54 2.54)
-					(end 15.24 -2.54)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "5015_1_1_1"
-				(pin bidirectional line
-					(at 0 0 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "5015_2"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 12.7 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "5015"
-				(at 7.874 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "tobo-footprints:5015"
-				(at 3.048 10.922 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.keyelco.com/product-pdf.cfm?p=1353"
-				(at 1.27 -5.334 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Conn Test Point 1 POS Solder ST SMD 1 Port T/R"
-				(at -0.254 -3.556 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Height" "1.52"
-				(at 24.638 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer Name" "Keystone Electronics"
-				(at 1.524 8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Part_Number" "5015"
-				(at 11.684 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mouser Part Number" "534-5015"
-				(at 1.524 13.462 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Keystone-Electronics/5015?qs=qOqV1E1P08ShW56PtUq2FA%3D%3D"
-				(at -0.508 5.842 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Arrow Part Number" "5015"
-				(at 19.05 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/5015/keystone-electronics?utm_currency=USD&region=europe"
-				(at 0.254 3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "5015_2_0_1"
-				(rectangle
-					(start 2.54 2.54)
-					(end 15.24 -2.54)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "5015_2_1_1"
-				(pin bidirectional line
-					(at 0 0 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "5015_3"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 12.7 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "5015"
-				(at 7.874 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "tobo-footprints:5015"
-				(at 3.048 10.922 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.keyelco.com/product-pdf.cfm?p=1353"
-				(at 1.27 -5.334 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Conn Test Point 1 POS Solder ST SMD 1 Port T/R"
-				(at -0.254 -3.556 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Height" "1.52"
-				(at 24.638 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer Name" "Keystone Electronics"
-				(at 1.524 8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Part_Number" "5015"
-				(at 11.684 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mouser Part Number" "534-5015"
-				(at 1.524 13.462 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Keystone-Electronics/5015?qs=qOqV1E1P08ShW56PtUq2FA%3D%3D"
-				(at -0.508 5.842 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Arrow Part Number" "5015"
-				(at 19.05 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/5015/keystone-electronics?utm_currency=USD&region=europe"
-				(at 0.254 3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "5015_3_0_1"
-				(rectangle
-					(start 2.54 2.54)
-					(end 15.24 -2.54)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "5015_3_1_1"
-				(pin bidirectional line
-					(at 0 0 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "5015_4"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 12.7 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "5015"
-				(at 7.874 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "tobo-footprints:5015"
-				(at 3.048 10.922 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.keyelco.com/product-pdf.cfm?p=1353"
-				(at 1.27 -5.334 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Conn Test Point 1 POS Solder ST SMD 1 Port T/R"
-				(at -0.254 -3.556 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Height" "1.52"
-				(at 24.638 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer Name" "Keystone Electronics"
-				(at 1.524 8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Part_Number" "5015"
-				(at 11.684 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mouser Part Number" "534-5015"
-				(at 1.524 13.462 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Keystone-Electronics/5015?qs=qOqV1E1P08ShW56PtUq2FA%3D%3D"
-				(at -0.508 5.842 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Arrow Part Number" "5015"
-				(at 19.05 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/5015/keystone-electronics?utm_currency=USD&region=europe"
-				(at 0.254 3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "5015_4_0_1"
-				(rectangle
-					(start 2.54 2.54)
-					(end 15.24 -2.54)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "5015_4_1_1"
-				(pin bidirectional line
-					(at 0 0 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "5015_5"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 12.7 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "5015"
-				(at 7.874 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "tobo-footprints:5015"
-				(at 3.048 10.922 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.keyelco.com/product-pdf.cfm?p=1353"
-				(at 1.27 -5.334 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Conn Test Point 1 POS Solder ST SMD 1 Port T/R"
-				(at -0.254 -3.556 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Height" "1.52"
-				(at 24.638 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer Name" "Keystone Electronics"
-				(at 1.524 8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Part_Number" "5015"
-				(at 11.684 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mouser Part Number" "534-5015"
-				(at 1.524 13.462 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Keystone-Electronics/5015?qs=qOqV1E1P08ShW56PtUq2FA%3D%3D"
-				(at -0.508 5.842 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Arrow Part Number" "5015"
-				(at 19.05 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/5015/keystone-electronics?utm_currency=USD&region=europe"
-				(at 0.254 3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "5015_5_0_1"
-				(rectangle
-					(start 2.54 2.54)
-					(end 15.24 -2.54)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "5015_5_1_1"
-				(pin bidirectional line
-					(at 0 0 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "5015_6"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 12.7 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "5015"
-				(at 7.874 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "tobo-footprints:5015"
-				(at 3.048 10.922 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.keyelco.com/product-pdf.cfm?p=1353"
-				(at 1.27 -5.334 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Conn Test Point 1 POS Solder ST SMD 1 Port T/R"
-				(at -0.254 -3.556 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Height" "1.52"
-				(at 24.638 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer Name" "Keystone Electronics"
-				(at 1.524 8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Part_Number" "5015"
-				(at 11.684 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mouser Part Number" "534-5015"
-				(at 1.524 13.462 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Keystone-Electronics/5015?qs=qOqV1E1P08ShW56PtUq2FA%3D%3D"
-				(at -0.508 5.842 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Arrow Part Number" "5015"
-				(at 19.05 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/5015/keystone-electronics?utm_currency=USD&region=europe"
-				(at 0.254 3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "5015_6_0_1"
-				(rectangle
-					(start 2.54 2.54)
-					(end 15.24 -2.54)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "5015_6_1_1"
-				(pin bidirectional line
-					(at 0 0 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "5015_7"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 12.7 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "5015"
-				(at 7.874 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "tobo-footprints:5015"
-				(at 3.048 10.922 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.keyelco.com/product-pdf.cfm?p=1353"
-				(at 1.27 -5.334 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Conn Test Point 1 POS Solder ST SMD 1 Port T/R"
-				(at -0.254 -3.556 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Height" "1.52"
-				(at 24.638 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer Name" "Keystone Electronics"
-				(at 1.524 8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Part_Number" "5015"
-				(at 11.684 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mouser Part Number" "534-5015"
-				(at 1.524 13.462 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Keystone-Electronics/5015?qs=qOqV1E1P08ShW56PtUq2FA%3D%3D"
-				(at -0.508 5.842 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Arrow Part Number" "5015"
-				(at 19.05 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/5015/keystone-electronics?utm_currency=USD&region=europe"
-				(at 0.254 3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "5015_7_0_1"
-				(rectangle
-					(start 2.54 2.54)
-					(end 15.24 -2.54)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "5015_7_1_1"
-				(pin bidirectional line
-					(at 0 0 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "5015_8"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 12.7 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "5015"
-				(at 7.874 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "tobo-footprints:5015"
-				(at 3.048 10.922 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.keyelco.com/product-pdf.cfm?p=1353"
-				(at 1.27 -5.334 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Conn Test Point 1 POS Solder ST SMD 1 Port T/R"
-				(at -0.254 -3.556 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Height" "1.52"
-				(at 24.638 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer Name" "Keystone Electronics"
-				(at 1.524 8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Part_Number" "5015"
-				(at 11.684 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mouser Part Number" "534-5015"
-				(at 1.524 13.462 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Keystone-Electronics/5015?qs=qOqV1E1P08ShW56PtUq2FA%3D%3D"
-				(at -0.508 5.842 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Arrow Part Number" "5015"
-				(at 19.05 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/5015/keystone-electronics?utm_currency=USD&region=europe"
-				(at 0.254 3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "5015_8_0_1"
-				(rectangle
-					(start 2.54 2.54)
-					(end 15.24 -2.54)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "5015_8_1_1"
-				(pin bidirectional line
-					(at 0 0 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "5015_9"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 12.7 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "5015"
-				(at 7.874 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "tobo-footprints:5015"
-				(at 3.048 10.922 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "http://www.keyelco.com/product-pdf.cfm?p=1353"
-				(at 1.27 -5.334 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Conn Test Point 1 POS Solder ST SMD 1 Port T/R"
-				(at -0.254 -3.556 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Height" "1.52"
-				(at 24.638 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer Name" "Keystone Electronics"
-				(at 1.524 8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Part_Number" "5015"
-				(at 11.684 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mouser Part Number" "534-5015"
-				(at 1.524 13.462 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Keystone-Electronics/5015?qs=qOqV1E1P08ShW56PtUq2FA%3D%3D"
-				(at -0.508 5.842 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Arrow Part Number" "5015"
-				(at 19.05 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/5015/keystone-electronics?utm_currency=USD&region=europe"
-				(at 0.254 3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "5015_9_0_1"
-				(rectangle
-					(start 2.54 2.54)
-					(end 15.24 -2.54)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "5015_9_1_1"
-				(pin bidirectional line
-					(at 0 0 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Connector:Conn_01x02_Pin"
 			(pin_names
 				(offset 1.016) hide)
@@ -4533,24 +3237,6 @@
 			)
 			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Keystone-Electronics/5015?qs=qOqV1E1P08ShW56PtUq2FA%3D%3D"
 				(at -0.508 5.842 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Arrow Part Number" "5015"
-				(at 19.05 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/5015/keystone-electronics?utm_currency=USD&region=europe"
-				(at 0.254 3.81 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -10532,7 +9218,6 @@
 		(uuid "f0aeb2dd-52f0-4b9c-b15e-2be3349c5e7e")
 	)
 	(symbol
-		(lib_name "5015_1")
 		(lib_id "tobo-components:5015")
 		(at 33.02 165.1 180)
 		(unit 1)
@@ -10597,16 +9282,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "Keystone Electronics"
-			(at 16.51 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer_Part_Number" "5015"
 			(at 16.51 154.94 0)
 			(effects
@@ -10637,37 +9312,8 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" "5015"
-			(at 16.51 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/5015/keystone-electronics?utm_currency=USD&region=europe"
-			(at 16.51 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer Name" "Keystone Electronics"
 			(at 31.496 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number§" ""
-			(at 33.02 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10732,15 +9378,6 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x09, script generated"
-			(at 139.7 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number§" ""
 			(at 139.7 175.26 0)
 			(effects
 				(font
@@ -10850,7 +9487,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "ATmega328P-A"
 			(at 74.93 102.87 0)
 			(effects
 				(font
@@ -11019,15 +9656,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
-			(at 195.58 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "0b05aac2-bbe8-44e5-b6c3-6831a87bce9c")
 		)
@@ -11103,7 +9731,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "ERJ-1GJJ102C"
 			(at 107.95 90.17 0)
 			(effects
 				(font
@@ -11324,7 +9952,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "ERJ-1GJJ102C"
 			(at 127 90.17 0)
 			(effects
 				(font
@@ -11393,15 +10021,6 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 177.8 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number§" ""
 			(at 177.8 130.81 0)
 			(effects
 				(font
@@ -11485,7 +10104,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "ERJ-1GJJ102C"
 			(at 118.11 90.17 0)
 			(effects
 				(font
@@ -11638,7 +10257,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "ERJ-1GJJ102C"
 			(at 115.57 90.17 0)
 			(effects
 				(font
@@ -11723,7 +10342,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "595-TS5A23167DCUR"
 			(at 203.2 88.9 0)
 			(effects
 				(font
@@ -11962,7 +10581,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "KGM03DR50G106MH"
 			(at 46.99 106.68 0)
 			(effects
 				(font
@@ -12049,7 +10668,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "ERA-1AEC512C"
 			(at 144.78 229.87 0)
 			(effects
 				(font
@@ -12259,15 +10878,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
-			(at 156.21 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "3"
 			(uuid "7187520e-4d06-41ee-98d8-cf90b6f3220b")
 		)
@@ -12359,15 +10969,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
-			(at 91.44 228.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "cdc1454b-326d-4ccc-82f7-931a7b2aedef")
 		)
@@ -12428,15 +11029,6 @@
 			)
 		)
 		(property "Description" "Solder Jumper, 2-pole, open"
-			(at 248.92 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number§" ""
 			(at 248.92 67.31 0)
 			(effects
 				(font
@@ -12515,15 +11107,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
-			(at 287.02 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "943d20a0-bd09-4924-ae20-fc4b2583d489")
 		)
@@ -12586,15 +11169,6 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 107.95 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number§" ""
 			(at 107.95 262.89 0)
 			(effects
 				(font
@@ -12679,7 +11253,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "538-54548-2272"
 			(at 273.05 90.17 0)
 			(effects
 				(font
@@ -12832,7 +11406,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "ERJ-1GJJ102C"
 			(at 105.41 90.17 0)
 			(effects
 				(font
@@ -12918,7 +11492,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
 			(at 193.04 144.78 0)
 			(effects
 				(font
@@ -13003,7 +11577,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "595-TS5A23167DCUR"
 			(at 203.2 152.4 0)
 			(effects
 				(font
@@ -13151,15 +11725,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
-			(at 356.87 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "4"
 			(uuid "85c33468-6cf0-422e-8fad-49f5708cc4dd")
 		)
@@ -13248,7 +11813,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "TMK063ABJ104KP-F"
 			(at 74.93 210.82 0)
 			(effects
 				(font
@@ -13402,7 +11967,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
 			(at 189.23 147.32 0)
 			(effects
 				(font
@@ -13473,15 +12038,6 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 91.44 226.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number§" ""
 			(at 91.44 226.06 0)
 			(effects
 				(font
@@ -13566,7 +12122,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
 			(at 189.23 60.96 0)
 			(effects
 				(font
@@ -13654,7 +12210,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
 			(at 189.23 124.46 0)
 			(effects
 				(font
@@ -13741,7 +12297,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
 			(at 217.17 93.98 0)
 			(effects
 				(font
@@ -13828,7 +12384,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "ERJ-1GJJ102C"
 			(at 110.49 90.17 0)
 			(effects
 				(font
@@ -13853,7 +12409,6 @@
 		)
 	)
 	(symbol
-		(lib_name "5015_2")
 		(lib_id "tobo-components:5015")
 		(at 33.02 171.45 180)
 		(unit 1)
@@ -13914,16 +12469,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "Keystone Electronics"
-			(at 16.51 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer_Part_Number" "5015"
 			(at 16.51 161.29 0)
 			(effects
@@ -13951,35 +12496,8 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" "5015"
-			(at 16.51 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/5015/keystone-electronics?utm_currency=USD&region=europe"
-			(at 16.51 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer Name" "Keystone Electronics"
 			(at 31.496 180.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number§" ""
-			(at 33.02 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14151,7 +12669,7 @@
 			)
 		)
 		(property "Value" "270"
-			(at 115.57 137.922 90)
+			(at 115.57 146.812 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14195,7 +12713,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "ERJ-1GNF2700C"
 			(at 115.57 138.43 0)
 			(effects
 				(font
@@ -14294,15 +12812,6 @@
 		)
 		(property "Mouser Part Number" "743-IN-S21AT5R"
 			(at 105.41 130.81 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number§" ""
-			(at 105.41 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14445,15 +12954,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
-			(at 264.16 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "fa5afe8e-16ba-4315-b432-3602ae5bca30")
 		)
@@ -14485,7 +12985,7 @@
 			)
 		)
 		(property "Value" "270"
-			(at 110.49 137.922 90)
+			(at 110.49 146.812 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14529,7 +13029,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "ERJ-1GNF2700C"
 			(at 110.49 138.43 0)
 			(effects
 				(font
@@ -14615,7 +13115,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
 			(at 213.36 154.94 0)
 			(effects
 				(font
@@ -14760,15 +13260,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
-			(at 177.8 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "c8007863-0e99-4daa-aa89-cb7c37488d95")
 		)
@@ -14846,7 +13337,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "CH340E"
 			(at 74.93 228.6 0)
 			(effects
 				(font
@@ -14913,7 +13404,7 @@
 			)
 		)
 		(property "Value" "270"
-			(at 105.41 137.922 90)
+			(at 105.41 146.812 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14957,7 +13448,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "ERJ-1GNF2700C"
 			(at 105.41 138.43 0)
 			(effects
 				(font
@@ -15044,7 +13535,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "ERJ-1GJJ102C"
 			(at 113.03 90.17 0)
 			(effects
 				(font
@@ -15087,7 +13578,7 @@
 			)
 		)
 		(property "Value" "270"
-			(at 113.03 137.922 90)
+			(at 113.03 146.812 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15131,7 +13622,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "ERJ-1GNF2700C"
 			(at 113.03 138.43 0)
 			(effects
 				(font
@@ -15216,7 +13707,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "KGM03DR50G106MH"
 			(at 107.95 210.82 0)
 			(effects
 				(font
@@ -15371,7 +13862,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "TMK063ABJ104KP-F"
 			(at 57.15 153.67 0)
 			(effects
 				(font
@@ -15543,15 +14034,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
-			(at 107.95 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "1ef65e8f-92e2-48b4-b345-3abfbadddf14")
 		)
@@ -15568,7 +14050,6 @@
 		)
 	)
 	(symbol
-		(lib_name "5015_4")
 		(lib_id "tobo-components:5015")
 		(at 95.25 44.45 180)
 		(unit 1)
@@ -15629,16 +14110,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "Keystone Electronics"
-			(at 78.74 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer_Part_Number" "5015"
 			(at 78.74 34.29 0)
 			(effects
@@ -15666,35 +14137,8 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" "5015"
-			(at 78.74 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/5015/keystone-electronics?utm_currency=USD&region=europe"
-			(at 78.74 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer Name" "Keystone Electronics"
 			(at 93.726 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number§" ""
-			(at 95.25 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15775,7 +14219,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "TYPE-C-31-M-12"
 			(at 115.57 240.03 0)
 			(effects
 				(font
@@ -15975,7 +14419,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "538-54548-2472"
 			(at 252.73 92.71 0)
 			(effects
 				(font
@@ -16132,7 +14576,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "TMK063ABJ104KP-F"
 			(at 111.76 210.82 0)
 			(effects
 				(font
@@ -16219,7 +14663,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "ERJ-1GJJ102C"
 			(at 120.65 90.17 0)
 			(effects
 				(font
@@ -16288,15 +14732,6 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x09, script generated"
-			(at 171.45 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number§" ""
 			(at 171.45 175.26 0)
 			(effects
 				(font
@@ -16397,15 +14832,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
-			(at 182.88 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "01c54448-dc97-4315-9bfe-53336d6c7a43")
 		)
@@ -16419,7 +14845,6 @@
 		)
 	)
 	(symbol
-		(lib_name "5015_8")
 		(lib_id "tobo-components:5015")
 		(at 95.25 50.8 180)
 		(unit 1)
@@ -16480,16 +14905,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "Keystone Electronics"
-			(at 78.74 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer_Part_Number" "5015"
 			(at 78.74 40.64 0)
 			(effects
@@ -16517,35 +14932,8 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" "5015"
-			(at 78.74 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/5015/keystone-electronics?utm_currency=USD&region=europe"
-			(at 78.74 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer Name" "Keystone Electronics"
 			(at 93.726 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number§" ""
-			(at 95.25 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16628,7 +15016,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
 			(at 213.36 132.08 0)
 			(effects
 				(font
@@ -16715,7 +15103,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
 			(at 217.17 157.48 0)
 			(effects
 				(font
@@ -16758,7 +15146,7 @@
 			)
 		)
 		(property "Value" "270"
-			(at 118.11 137.922 90)
+			(at 118.11 146.812 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16802,7 +15190,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "ERJ-1GNF2700C"
 			(at 118.11 138.43 0)
 			(effects
 				(font
@@ -16888,7 +15276,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
 			(at 193.04 121.92 0)
 			(effects
 				(font
@@ -16973,16 +15361,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "Keystone Electronics"
-			(at 257.81 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer_Part_Number" "5015"
 			(at 257.81 30.48 0)
 			(effects
@@ -17010,35 +15388,8 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" "5015"
-			(at 257.81 22.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/5015/keystone-electronics?utm_currency=USD&region=europe"
-			(at 257.81 20.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer Name" "Keystone Electronics"
 			(at 272.796 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number§" ""
-			(at 274.32 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17133,15 +15484,6 @@
 		)
 		(property "Mouser Part Number" "743-IN-S21AT5R"
 			(at 110.49 130.81 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number§" ""
-			(at 110.49 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17270,15 +15612,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
-			(at 356.87 213.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "4"
 			(uuid "feb67257-1cd5-4272-9a5e-fdfa40f6f5aa")
 		)
@@ -17365,7 +15698,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
 			(at 193.04 81.28 0)
 			(effects
 				(font
@@ -17390,7 +15723,6 @@
 		)
 	)
 	(symbol
-		(lib_name "5015_7")
 		(lib_id "tobo-components:5015")
 		(at 95.25 25.4 180)
 		(unit 1)
@@ -17451,16 +15783,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "Keystone Electronics"
-			(at 78.74 17.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer_Part_Number" "5015"
 			(at 78.74 15.24 0)
 			(effects
@@ -17488,35 +15810,8 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" "5015"
-			(at 78.74 7.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/5015/keystone-electronics?utm_currency=USD&region=europe"
-			(at 78.74 5.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer Name" "Keystone Electronics"
 			(at 93.726 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number§" ""
-			(at 95.25 25.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17584,15 +15879,6 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 91.44 213.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number§" ""
 			(at 91.44 213.36 0)
 			(effects
 				(font
@@ -17810,7 +16096,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
 			(at 213.36 91.44 0)
 			(effects
 				(font
@@ -17916,15 +16202,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
-			(at 113.03 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "07fc51b3-3980-4d05-ac61-1fed8a760cc4")
 		)
@@ -18003,7 +16280,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
 			(at 217.17 71.12 0)
 			(effects
 				(font
@@ -18046,7 +16323,7 @@
 			)
 		)
 		(property "Value" "270"
-			(at 107.95 137.922 90)
+			(at 107.95 146.812 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18090,7 +16367,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "ERJ-1GNF2700C"
 			(at 107.95 138.43 0)
 			(effects
 				(font
@@ -18220,15 +16497,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
-			(at 356.87 201.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "4"
 			(uuid "9a5c07be-9510-40da-942e-fd4822b68fc5")
 		)
@@ -18316,7 +16584,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
 			(at 217.17 134.62 0)
 			(effects
 				(font
@@ -18403,7 +16671,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
 			(at 213.36 68.58 0)
 			(effects
 				(font
@@ -18556,7 +16824,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "ERJ-6DQF1R0V"
 			(at 273.05 53.34 0)
 			(effects
 				(font
@@ -18581,7 +16849,6 @@
 		)
 	)
 	(symbol
-		(lib_name "5015_6")
 		(lib_id "tobo-components:5015")
 		(at 95.25 31.75 180)
 		(unit 1)
@@ -18642,16 +16909,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "Keystone Electronics"
-			(at 78.74 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer_Part_Number" "5015"
 			(at 78.74 21.59 0)
 			(effects
@@ -18679,35 +16936,8 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" "5015"
-			(at 78.74 13.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/5015/keystone-electronics?utm_currency=USD&region=europe"
-			(at 78.74 11.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer Name" "Keystone Electronics"
 			(at 93.726 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number§" ""
-			(at 95.25 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18775,15 +17005,6 @@
 			)
 		)
 		(property "Description" "Solder Jumper, 2-pole, open"
-			(at 130.81 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number§" ""
 			(at 130.81 138.43 0)
 			(effects
 				(font
@@ -18882,15 +17103,6 @@
 		)
 		(property "Mouser Part Number" "743-IN-S21AT5R"
 			(at 115.57 130.81 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number§" ""
-			(at 115.57 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19032,15 +17244,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
-			(at 264.16 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "de9e1233-453a-45d5-98cb-88d976a54432")
 		)
@@ -19135,15 +17338,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
-			(at 118.11 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "b24f16f9-1a97-4108-9ddf-2c335b889205")
 		)
@@ -19223,7 +17417,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
 			(at 191.77 63.5 0)
 			(effects
 				(font
@@ -19308,7 +17502,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "595-TS5A23167DCUR"
 			(at 203.2 66.04 0)
 			(effects
 				(font
@@ -19523,15 +17717,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
-			(at 356.87 179.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "5"
 			(uuid "fccd0f7f-5659-4faf-a96f-63407c54b422")
 		)
@@ -19617,7 +17802,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "TMK063ABJ104KP-F"
 			(at 115.57 210.82 0)
 			(effects
 				(font
@@ -19705,7 +17890,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
 			(at 189.23 83.82 0)
 			(effects
 				(font
@@ -19730,7 +17915,6 @@
 		)
 	)
 	(symbol
-		(lib_name "5015_9")
 		(lib_id "tobo-components:5015")
 		(at 95.25 19.05 180)
 		(unit 1)
@@ -19791,16 +17975,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "Keystone Electronics"
-			(at 78.74 11.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer_Part_Number" "5015"
 			(at 78.74 8.89 0)
 			(effects
@@ -19828,35 +18002,8 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" "5015"
-			(at 78.74 1.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/5015/keystone-electronics?utm_currency=USD&region=europe"
-			(at 78.74 -1.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer Name" "Keystone Electronics"
 			(at 93.726 27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number§" ""
-			(at 95.25 19.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19877,7 +18024,6 @@
 		)
 	)
 	(symbol
-		(lib_name "5015_5")
 		(lib_id "tobo-components:5015")
 		(at 95.25 38.1 180)
 		(unit 1)
@@ -19938,16 +18084,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "Keystone Electronics"
-			(at 78.74 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer_Part_Number" "5015"
 			(at 78.74 27.94 0)
 			(effects
@@ -19975,35 +18111,8 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" "5015"
-			(at 78.74 20.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/5015/keystone-electronics?utm_currency=USD&region=europe"
-			(at 78.74 17.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer Name" "Keystone Electronics"
 			(at 93.726 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number§" ""
-			(at 95.25 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20070,15 +18179,6 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 266.7 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number§" ""
 			(at 266.7 53.34 0)
 			(effects
 				(font
@@ -20405,15 +18505,6 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
-			(at 356.87 190.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "4"
 			(uuid "a1b5328f-d608-487f-8bc9-cb4d10e9a61c")
 		)
@@ -20439,7 +18530,6 @@
 		)
 	)
 	(symbol
-		(lib_name "5015_3")
 		(lib_id "tobo-components:5015")
 		(at 33.02 177.8 180)
 		(unit 1)
@@ -20500,16 +18590,6 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "Keystone Electronics"
-			(at 16.51 170.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer_Part_Number" "5015"
 			(at 16.51 167.64 0)
 			(effects
@@ -20537,35 +18617,8 @@
 				(hide yes)
 			)
 		)
-		(property "Arrow Part Number" "5015"
-			(at 16.51 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/5015/keystone-electronics?utm_currency=USD&region=europe"
-			(at 16.51 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer Name" "Keystone Electronics"
 			(at 31.496 186.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number§" ""
-			(at 33.02 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20604,7 +18657,7 @@
 			)
 		)
 		(property "Value" "270"
-			(at 120.65 137.922 90)
+			(at 120.65 146.812 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20648,7 +18701,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "ERJ-1GNF2700C"
 			(at 120.65 138.43 0)
 			(effects
 				(font
@@ -20735,7 +18788,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "ERA-1AEC512C"
 			(at 144.78 232.41 0)
 			(effects
 				(font
@@ -20887,7 +18940,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number§" ""
+		(property "Manufacturer_Part_Number" "595-TS5A23167DCUR"
 			(at 203.2 129.54 0)
 			(effects
 				(font
@@ -21071,15 +19124,6 @@
 		)
 		(property "Mouser Part Number" "743-IN-S21AT5R"
 			(at 120.65 130.81 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number§" ""
-			(at 120.65 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
