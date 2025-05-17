@@ -3,12 +3,13 @@ OUTDIR:=$(PWD)/../dist/pcb
 #
 # make bom
 # make gerber
+# make pos
 # make scad
 # make vrml
 # make step
 #
 
-all: gerber bom
+all: gerber bom pos
 
 
 gerber:
@@ -22,6 +23,13 @@ gerber:
 			--layers "F.Cu,B.Cu,F.Paste,B.Paste,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask,Edge.Cuts" \
 			--exclude-value \
 			$${PCB}; \
+		kicad-cli pcb export drill -o "$(OUTDIR)/$${GRBDIR}" \
+			--format excellon \
+			--excellon-oval-format route \
+			--excellon-units mm \
+			--generate-map \
+			--map-format pdf \
+			$${PCB}; \
 		(cd "$(OUTDIR)" && zip -r "$${GRBZIP}" "$${GRBDIR}"); \
 	done
 
@@ -33,7 +41,16 @@ bom:
 			$${SCH}; \
 	done
 
-
+pos:
+	for PCB in tobo/tobo*.kicad_pcb; do \
+		POSFILE="$(OUTDIR)/tobo-pos.csv"; \
+		kicad-cli pcb export pos -o "$${POSFILE}" \
+			--side front \
+			--format csv \
+			--units mm \
+			--exclude-dnp \
+			$${PCB}; \
+	done
 
 
 #
