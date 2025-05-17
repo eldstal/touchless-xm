@@ -1,6 +1,28 @@
 OUTDIR:=$(PWD)/../dist/pcb
 
-all: have_vrml2scad vrml step scad
+#
+# make gerbers
+# make scad
+# make vrml
+# make step
+#
+
+all: gerber
+
+
+gerber:
+	for PCB in tobo/tobo*.kicad_pcb; do \
+		GRBDIR=tobo-gerbers; \
+		GRBZIP=tobo-gerbers.zip; \
+		rm -r "$(OUTDIR)/$${GRBDIR}/"; \
+		rm "$(OUTDIR)/$${GRBZIP}"; \
+		mkdir -p "$(OUTDIR)/$${GRBDIR}/"; \
+		kicad-cli pcb export gerbers -o "$(OUTDIR)/$${GRBDIR}" \
+			--layers "F.Cu,B.Cu,F.Paste,B.Paste,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask,Edge.Cuts" \
+			--exclude-value \
+			$${PCB}; \
+		(cd "$(OUTDIR)" && zip -r "$${GRBZIP}" "$${GRBDIR}"); \
+	done
 
 vrml:
 	mkdir -p $(OUTDIR)
@@ -20,7 +42,7 @@ step:
 have_vrml2scad:
 	which vrml2scad 2>/dev/null || ( echo "-- ERROR --"; echo "Need vrml2scad."; echo "cargo install --git https://github.com/agausmann/vrml2scad"; exit 1)
 
-scad: have_vrml2scad
+scad: have_vrml2scad vrml
 	mkdir -p $(OUTDIR)
 	for VRML in $(OUTDIR)/*.vrml; do \
 		SCAD=$(OUTDIR)/$$(basename $$VRML .vrml).scad; \
