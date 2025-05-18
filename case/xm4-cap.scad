@@ -296,12 +296,12 @@ module screw_posts_and_pegs() {
         screw_post(3.5, outside_max_depth, true, 7.2, 3);
         
         // Top front post
-        translate([18.4, 27.9, 0])
+        translate([18.1, 28.3, 0])
         rotate([0, 0, -30])
         screw_post(3.5, outside_max_depth, false, 0, 0);
         
         // Top rear post
-        translate([-16.6, 29.2, 0])
+        translate([-17.1, 28.7, 0])
         rotate([0, 0, 10])
         screw_post(3.5, outside_max_depth, false, 0, 0);
         
@@ -336,7 +336,7 @@ module rounded_cube(w, h, d, center=true, radius=0.2) {
     }
 }
 
-module grill(cc, diameter, thickness, hole_r=2.3, hole_cc=1.6) {
+module grill(cc, diameter, thickness, hole_r=2.9, hole_cc=2) {
 
     n_w = round((cc+diameter) / hole_cc) + 1;
     n_h = round(diameter / hole_cc) + 1;
@@ -384,9 +384,9 @@ module mic_cover() {
                         flat_pill(mic_hole_cc, mic_hole_cut_height+mic_grill_friction_fit);
                         
                         // A stopper to keep it from falling out of the hole
-                        translate([0, 0, mic_hole_inside_protrude-0.2])
-                        linear_extrude(0.2)
-                        flat_pill(mic_hole_cc, mic_hole_cut_height+0.25);
+                        translate([0, 0, mic_hole_inside_protrude-0.4])
+                        linear_extrude(0.4)
+                        flat_pill(mic_hole_cc, mic_hole_cut_height+0.5);
                     }
                     
                     // Chamfer around the outside opening
@@ -479,7 +479,8 @@ module fork() {
          
             translate([0, 5/2, -(2 - (3.5-2.8))])
             rotate([0, 90, 0])
-            cylinder(3, 2, 2, center=true);
+            //cylinder(3, 2, 2, center=true);
+            cube([4,6,3], center=true);
         }
     }
 }
@@ -602,26 +603,28 @@ module standard_cup() {
 
 }
 
-module keycap(cut=false, type=0, radius=2, depth=2, clearance=0.1) {
+module keycap(cut=false, type=0, radius=2, length=8, depth=2, clearance=0.1) {
 
     pill_rot = [ -15, -10, 0, 10, 15 ];
+    vert_offset = (length - 7.2)/2;
 
     rotate([pill_rot[type], 0, 0])
     translate([0, 0, -1])
     if (!cut) {
     
         rotate([0, 90, 0])
+        translate([vert_offset, 0, 0])
         difference() {
             // Basic pill shape
             linear_extrude(depth)
-            flat_pill(7.2-(radius), radius-clearance);
+            flat_pill(length-(radius), radius-clearance);
             
             
             // Some sort of texture
             if (type == 2) {
                 for (x = [ -6:1:6 ])
-                    translate([x*0.5, 0, depth-0.1])
-                    cube([0.2, radius*2, 0.4], center=true);
+                    translate([x*0.7, 0, depth-0.1])
+                    cube([0.4, radius*2, 0.4], center=true);
             
             }
             
@@ -630,8 +633,9 @@ module keycap(cut=false, type=0, radius=2, depth=2, clearance=0.1) {
         
     } else {
         rotate([0, 90, 0])
+        translate([vert_offset, 0, 0])
         linear_extrude(depth*5,center=true)
-        flat_pill(7.2-radius, radius);
+        flat_pill(length-radius, radius);
     }
 
 
@@ -642,7 +646,7 @@ module radial_button(cut=false, angle=180, cap_type=0, distance=32.25, vertical_
 
     peg_length=0.5;
     guide_length=0.7;
-    cap_length = 1.5;
+    cap_length = 2;
     
     tip_angle = tipped_down ? -90: 0;
     
@@ -743,7 +747,7 @@ module button_box_cut(outer_radius=34.8, height=7, top_angle=180-5.5, bottom_ang
     }
 }
 
-module button_box(outer_radius=34, height=7, top_angle=180-5.5, bottom_angle=180+46.5) {
+module button_box(outer_radius=34.5, height=7.5, top_angle=180-5.5, bottom_angle=180+46.5) {
     
  
     rounding = 0.5;
@@ -789,7 +793,7 @@ module button_box(outer_radius=34, height=7, top_angle=180-5.5, bottom_angle=180
 
             // Inside edge
             rotate([0, 16, 0])
-            translate([0, 0, -height-rounding])
+            translate([0, 0, -height+1.5-rounding])
             rotate_extrude(angle=bottom_angle - top_angle+15) {
                 translate([outer_radius-5 - rounding, 0, 0])    
                 circle(rounding);
