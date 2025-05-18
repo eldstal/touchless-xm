@@ -16,12 +16,12 @@ A mod for Sony WH1000-XM2 (experimental), WH1000-XM3, WH1000-XM4 and WH1000-XM5 
 The project is not yet ready for use.
 
 ### Case
-A design is ready for the first prototype run and test fit against the XM4 chassis. It will be 3D-printable, but you can probably get even better quality and finish by ordering it from a fabrication company.
+The design has been 3D-printed and test fit against an XM4 headset. The button design and PCB fastening is still undergoing work.
 
 ### PCB
 The design is ready for the first prototype production run, based on a benchtop proof-of-concept.
 
-Boards will not be fabricated before the case is known to be compatible. Once I've made a first production run, I'll also upload all the files you need to order your own board from a vendor such as PCBWay.
+A fabrication order is underway with a batch of boards labeled v0.1a.
 
 ### Firmware
 Mostly ready for testing. USB support (only for programming) is already included in the main board. The project uses platform.io and OptiBoot to run an Arduino-based firmware.
