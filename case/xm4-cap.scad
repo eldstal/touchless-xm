@@ -263,9 +263,17 @@ module peg(clearance=3, tip_radius=0.6, height=outside_max_depth, support=4) {
         translate([0, 0, -(clearance - tip_radius)])
         cylinder(h=height, r1= tip_radius, r2=tip_radius*1.2);
         
-        translate([-tip_radius, 0, 0])
-        resize([tip_radius*2, support, height-clearance,])
-        cube();
+        // The support
+        //translate([-tip_radius, 0, 0])
+        //resize([tip_radius*2, support, height-clearance,])
+        //cube();
+        linear_extrude(height-clearance)
+        polygon([
+            [-tip_radius, 0],
+            [tip_radius, 0],
+            [2*tip_radius, support],
+            [-2*tip_radius, support]
+        ]);
     }
 }
 
@@ -298,9 +306,13 @@ module screw_posts_and_pegs() {
         screw_post(3.5, outside_max_depth, false, 0, 0);
         
         // Top rear peg
-        translate([-20.5, 26.54, 0.1])
-        rotate([0, 0, -52])
-        peg(support=3.2);
+        translate([-20.5, 26.54, 0.1]) {
+            rotate([0, 0, -57])
+            peg(support=3.7);
+            
+            rotate([0, 0, 33])
+            peg(support=3.7);
+        }
         
     }
 }
@@ -1052,7 +1064,7 @@ intersection() {
     
     {
         if (test_fit_print) {
-            cube([outside_width*2, outside_height*2, 17], center=true);
+            cube([outside_width*2, outside_height*2, 13], center=true);
         }
         
         if (test_clearance_print) {

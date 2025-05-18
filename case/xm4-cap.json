@@ -242,7 +242,7 @@
             "rim_width": "2.5",
             "show_buttons": "true",
             "show_cap": "false",
-            "show_grill": "false",
+            "show_grill": "true",
             "show_pcb": "false",
             "test_fit_print": "false",
             "top_circle_angle_x": "1.8999999999999999",
