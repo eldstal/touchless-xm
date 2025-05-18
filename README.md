@@ -6,6 +6,7 @@ A mod for Sony WH1000-XM2 (experimental), WH1000-XM3, WH1000-XM4 and WH1000-XM5 
 - [Compatible headsets](#compatibility)
 - [Modifications](#modifications)
 - [How to program your board](#how-to-program)
+- [Notes on ordering PCBs](#fabrication-notes)
 - [License](#license)
 
 ![Outside view](doc/preview_outside.png)
@@ -155,6 +156,13 @@ pio run --target upload
 ```
 
 If all went well, you're ready to go!
+
+## Fabrication Notes
+I'm currently in the process or ordering a first batch of boards from PCBWay. These are caveats of the design:
+
+- Order a 0.6mm PCB, to maximize the clearance inside the cap
+- The smallest drilled hole is just over 0.2mm
+- The XM4/XM5 connector footprints have narrow spacing between pads. This is a problem for the "Matte black" solder mask, but apparently possible with green/blue/red solder mask. If you want a matte black board, you have to allow for gaps in the solder mask at these connectors, and that may lead to shorts. Go with green or blue or red.
 
 ## License
 Touchlæss XM © 2025 by Albin Eldstål-Ahrens is licensed under Creative Commons BY-SA 4.0 
