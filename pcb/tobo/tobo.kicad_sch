@@ -9441,7 +9441,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "ATmega328P-A"
+		(property "Value" "ATmega328P-AN"
 			(at 77.1241 143.51 0)
 			(effects
 				(font
@@ -9487,7 +9487,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "ATmega328P-A"
+		(property "Manufacturer_Part_Number" "ATmega328P-AN"
+			(at 74.93 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C618732"
 			(at 74.93 102.87 0)
 			(effects
 				(font
@@ -10298,7 +10307,7 @@
 				)
 			)
 		)
-		(property "Value" "TS5A23167"
+		(property "Value" "TS5A23167DCUR"
 			(at 203.2 82.55 0)
 			(effects
 				(font
@@ -10512,94 +10521,6 @@
 			(project "tobo"
 				(path "/ce2fc4a9-618f-4cc1-898a-224ffa79d770"
 					(reference "#PWR025")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Small")
-		(at 46.99 106.68 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "17c409cf-67d6-44ca-9ee9-08e010ce8c9d")
-		(property "Reference" "C17"
-			(at 49.53 105.4162 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10uF"
-			(at 49.53 107.9562 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
-			(at 46.99 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 46.99 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 46.99 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "581-KGM03DR50G106MH"
-			(at 46.99 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "KGM03DR50G106MH"
-			(at 46.99 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "b6194176-fb68-40d8-bd20-67c19ba6eed4")
-		)
-		(pin "1"
-			(uuid "e8cf3534-b588-473b-9d9e-fb1dfe3620e9")
-		)
-		(instances
-			(project "tobo"
-				(path "/ce2fc4a9-618f-4cc1-898a-224ffa79d770"
-					(reference "C17")
 					(unit 1)
 				)
 			)
@@ -11195,8 +11116,8 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+		(on_board no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "2331b38e-ab92-44ea-a6d5-70a958b5cd2e")
 		(property "Reference" "J1"
@@ -11208,7 +11129,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Molex 538-54548-2272 "
+		(property "Value" "54548-2272 "
 			(at 281.94 92.075 0)
 			(effects
 				(font
@@ -11483,7 +11404,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "346-CM02CG1R5B25AH "
+		(property "Mouser Part Number" ""
 			(at 193.04 144.78 90)
 			(effects
 				(font
@@ -11492,7 +11413,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
+		(property "Manufacturer_Part_Number" "CC0402BRNPO9BN1R5"
+			(at 193.04 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C282238"
 			(at 193.04 144.78 0)
 			(effects
 				(font
@@ -11533,7 +11463,7 @@
 				)
 			)
 		)
-		(property "Value" "TS5A23167"
+		(property "Value" "TS5A23167DCUR"
 			(at 203.2 146.05 0)
 			(effects
 				(font
@@ -11958,7 +11888,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "346-CM02CG1R5B25AH "
+		(property "Mouser Part Number" ""
 			(at 189.23 147.32 0)
 			(effects
 				(font
@@ -11967,7 +11897,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
+		(property "Manufacturer_Part_Number" "CC0402BRNPO9BN1R5"
+			(at 189.23 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C282238"
 			(at 189.23 147.32 0)
 			(effects
 				(font
@@ -12113,7 +12052,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "346-CM02CG1R5B25AH "
+		(property "Mouser Part Number" ""
 			(at 189.23 60.96 0)
 			(effects
 				(font
@@ -12122,7 +12061,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
+		(property "Manufacturer_Part_Number" "CC0402BRNPO9BN1R5"
+			(at 189.23 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C282238"
 			(at 189.23 60.96 0)
 			(effects
 				(font
@@ -12201,7 +12149,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "346-CM02CG1R5B25AH "
+		(property "Mouser Part Number" ""
 			(at 189.23 124.46 0)
 			(effects
 				(font
@@ -12210,7 +12158,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
+		(property "Manufacturer_Part_Number" "CC0402BRNPO9BN1R5"
+			(at 189.23 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C282238"
 			(at 189.23 124.46 0)
 			(effects
 				(font
@@ -12288,7 +12245,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "346-CM02CG1R5B25AH "
+		(property "Mouser Part Number" ""
 			(at 217.17 93.98 0)
 			(effects
 				(font
@@ -12297,7 +12254,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
+		(property "Manufacturer_Part_Number" "CC0402BRNPO9BN1R5"
+			(at 217.17 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C282238"
 			(at 217.17 93.98 0)
 			(effects
 				(font
@@ -12738,6 +12704,91 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C_Small")
+		(at 46.99 106.68 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "42e5c42a-cef6-4ced-9529-1d5b36b50010")
+		(property "Reference" "C17"
+			(at 46.99 112.014 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10uF"
+			(at 48.006 103.378 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 46.99 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 46.99 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 46.99 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CL05A106MP5NUNC"
+			(at 46.99 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C315248"
+			(at 46.99 106.68 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "7bd6e86e-ceb6-418d-8b88-3416cc3d98b8")
+		)
+		(pin "1"
+			(uuid "d884dc27-af30-4bd0-896d-a027b3aca007")
+		)
+		(instances
+			(project "tobo"
+				(path "/ce2fc4a9-618f-4cc1-898a-224ffa79d770"
+					(reference "C17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:LED")
 		(at 105.41 130.81 90)
 		(unit 1)
@@ -12801,7 +12852,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "IN-S21AT5R"
+		(property "Manufacturer_Part_Number" "XL-0201UYC"
 			(at 105.41 130.81 90)
 			(effects
 				(font
@@ -12810,8 +12861,17 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "743-IN-S21AT5R"
+		(property "Mouser Part Number" ""
 			(at 105.41 130.81 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C5440628"
+			(at 105.41 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13106,7 +13166,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "346-CM02CG1R5B25AH "
+		(property "Mouser Part Number" ""
 			(at 213.36 154.94 90)
 			(effects
 				(font
@@ -13115,7 +13175,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
+		(property "Manufacturer_Part_Number" "CC0402BRNPO9BN1R5"
+			(at 213.36 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C282238"
 			(at 213.36 154.94 0)
 			(effects
 				(font
@@ -13671,7 +13740,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 107.95 210.82 0)
 			(effects
 				(font
@@ -13698,8 +13767,8 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "581-KGM03DR50G106MH"
-			(at 107.95 210.82 90)
+		(property "Manufacturer_Part_Number" "CL05A106MP5NUNC"
+			(at 107.95 210.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13707,8 +13776,8 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "KGM03DR50G106MH"
-			(at 107.95 210.82 0)
+		(property "LCSC Part Number" "C315248"
+			(at 107.95 210.82 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14016,7 +14085,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "IN-S21AT5R"
+		(property "Manufacturer_Part_Number" "XL-0201UYC"
 			(at 107.95 130.81 90)
 			(effects
 				(font
@@ -14025,8 +14094,17 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "743-IN-S21AT5R"
+		(property "Mouser Part Number" ""
 			(at 107.95 130.81 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C5440628"
+			(at 107.95 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14374,7 +14452,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Molex 538-54548-2472"
+		(property "Value" "54548-2472"
 			(at 261.62 93.345 0)
 			(effects
 				(font
@@ -15007,7 +15085,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "346-CM02CG1R5B25AH "
+		(property "Mouser Part Number" ""
 			(at 213.36 132.08 90)
 			(effects
 				(font
@@ -15016,7 +15094,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
+		(property "Manufacturer_Part_Number" "CC0402BRNPO9BN1R5"
+			(at 213.36 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C282238"
 			(at 213.36 132.08 0)
 			(effects
 				(font
@@ -15094,7 +15181,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "346-CM02CG1R5B25AH "
+		(property "Mouser Part Number" ""
 			(at 217.17 157.48 0)
 			(effects
 				(font
@@ -15103,7 +15190,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
+		(property "Manufacturer_Part_Number" "CC0402BRNPO9BN1R5"
+			(at 217.17 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C282238"
 			(at 217.17 157.48 0)
 			(effects
 				(font
@@ -15267,7 +15363,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "346-CM02CG1R5B25AH "
+		(property "Mouser Part Number" ""
 			(at 193.04 121.92 90)
 			(effects
 				(font
@@ -15276,7 +15372,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
+		(property "Manufacturer_Part_Number" "CC0402BRNPO9BN1R5"
+			(at 193.04 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C282238"
 			(at 193.04 121.92 0)
 			(effects
 				(font
@@ -15473,7 +15578,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "IN-S21AT5R"
+		(property "Manufacturer_Part_Number" "XL-0201UYC"
 			(at 110.49 130.81 90)
 			(effects
 				(font
@@ -15482,8 +15587,17 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "743-IN-S21AT5R"
+		(property "Mouser Part Number" ""
 			(at 110.49 130.81 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C5440628"
+			(at 110.49 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15689,7 +15803,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "346-CM02CG1R5B25AH "
+		(property "Mouser Part Number" ""
 			(at 193.04 81.28 90)
 			(effects
 				(font
@@ -15698,7 +15812,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
+		(property "Manufacturer_Part_Number" "CC0402BRNPO9BN1R5"
+			(at 193.04 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C282238"
 			(at 193.04 81.28 0)
 			(effects
 				(font
@@ -16087,7 +16210,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "346-CM02CG1R5B25AH "
+		(property "Mouser Part Number" ""
 			(at 213.36 91.44 90)
 			(effects
 				(font
@@ -16096,7 +16219,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
+		(property "Manufacturer_Part_Number" "CC0402BRNPO9BN1R5"
+			(at 213.36 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C282238"
 			(at 213.36 91.44 0)
 			(effects
 				(font
@@ -16184,7 +16316,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "IN-S21AT5R"
+		(property "Manufacturer_Part_Number" "XL-0201UYC"
 			(at 113.03 130.81 90)
 			(effects
 				(font
@@ -16193,8 +16325,17 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "743-IN-S21AT5R"
+		(property "Mouser Part Number" ""
 			(at 113.03 130.81 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C5440628"
+			(at 113.03 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16271,7 +16412,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "346-CM02CG1R5B25AH "
+		(property "Mouser Part Number" ""
 			(at 217.17 71.12 0)
 			(effects
 				(font
@@ -16280,7 +16421,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
+		(property "Manufacturer_Part_Number" "CC0402BRNPO9BN1R5"
+			(at 217.17 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C282238"
 			(at 217.17 71.12 0)
 			(effects
 				(font
@@ -16575,7 +16725,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "346-CM02CG1R5B25AH "
+		(property "Mouser Part Number" ""
 			(at 217.17 134.62 0)
 			(effects
 				(font
@@ -16584,7 +16734,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
+		(property "Manufacturer_Part_Number" "CC0402BRNPO9BN1R5"
+			(at 217.17 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C282238"
 			(at 217.17 134.62 0)
 			(effects
 				(font
@@ -16662,7 +16821,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "346-CM02CG1R5B25AH "
+		(property "Mouser Part Number" ""
 			(at 213.36 68.58 90)
 			(effects
 				(font
@@ -16671,7 +16830,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
+		(property "Manufacturer_Part_Number" "CC0402BRNPO9BN1R5"
+			(at 213.36 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C282238"
 			(at 213.36 68.58 0)
 			(effects
 				(font
@@ -17092,7 +17260,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "IN-S21AT5R"
+		(property "Manufacturer_Part_Number" "XL-0201UYC"
 			(at 115.57 130.81 90)
 			(effects
 				(font
@@ -17101,8 +17269,17 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "743-IN-S21AT5R"
+		(property "Mouser Part Number" ""
 			(at 115.57 130.81 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C5440628"
+			(at 115.57 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17320,7 +17497,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "IN-S21AT5R"
+		(property "Manufacturer_Part_Number" "XL-0201UYC"
 			(at 118.11 130.81 90)
 			(effects
 				(font
@@ -17329,8 +17506,17 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "743-IN-S21AT5R"
+		(property "Mouser Part Number" ""
 			(at 118.11 130.81 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C5440628"
+			(at 118.11 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17408,7 +17594,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "346-CM02CG1R5B25AH "
+		(property "Mouser Part Number" ""
 			(at 191.77 63.5 0)
 			(effects
 				(font
@@ -17417,7 +17603,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
+		(property "Manufacturer_Part_Number" "CC0402BRNPO9BN1R5"
+			(at 191.77 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C282238"
 			(at 191.77 63.5 0)
 			(effects
 				(font
@@ -17458,7 +17653,7 @@
 				)
 			)
 		)
-		(property "Value" "TS5A23167"
+		(property "Value" "TS5A23167DCUR"
 			(at 203.2 59.69 0)
 			(effects
 				(font
@@ -17881,7 +18076,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "346-CM02CG1R5B25AH "
+		(property "Mouser Part Number" ""
 			(at 189.23 83.82 0)
 			(effects
 				(font
@@ -17890,7 +18085,16 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CM02CG1R5B25AH "
+		(property "Manufacturer_Part_Number" "CC0402BRNPO9BN1R5"
+			(at 189.23 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C282238"
 			(at 189.23 83.82 0)
 			(effects
 				(font
@@ -18896,7 +19100,7 @@
 				)
 			)
 		)
-		(property "Value" "TS5A23167"
+		(property "Value" "TS5A23167DCUR"
 			(at 203.2 123.19 0)
 			(effects
 				(font
@@ -19113,7 +19317,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "IN-S21AT5R"
+		(property "Manufacturer_Part_Number" "XL-0201UYC"
 			(at 120.65 130.81 90)
 			(effects
 				(font
@@ -19122,8 +19326,17 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "743-IN-S21AT5R"
+		(property "Mouser Part Number" ""
 			(at 120.65 130.81 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part Number" "C5440628"
+			(at 120.65 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
