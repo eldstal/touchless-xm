@@ -172,24 +172,24 @@ module top_circle() {
         circle(d = top_circle_diameter);
 }
 
-module top_circle_with_rounding(radius, off_z_c) {
+module top_circle_with_rounding(radius, off_z_c, cap_radius_modifier=0) {
     translate([top_circle_off_x, top_circle_off_y, 0])
     translate([0, 0, off_z_c])
     rotate([top_circle_angle_x, top_circle_angle_y, 0])
     translate([0, 0, -radius])
     rotate_extrude() {
-        translate([top_circle_diameter/2 - radius, 0, 0])
+        translate([top_circle_diameter/2 - radius + cap_radius_modifier, 0, 0])
         circle(radius);
     }
 }
 
 
-module standard_cup_shape (width, height, depth_c=top_circle_off_z_c){
+module standard_cup_shape (width, height, depth_c=top_circle_off_z_c, rounding=1.75, cap_radius_modifier=0){
 
     
     hull() {
     
-        // Slightly smaller, to prevent interference with 
+        // Slightly smaller, to prevent interference with hinge fork
         resize([width-0.2, height-0.2, 0], true)
         translate([0, 0, 3.1])
             edge_with_rounding(1.75);
@@ -199,7 +199,7 @@ module standard_cup_shape (width, height, depth_c=top_circle_off_z_c){
             bottom_outer_edge();
  
         
-        top_circle_with_rounding(1.75, depth_c);
+        top_circle_with_rounding(rounding, depth_c, cap_radius_modifier=cap_radius_modifier);
        
     }
 }
@@ -226,7 +226,7 @@ module standard_case (cut=false) {
         // The inside cavity of the case
         translate([0, 0, -0.01])
         //#resize([0, outside_height-2*case_thickness, 0], true)
-        standard_cup_shape(outside_width-2*case_thickness, outside_height-2*case_thickness, inside_depth_c+0.01);
+        standard_cup_shape(outside_width-2*case_thickness, outside_height-2*case_thickness, inside_depth_c+0.01, rounding=0.5, cap_radius_modifier=-(case_thickness/2));
 
     }
 }
@@ -711,7 +711,7 @@ module buttons(cut=false, mounted=false, distance=32.25, vertical_center=pcb_thi
     }
 }
 
-module button_box_cut(outer_radius=34.8, height=7, top_angle=180-5.5, bottom_angle=180+46.5) {
+module button_box_cut(outer_radius=34.8, height=7.3, top_angle=180-5.5, bottom_angle=180+46.5) {
     
     rounding = 0.2;
     
@@ -723,7 +723,7 @@ module button_box_cut(outer_radius=34.8, height=7, top_angle=180-5.5, bottom_ang
         
         
             // Outside face
-            translate([0, 0, -rounding-0.1]) {
+            translate([0, 0, -rounding]) {
             
                 // Bottom edge
                 rotate_extrude(angle=bottom_angle - top_angle) {
