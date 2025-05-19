@@ -21,7 +21,7 @@ The design has been 3D-printed and test fit against an XM4 headset. The button d
 ### PCB
 The design is ready for the first prototype production run, based on a benchtop proof-of-concept.
 
-A fabrication order is underway with a batch of boards labeled v0.1a.
+A fabrication order is underway with a batch of boards labeled v0.2a.
 
 ### Firmware
 Mostly ready for testing. USB support (only for programming) is already included in the main board. The project uses platform.io and OptiBoot to run an Arduino-based firmware.
@@ -29,7 +29,7 @@ Mostly ready for testing. USB support (only for programming) is already included
 
 
 ## Compatibility
-I only have a pair of XM4 to test with, so the design is made to fit them.
+I only have a pair of XM4 to test with, so the design is made to fit them. The connector is a 24-pin, but only XM5 has a cable that wide. For other models, insert your narrower cable carefully to match the lines on the PCB.
 
 ### 🟡 Sony WH1000-XM2 (Experimental)
 I've laid out the board for experimental support for the XM2. These are the most different out of the bunch, so there are caveats.
@@ -37,7 +37,7 @@ I've laid out the board for experimental support for the XM2. These are the most
 ⚠️**WARNING**⚠️
 The OEM cable will not work, because the XM2 has the touch board's connector at the front. You will need a slightly longer cable **with opposite side contacts**. Possibly [This Würth 687712100002](https://eu.mouser.com/ProductDetail/Wurth-Elektronik/687712100002?qs=PhR8RmCirEbjmYLiy2w9eg%3D%3D) is suitable, but too long of a cable will cause interference. If you can trim it to length, that will improve the chances of success.
 
-There is no bespoke connector for the XM2, you need to very carefully position it in the XM4 or XM5 connector using the lines on the PCB.
+There is no bespoke connector for the XM2, you need to very carefully position it in the larger connector using the lines on the PCB.
 
 It's also necessary to modify the firmware pin map slightly, since the Y pins are in the opposite order. Use `--environment xm2` when you compile the firmware.
 
@@ -46,17 +46,21 @@ If you've got a pair of XM2s and want to help me tune the compatibility, let me 
 ### 🟡 Sony WH1000-XM3 (Probably compatible)
 The XM3 touch board and battery connector appear to be electrically identical to XM4, so the PCB should be compatible. A different case design may be needed.
 
+Insert your cable all the way at the top of the connector (there will be two unused pins at the bottom). Follow the lines in the silkscreen for guidance.
+
 
 ### 🟢 Sony WH1000-XM4 (Compatible)
 The project is designed for these, so these will be the ones primarily tested. The OEM touch board has a flat cable which Touchlæss is designed to reuse.
+
+Insert your cable all the way at the top of the connector (there will be two unused pins at the bottom). Follow the lines in the silkscreen for guidance.
 
 The battery uses a 2-pin JST ZH series connector. There is no vertical space inside the case for a matching connector on the board, so I've resorted to soldering a Y-connector onto the Touchlæss pcb. Separate from the PCB BOM, you'll need one male and one female JST ZH-2 connector and some red/black cables.
 
 
 ### 🟡 Sony WH1000-XM5 (Possibly compatible)
-Experimental support is included in the initial board design, but I **do not** own a pair of XM5 and cannot test them. The XM5 connector is entirely based on reverse-engineering of photos, so I may have made a mistake! The Touchless board shouldn't be able to do any damage to the headphones. If you have a pair of XM5s and would like to help me test the compatibility, feel free to reach out!
+Experimental support is included in the initial board design, but I **do not** own a pair of XM5 and cannot test them. The XM5 pinout is entirely based on reverse-engineering of photos, so I may have made a mistake! The Touchless board shouldn't be able to do any damage to the headphones. If you have a pair of XM5s and would like to help me test the compatibility, feel free to reach out!
 
-At a minimum, the XM5 has a different connector (24-pin FPC instead of 22-pin FFC), and the OEM design doesn't include a loose cable for us to reuse. You will need a suitable flat cable, which is 24-pin FFC with 0.5mm pitch and same-side connectors. [This Würth 687624050002](https://eu.mouser.com/ProductDetail/Wurth-Elektronik/687624050002?qs=P%2FTEqz%252BQfndQFFKLalvVUA%3D%3D) should work, but may not be the proper length.
+At a minimum, the XM5 OEM design doesn't include a loose cable for us to reuse. You will need a suitable flat cable, which is 24-pin FFC with 0.5mm pitch and same-side connectors. [This Würth 687624050002](https://eu.mouser.com/ProductDetail/Wurth-Elektronik/687624050002?qs=P%2FTEqz%252BQfndQFFKLalvVUA%3D%3D) should work, but may not be the proper length.
 
 The battery connector for XM5 is also different, a 3-pin of unknown design. If you have more information about this, let me know!
 
