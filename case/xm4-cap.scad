@@ -189,7 +189,8 @@ module standard_cup_shape (width, height, depth_c=top_circle_off_z_c){
     
     hull() {
     
-        resize([width, height, 0], true)
+        // Slightly smaller, to prevent interference with 
+        resize([width-0.2, height-0.2, 0], true)
         translate([0, 0, 3.1])
             edge_with_rounding(1.75);
     
@@ -308,7 +309,7 @@ module screw_posts_and_pegs() {
         // Top rear peg
         translate([-20.5, 26.54, 0.1]) {
             rotate([0, 0, -57])
-            peg(support=3.7);
+            peg(support=3.3);
             
             rotate([0, 0, 33])
             peg(support=3.7);
@@ -603,10 +604,10 @@ module standard_cup() {
 
 }
 
-module keycap(cut=false, type=0, radius=2, length=8, depth=2, clearance=0.1) {
+module keycap(cut=false, type=0, radius=2, length=7, depth=2, clearance=0.1) {
 
     pill_rot = [ -15, -10, 0, 10, 15 ];
-    vert_offset = (length - 7.2)/2;
+    vert_offset = (length - 7.2)/2 +0.3;
 
     rotate([pill_rot[type], 0, 0])
     translate([0, 0, -1])
@@ -663,10 +664,10 @@ module radial_button(cut=false, angle=180, cap_type=0, distance=32.25, vertical_
         translate([peg_length, 0, 0])
         rotate([0, 90, 0])
         if (!cut) {
-            cylinder(guide_length, 2.4, 2.3);
+            cylinder(guide_length, 2.2, 2.1);
         } else {
             translate([0, 0, -3*guide_length])
-            cylinder(4*guide_length, 2.7, 2.3);
+            cylinder(4*guide_length, 2.5, 2.1);
         }
         
         
@@ -747,10 +748,10 @@ module button_box_cut(outer_radius=34.8, height=7, top_angle=180-5.5, bottom_ang
     }
 }
 
-module button_box(outer_radius=34.5, height=7.5, top_angle=180-5.5, bottom_angle=180+46.5) {
+module button_box(outer_radius=34.8, height=7, top_angle=180-5.5, bottom_angle=180+46.5) {
     
  
-    rounding = 0.5;
+    rounding = 1;
     hull() {
     
         
@@ -759,7 +760,7 @@ module button_box(outer_radius=34.5, height=7.5, top_angle=180-5.5, bottom_angle
         
         
             // Outside face
-            translate([0, 0, case_thickness-rounding-0.1]) {
+            translate([0, 0, case_thickness-rounding]) {
             
                 // Cap edge
                 rotate_extrude(angle=bottom_angle - top_angle) {
@@ -784,7 +785,7 @@ module button_box(outer_radius=34.5, height=7.5, top_angle=180-5.5, bottom_angle
             
             // Cap edge
             rotate([0, 0, -5])
-            translate([0, 0, case_thickness-rounding-0.1])
+            translate([0, 0, case_thickness-rounding])
             rotate_extrude(angle=bottom_angle - top_angle+25) {
                 translate([outer_radius-10 - rounding, 0, 0])    
                 circle(rounding);
@@ -835,9 +836,9 @@ module usb_box(cut=false) {
         translate([0, -top_circle_diameter/2, 0])
         translate([0, 0, case_thickness])        // Align to the cup on the outside
         rounded_cube(13.5 + 2*case_thickness,
-                     18,
+                     18+case_thickness,
                      9,
-                     center=true, radius=0.5);
+                     center=true, radius=1);
     
     } else {
     
@@ -992,6 +993,13 @@ module cup_mod_exterior_features() {
 
 }
 
+module cap_surface_cut() {
+    inside_top_center() {
+        translate([0, 0, 5+case_thickness-0.01])
+        cube([outside_width, outside_height, 10], center=true);
+    }
+}
+
 
 
 module cup_mod_cuts() {
@@ -1016,6 +1024,9 @@ module cup_mod_cuts() {
             
     // Holes for the buttons
     buttons(cut=true, mounted=mounted_buttons);
+    
+    // Flatten the outside cap perfectly
+    cap_surface_cut();
 }
 
 
@@ -1073,7 +1084,7 @@ intersection() {
         
         if (test_clearance_print) {
             difference() {
-                cylinder(h=outside_max_depth*2, r=outside_height*2, center=true);
+                cylinder(h=outside_max_depth*3, r=outside_height*2, center=true);
              
                 cylinder(h=outside_max_depth*2, r=outside_width/4, center=true);
                     
