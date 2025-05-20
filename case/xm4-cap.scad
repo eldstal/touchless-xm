@@ -229,7 +229,7 @@ module standard_case (cut=false) {
         // Naive approach. Scale the cup down in all directions to make
         // the cavity. This doesn't give a uniformly thick end cap,
         // so in slicing it may give a weird effect on the inside surface.
-        translate([0, 0, -0.001])
+        translate([0, 0, -0.01])
         standard_cup_shape(outside_width-2*case_thickness, outside_height-2*case_thickness, inside_depth_c, rounding=0.5, cap_radius_modifier=-(case_thickness/2));
         
         // Route down the inside cap so it's perfectly flat (compared to the outside)
@@ -961,10 +961,12 @@ module cup_mod_interior_features() {
     inside_top_center() {
     
         // An origin pin
+        /*
         if (show_pcb) {
             translate([0, 0, -1.5])
             cylinder(3, 0.2, 0.2, center=true);
         }
+        */
         
         pcb_clips();
     }
