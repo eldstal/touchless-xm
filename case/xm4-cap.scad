@@ -224,9 +224,19 @@ module standard_case (cut=false) {
         
     } else {
         // The inside cavity of the case
-        translate([0, 0, -0.01])
-        //#resize([0, outside_height-2*case_thickness, 0], true)
-        standard_cup_shape(outside_width-2*case_thickness, outside_height-2*case_thickness, inside_depth_c+0.01, rounding=0.5, cap_radius_modifier=-(case_thickness/2));
+        
+       
+        // Naive approach. Scale the cup down in all directions to make
+        // the cavity. This doesn't give a uniformly thick end cap,
+        // so in slicing it may give a weird effect on the inside surface.
+        translate([0, 0, -0.001])
+        standard_cup_shape(outside_width-2*case_thickness, outside_height-2*case_thickness, inside_depth_c, rounding=0.5, cap_radius_modifier=-(case_thickness/2));
+        
+        // Route down the inside cap so it's perfectly flat (compared to the outside)
+        inside_top_center() {
+            translate([0, 0, -5])
+            cylinder(5, top_circle_diameter/2-2, top_circle_diameter/2-1);
+        }
 
     }
 }
