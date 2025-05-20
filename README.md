@@ -21,7 +21,7 @@ The design has been 3D-printed and test fit against an XM4 headset. The button d
 ### PCB
 The design is ready for the first prototype production run, based on a benchtop proof-of-concept.
 
-A fabrication order is underway with a batch of boards labeled v0.2a.
+A fabrication order is underway with a batch of boards labeled v0.3a.
 
 ### Firmware
 Mostly ready for testing. USB support (only for programming) is already included in the main board. The project uses platform.io and OptiBoot to run an Arduino-based firmware.
