@@ -175,4 +175,4 @@ This means you are free to use, modify, distribute, remix, redesign the project 
 1. Credit the original work where relevant
 2. Release your own modified work under a similar CC license
 
-If you want to make and sell kits of this, feel free! If you make money from my work, please consider making a charitable donation or something as a thank you!
+If you want to make and sell kits of this, feel free! If you make money from my work, please consider making a donation to a charitable organization as a thank you!
