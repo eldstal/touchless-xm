@@ -52,12 +52,21 @@ pos:
 			$${PCB}; \
 	done
 
-
 #
 # The rules below are just for the CAD preview of the board
 # They are not needed for fabrication.
 #
 
+
+outline:
+	for PCB in tobo/tobo*.kicad_pcb; do \
+		CUTFILE="$(OUTDIR)/tobo-outline.svg"; \
+		kicad-cli pcb export svg -o "$${CUTFILE}" \
+			--layers "Edge.Cuts" \
+			--black-and-white \
+			--exclude-drawing-sheet \
+			$${PCB}; \
+	done
 
 vrml:
 	mkdir -p $(OUTDIR)

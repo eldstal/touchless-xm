@@ -26,6 +26,9 @@ half_view = false;
 // Render PCB (run make in pcb/)
 show_pcb = true;
 
+// Replace the fancy render with a placeholder for test fits
+dummy_pcb = false;
+
 // Render buttons
 show_buttons = true;
 mounted_buttons = false;
@@ -512,7 +515,7 @@ module pcb_key() {
 
 
 
-module dummy_pcb() {
+module oem_pcb() {
 
     color("#037A5E")
     inside_top_center()
@@ -525,7 +528,7 @@ module dummy_pcb() {
         union() {
         
             // Cutout for key
-            translate([0, (-53/2) +0.1, 0]) {
+            #translate([0, (-53/2) +0.1, 0]) {
                 translate([0, -(5 - 0.8), 0])
                 cube([27, 10, 4], true);
                 
@@ -547,17 +550,78 @@ module cad_pcb() {
 }
 
 
+module dummy_pcb() {
+
+    color("#037A5E")
+    inside_top_center()
+    translate([0, 0, -pcb_thickness-0.01])
+    
+    union() {
+        // Main PCB body
+        difference() {
+        
+            linear_extrude(pcb_thickness)
+                circle(25.5);
+        
+            union() {
+                // Top cut
+                translate([0, (20/2)+24, 0])
+                cube([outside_width, 20, 3*pcb_thickness], center=true);
+            
+                // Bottom cut
+                translate([0, -(20/2)-22.5, 0])
+                cube([outside_width, 20, 3*pcb_thickness], center=true);
+            }
+        }
+        
+        // USB board
+        translate([0, -37/2, pcb_thickness/2])
+        cube([12.5, 37, pcb_thickness], center=true);
+        
+        // Button board
+        difference() {
+            linear_extrude(pcb_thickness)
+            circle(32);
+            
+            union() {
+                // Top edge
+                rotate([0, 0, -5])
+                translate([-35/2,35/2,pcb_thickness/2])
+                cube([35, 35, 3*pcb_thickness], center=true);
+                
+                // Bottom edge
+                rotate([0, 0, 44.9])
+                translate([-35/2,-35/2,pcb_thickness/2])
+                cube([35, 35, 3*pcb_thickness], center=true);
+                
+                // Off side
+                translate([70/2, 0, pcb_thickness/2])
+                cube([70, 70, 3*pcb_thickness], center=true);
+            }
+        }
+    }
+    /*
+        inside_top_center()
+        translate([-3.25, -6.5, -pcb_thickness/2]) // Offset the board origin
+        rotate([0, 180, 0])
+        linear_extrude(pcb_thickness, center=true)
+        import("../dist/pcb/tobo-outline.svg", center=true);
+    */
+}
+
 module pcb() {
 
     
+    if (dummy_pcb) {
+        //oem_pcb();
+        dummy_pcb();
+    } else {
     
-    //dummy_pcb();
-    
-    
-    inside_top_center()
-    translate([-3.25, -6.5, -pcb_thickness/2]) // Offset the board origin
-    rotate([0, 180, 0])
-    cad_pcb();
+        inside_top_center()
+        translate([-3.25, -6.5, -pcb_thickness/2]) // Offset the board origin
+        rotate([0, 180, 0])
+        cad_pcb();
+    }
 
     
 }
@@ -897,9 +961,10 @@ module usb_box(cut=false) {
     }
 }
 
-module pcb_clip(width=2, depth=0.2, grab=0.3, clearance=0.05) {
+module pcb_clip(width=2, depth=0.8, grab=0.4, clearance=0.05) {
     roots = 0.1;
-    ramp_height = 0.3;
+    ramp_height = 1;
+    support = 0.1;
     total_height = roots + pcb_thickness + clearance + ramp_height;
 
     // A ramp tooth
@@ -909,7 +974,8 @@ module pcb_clip(width=2, depth=0.2, grab=0.3, clearance=0.05) {
     linear_extrude(width, center=true)
     #polygon([
         [0,0],                  // Origin, 
-        [0, pcb_thickness + clearance],     // Inner corner
+        [0, pcb_thickness + clearance - support],     // Below inner corner support
+        [support, pcb_thickness + clearance],     // Inner corner
         [grab,pcb_thickness + clearance],   // Bottom of tip
         [grab,pcb_thickness + clearance + ramp_height/3],    // Top of tip
         [-depth,total_height],   // Top of ramp
