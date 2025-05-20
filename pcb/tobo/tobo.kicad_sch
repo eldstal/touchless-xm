@@ -11118,10 +11118,9 @@
 		(in_bom yes)
 		(on_board no)
 		(dnp yes)
-		(fields_autoplaced yes)
 		(uuid "2331b38e-ab92-44ea-a6d5-70a958b5cd2e")
 		(property "Reference" "J1"
-			(at 281.94 90.1699 0)
+			(at 281.686 96.774 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11130,7 +11129,7 @@
 			)
 		)
 		(property "Value" "54548-2272 "
-			(at 281.94 92.075 0)
+			(at 281.432 98.552 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11156,13 +11155,12 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 273.05 90.17 0)
+		(property "Description" "Only for XM3/XM4"
+			(at 282.194 85.852 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Mouser Part Number" "538-54548-2272 "
@@ -14441,7 +14439,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "7d170c14-983e-430e-9b74-bab8b93377e3")
 		(property "Reference" "J4"
 			(at 261.62 91.4399 0)
@@ -14479,13 +14476,12 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 252.73 93.98 0)
+		(property "Description" "USeful for XM2,3,4,5"
+			(at 252.222 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Mouser Part Number" "538-54548-2472 "
