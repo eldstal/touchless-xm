@@ -1,6 +1,6 @@
 # Touchlæss XM
 
-A mod for Sony WH1000-XM2 (experimental), WH1000-XM3, WH1000-XM4 and WH1000-XM5 (experimental) headphones to remove the gesture-based touch controls and add physical buttons.
+A mod for Sony WH-1000XM2 (experimental), WH-1000XM3, WH-1000XM4 and WH-1000XM5 (experimental) headphones to remove the gesture-based touch controls and add physical buttons.
 
 - [Project Status](#Status)
 - [Compatible headsets](#compatibility)
@@ -31,7 +31,7 @@ Mostly ready for testing. USB support (only for programming) is already included
 ## Compatibility
 I only have a pair of XM4 to test with, so the design is made to fit them. The connector is a 24-pin, but only XM5 has a cable that wide. For other models, insert your narrower cable carefully to match the lines on the PCB.
 
-### 🟡 Sony WH1000-XM2 (Experimental)
+### 🟡 Sony WH-1000XM2 (Experimental)
 I've laid out the board for experimental support for the XM2. These are the most different out of the bunch, so there are caveats.
 
 ⚠️**WARNING**⚠️
@@ -43,13 +43,13 @@ It's also necessary to modify the firmware pin map slightly, since the Y pins ar
 
 If you've got a pair of XM2s and want to help me tune the compatibility, let me know!
 
-### 🟡 Sony WH1000-XM3 (Probably compatible)
+### 🟡 Sony WH-1000XM3 (Probably compatible)
 The XM3 touch board and battery connector appear to be electrically identical to XM4, so the PCB should be compatible. A different case design may be needed.
 
 Insert your cable all the way at the top of the connector (there will be two unused pins at the bottom). Follow the lines in the silkscreen for guidance.
 
 
-### 🟢 Sony WH1000-XM4 (Compatible)
+### 🟢 Sony WH-1000XM4 (Compatible)
 The project is designed for these, so these will be the ones primarily tested. The OEM touch board has a flat cable which Touchlæss is designed to reuse.
 
 Insert your cable all the way at the top of the connector (there will be two unused pins at the bottom). Follow the lines in the silkscreen for guidance.
@@ -57,14 +57,14 @@ Insert your cable all the way at the top of the connector (there will be two unu
 The battery uses a 2-pin JST ZH series connector. There is no vertical space inside the case for a matching connector on the board, so I've resorted to soldering a Y-connector onto the Touchlæss pcb. Separate from the PCB BOM, you'll need one male and one female JST ZH-2 connector and some red/black cables.
 
 
-### 🟡 Sony WH1000-XM5 (Possibly compatible)
+### 🟡 Sony WH-1000XM5 (Possibly compatible)
 Experimental support is included in the initial board design, but I **do not** own a pair of XM5 and cannot test them. The XM5 pinout is entirely based on reverse-engineering of photos, so I may have made a mistake! The Touchless board shouldn't be able to do any damage to the headphones. If you have a pair of XM5s and would like to help me test the compatibility, feel free to reach out!
 
 At a minimum, the XM5 OEM design doesn't include a loose cable for us to reuse. You will need a suitable flat cable, which is 24-pin FFC with 0.5mm pitch and same-side connectors. [This Würth 687624050002](https://eu.mouser.com/ProductDetail/Wurth-Elektronik/687624050002?qs=P%2FTEqz%252BQfndQFFKLalvVUA%3D%3D) should work, but may not be the proper length.
 
 The battery connector for XM5 is also different, a 3-pin of unknown design. If you have more information about this, let me know!
 
-### 🟡 Sony WH1000-XM6 (Not even released yet)
+### 🟡 Sony WH-1000XM6 (Not even released yet)
 With any luck, the XM6 touch board will be similar to the XM5. It will be a while before I get my hands on a new high-end headset to test it, though.
 
 If you're getting a pair of XM6 and would like to send me some nice photos of the internals, I'll be very grateful!
