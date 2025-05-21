@@ -98,7 +98,7 @@ mic_hole_cc = mic_hole_width - mic_hole_height;
 mic_hole_feeler = false;
 mic_hole_angle_x = 31.8;
 mic_hole_angle_z = -1;
-mic_hole_angle_y = -5;
+mic_hole_angle_y = 0;  //-5 ish on the OEM design
 mic_hole_distance = 36.4;
 mic_grill_alignment = -1.2;
 //mic_hole_angle_z = atan((mic_hole_y2 - mic_hole_y1) / (mic_hole_x2 - mic_hole_x1));
@@ -678,7 +678,7 @@ module standard_cup() {
 
 }
 
-module keycap(cut=false, type=0, radius=2, length=7, depth=2, clearance=0.1) {
+module keycap(cut=false, type=0, radius=2.5, length=7.5, depth=2, clearance=0.1) {
 
     pill_rot = [ -15, -10, 0, 10, 15 ];
     vert_offset = (length - 7.2)/2 +0.3;
@@ -721,7 +721,7 @@ module radial_button(cut=false, angle=180, cap_type=0, distance=32.25, vertical_
 
     peg_length=0.5;
     guide_length=0.7;
-    cap_length = 2;
+    cap_length = 2.5;
     
     tip_angle = tipped_down ? -90: 0;
     
