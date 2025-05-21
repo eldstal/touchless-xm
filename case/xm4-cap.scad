@@ -970,22 +970,39 @@ module usb_box(cut=false) {
             
                 // The main cavity for the board and connector
                 // Pulled back by 5mm to also cut the PCB key
-                translate([-cavity_width/2, 0, -usb_board_h])
-                cube([cavity_width, cavity_depth-groove_depth, usb_board_h], center=false);
+                translate([-cavity_width/2, 0, -usb_board_h*2])
+                cube([cavity_width, cavity_depth, usb_board_h*2], center=false);
                 
                 
+                /*
                 // It goes full depth inside the grooves
                 translate([-(cavity_width-2)/2, 0, -usb_board_h])
                 cube([cavity_width-2, cavity_depth, usb_board_h], center=false);
             
+                
                 // A shaped cavity at the inside of the USB box, which has grooves
                 // to grab the PCB itself    
                 translate([-cavity_width/2, 0, -pcb_thickness-4*clearance])
                 cube([cavity_width, cavity_depth, pcb_thickness+4*clearance], center=false);
+                */
                 
                 // Cut above the groove
                 //translate([-cavity_width/2, 0, -usb_board_h])
                 //cube([cavity_width, cavity_depth, usb_board_h-pcb_thickness-clearance-0.5], center=false);
+                
+                
+                /*
+                // Round out the ceiling a bit
+                intersection() {
+                    translate([0, cavity_depth, 0])
+                    translate([0, 0, 20-usb_board_h-1])
+                    rotate([90, 0, 0])
+                    cylinder(h=cavity_depth/2, r=20, center=false);
+                    
+                    translate([-cavity_width/2, 0, -usb_board_h*1.3])
+                    cube([cavity_width, cavity_depth, usb_board_h/2], center=false);
+                }
+                */
             }
             
             
@@ -1071,6 +1088,17 @@ module pcb_clips() {
             translate([-25.5, 0, 0])
             rotate([0, 0, -90])
             pcb_clip(width=3);
+        }
+        
+        // Inside the USB box
+        translate([0, -36, 0]) {
+            translate([-12.5/2, 0, 0])
+            rotate([0, 0, -90])
+            pcb_clip(width=2);
+            
+            translate([12.5/2, 0, 0])
+            rotate([0, 0, 90])
+            pcb_clip(width=2);
         }
 }
 
