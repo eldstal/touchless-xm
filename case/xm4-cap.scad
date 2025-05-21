@@ -678,9 +678,10 @@ module standard_cup() {
 
 }
 
-module keycap(cut=false, type=0, radius=2.5, length=7.5, depth=2, clearance=0.1) {
+module keycap(cut=false, type=0, width=2.5, length=7.5, depth=2, clearance=0.1) {
 
-    pill_rot = [ -15, -10, 0, 10, 15 ];
+    //pill_rot = [ -15, -10, 0, 10, 15 ];
+    pill_rot = [ 0, 0, 0, 0, 0 ];
     vert_offset = (length - 7.2)/2 +0.3;
 
     rotate([pill_rot[type], 0, 0])
@@ -692,16 +693,18 @@ module keycap(cut=false, type=0, radius=2.5, length=7.5, depth=2, clearance=0.1)
         difference() {
             // Basic pill shape
             linear_extrude(depth)
-            flat_pill(length-(radius), radius-clearance);
+            flat_pill(length-(width), width-clearance);
             
             
             // Some sort of texture
+            /*
             if (type == 2) {
                 for (x = [ -6:1:6 ])
                     translate([x*0.7, 0, depth-0.1])
                     cube([0.4, radius*2, 0.4], center=true);
             
             }
+            */
             
         }
         
@@ -710,7 +713,7 @@ module keycap(cut=false, type=0, radius=2.5, length=7.5, depth=2, clearance=0.1)
         rotate([0, 90, 0])
         translate([vert_offset, 0, 0])
         linear_extrude(depth*5,center=true)
-        flat_pill(length-radius, radius);
+        flat_pill(length-width, width);
     }
 
 
@@ -719,9 +722,11 @@ module keycap(cut=false, type=0, radius=2.5, length=7.5, depth=2, clearance=0.1)
 
 module radial_button(cut=false, angle=180, cap_type=0, distance=32.25, vertical_center=pcb_thickness + 1.7, tipped_down=false) {
 
+    guide_wide_end = 4.4;
     peg_length=0.5;
     guide_length=0.7;
-    cap_length = 2.5;
+    cap_depth = 2.7;
+    cap_width = 2.5;
     
     tip_angle = tipped_down ? -90: 0;
     
@@ -730,31 +735,39 @@ module radial_button(cut=false, angle=180, cap_type=0, distance=32.25, vertical_
     translate([distance, 0, -vertical_center])
     rotate([0, tip_angle, 0 ])
     {
-        // Peg touching the actual switch
-        translate([0, -1, -1])
-        cube([peg_length+0.1,2,2], center=false);
+    
         
-        // A lip to keep the button from falling out
-        translate([peg_length, 0, 0])
+        // No more peg, it just builds all the way back.
         rotate([0, 90, 0])
+        cylinder(h=peg_length, r=guide_wide_end/2, center=false);
+
+
         if (!cut) {
-            cylinder(guide_length, 2.2, 2.1);
+        
+                // A conical lip to keep the button from falling out
+                translate([peg_length, 0, 0])
+                rotate([0, 90, 0])
+                cylinder(guide_length, guide_wide_end/2, guide_wide_end/2-0.1);
         } else {
+        
+            // A lip to keep the button from falling out
+            translate([peg_length, 0, 0])
+            rotate([0, 90, 0])
             translate([0, 0, -3*guide_length])
-            cylinder(4*guide_length, 2.5, 2.1);
+            cylinder(4*guide_length, guide_wide_end/2+0.3, guide_wide_end/2-0.1);
         }
         
         
         if (!cut) {
             // The visible button itself
-            translate([peg_length+guide_length, 0, 0])
-            keycap(false, cap_type, depth=cap_length, clearance=button_clearance);
+            //translate([peg_length+guide_length, 0, 0])
+            keycap(false, cap_type, width=cap_width, depth=cap_depth+peg_length+guide_length, clearance=button_clearance);
 
 
         } else {
             translate([peg_length+guide_length, 0, 0])
             //rotate([0, 90, 0])
-            keycap(true, cap_type, clearance=button_clearance);
+            keycap(true, cap_type, width=cap_width, clearance=button_clearance);
         }
     }    
 }
@@ -811,12 +824,32 @@ module button_box_cut(outer_radius=34.8, height=7.3, top_angle=180-5.5, bottom_a
                     translate([outer_radius - rounding-2.5, 0, 0])    
                     circle(rounding);
                 }
+                
+                // Eyebrow trimming
+                rotate([0, 5, 0])
+                translate([0, 0, -height-rounding])
+                rotate_extrude(angle=bottom_angle - top_angle) {
+                    translate([outer_radius - rounding-2.5, 0, 0])    
+                    circle(rounding);
+                }
 
             }
         }
         
 
         translate([0, 0, -rounding])
+        sphere(rounding);
+        
+        // Eyebrow trimming on the inside
+        /*
+        #translate([-top_circle_diameter/2, 2, -height-14])
+        sphere(rounding);
+        #translate([-top_circle_diameter/2+5, -20, -height-14])
+        sphere(rounding);
+        */
+        
+        // Wider angle at the top, so we can insert the PCB
+        translate([0, 15, -rounding])
         sphere(rounding);
 
     }
