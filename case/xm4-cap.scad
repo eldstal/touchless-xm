@@ -936,8 +936,8 @@ module usb_box(cut=false) {
             
                 // A shaped cavity at the inside of the USB box, which has grooves
                 // to grab the PCB itself    
-                translate([-cavity_width/2, 0, -pcb_thickness-clearance])
-                cube([cavity_width, cavity_depth, pcb_thickness+clearance], center=false);
+                translate([-cavity_width/2, 0, -pcb_thickness-4*clearance])
+                cube([cavity_width, cavity_depth, pcb_thickness+4*clearance], center=false);
                 
                 // Cut above the groove
                 //translate([-cavity_width/2, 0, -usb_board_h])
@@ -948,8 +948,18 @@ module usb_box(cut=false) {
             
                 
             // A deeper trough in the center, to give the port's feet some clearance
-            translate([-5.25, -1, -0.4])
-            cube([10.5, 8, 0.8], center=false);
+            // The bottom has a ramp, to let the
+            // PCB slide over more easily on assembly.
+            translate([-5.25, -1, 0])
+            hull() {
+                translate([0, 1, 0.4])
+                linear_extrude(0.01)
+                square([10.5, 5.5/*ramp*/], center=false);
+                
+                translate([0, 0, -0.4])
+                linear_extrude(0.01)
+                square([10.5, 9], center=false);
+            }
             
             // Expose the USB port itself
             translate([0, 0, -pcb_thickness-1.65])
