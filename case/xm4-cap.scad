@@ -769,6 +769,13 @@ module radial_button(cut=false, angle=180, cap_type=0, distance=32.25, vertical_
             //rotate([0, 90, 0])
             keycap(true, cap_type, width=cap_width, clearance=button_clearance);
         }
+        
+        if (!cut && tipped_down) {
+            // A little support bar, which helps adhere them.
+            // You could add this in your slicer, but that's manual work.
+            translate([0, 0, -1])
+            cube([0.2, 6, 2]);
+        }
     }    
 }
 
@@ -792,7 +799,11 @@ module buttons(cut=false, mounted=false, distance=32.25, vertical_center=pcb_thi
                 // The same buttons, but off to the side for printing
                 for (i=[0:1:4]) {
                     radial_button(false, angle=btn_angle[i], cap_type=i, distance=distance + 8, tipped_down=true);
+
+                    
                 }
+                
+
             }
         }
     }
