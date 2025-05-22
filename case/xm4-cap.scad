@@ -678,11 +678,13 @@ module standard_cup() {
 
 }
 
-module keycap(cut=false, type=0, width=2.5, length=7.5, depth=2, clearance=0.1) {
+module keycap(cut=false, type=0, width=2.5, length=7.4, depth=2, backside=0.5, clearance=0.1) {
 
     //pill_rot = [ -15, -10, 0, 10, 15 ];
     pill_rot = [ 0, 0, 0, 0, 0 ];
-    vert_offset = (length - 7.2)/2 +0.3;
+    vert_offset = (length - 7.2)/2 +0.4;
+    
+    backside_diff = length/6;
 
     rotate([pill_rot[type], 0, 0])
     translate([0, 0, -1])
@@ -691,10 +693,21 @@ module keycap(cut=false, type=0, width=2.5, length=7.5, depth=2, clearance=0.1) 
         rotate([0, 90, 0])
         translate([vert_offset, 0, 0])
         difference() {
-            // Basic pill shape
-            linear_extrude(depth)
-            flat_pill(length-(width), width-clearance);
-            
+        
+            union() {
+                // Basic pill shape
+                linear_extrude(depth)
+                flat_pill(length-(width), width-clearance);
+                // Back supports
+                hull() {
+                    linear_extrude(0.01)
+                    flat_pill(length-(width), width-clearance);
+                    
+                    translate([backside_diff/2, 0, -backside])
+                    linear_extrude(0.01)
+                    flat_pill((length-(width)) - backside_diff, (width-clearance));
+                }         
+            }
             
             // Some sort of texture
             /*
@@ -725,6 +738,7 @@ module radial_button(cut=false, angle=180, cap_type=0, distance=32.25, vertical_
     guide_wide_end = 4.4;
     peg_length=0.5;
     guide_length=0.7;
+    guide_clearance=0.15;
     cap_depth = 2.7;
     cap_width = 2.5;
     
@@ -736,37 +750,39 @@ module radial_button(cut=false, angle=180, cap_type=0, distance=32.25, vertical_
     rotate([0, tip_angle, 0 ])
     {
     
-        
-        // No more peg, it just builds all the way back.
-        rotate([0, 90, 0])
-        cylinder(h=peg_length, r=guide_wide_end/2, center=false);
 
 
         if (!cut) {
         
+                
+                // No more peg, it just builds all the way back.
+                translate([0, 0, -0.6])
+                rotate([0, 90, 0])
+                cylinder(h=peg_length, r1=guide_wide_end/3,r2=guide_wide_end/2, center=false);
+
+        
                 // A conical lip to keep the button from falling out
-                translate([peg_length, 0, 0])
+                translate([peg_length, 0, -0.6])
                 rotate([0, 90, 0])
                 cylinder(guide_length, guide_wide_end/2, guide_wide_end/2-0.1);
         } else {
         
             // A lip to keep the button from falling out
-            translate([peg_length, 0, 0])
+            translate([peg_length, 0, -0.6])
             rotate([0, 90, 0])
-            translate([0, 0, -3*guide_length])
+            translate([0, 0, -3*guide_length+guide_clearance])
             cylinder(4*guide_length, guide_wide_end/2+0.3, guide_wide_end/2-0.1);
         }
         
         
         if (!cut) {
             // The visible button itself
-            //translate([peg_length+guide_length, 0, 0])
-            keycap(false, cap_type, width=cap_width, depth=cap_depth+peg_length+guide_length, clearance=button_clearance);
+            translate([peg_length, 0, 0])
+            keycap(false, cap_type, width=cap_width, depth=cap_depth+guide_length, backside=peg_length, clearance=button_clearance);
 
 
         } else {
-            translate([peg_length+guide_length, 0, 0])
-            //rotate([0, 90, 0])
+            translate([peg_length, 0, 0])
             keycap(true, cap_type, width=cap_width, clearance=button_clearance);
         }
         
