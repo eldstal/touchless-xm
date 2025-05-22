@@ -5,52 +5,69 @@
 $fa = 1;
 $fs = 0.2;
 
+/* [Parts included] */
 // Render the main body
 show_cap = true;
-
-// No custom additions, an OEM-adjacent design
-oem_cap = false;
-
-// Expose USB port
-with_usb = true;
-
-// Print only bottom ring
-test_fit_print = false;
-
-// Cut away part of the endcap for internal visibility
-test_clearance_print = false;
-
-// Cutaway view
-half_view = false;
 
 // Render PCB (run make in pcb/)
 show_pcb = true;
 
-// Replace the fancy render with a placeholder for test fits
-dummy_pcb = false;
-
 // Render buttons
 show_buttons = true;
-mounted_buttons = false;
 
-// Render the microphone grill
+// Render microphone grill
 show_grill = true;
-mounted_grill = false;
 
-// Maybe we can just stick a length of TPU filament in there?
+
+/* [Body options] */
+cap_type = "usb";        // [usb, nousb, oem]
+
+// Partial rendering
+cap_portion = "full";       // [full, mount, cutaway, clearance, buttons, grill]
+
+body_thickness = 0.9;
 
 gasket_thickness=1.75;
 
+// Width of the flat rim around the bottom
+rim_width = 2.6;
+
+
+/* [PCB options] */
+// Replace the fancy render with a placeholder for test fits
+pcb_type_dummy = false;
+pcb_thickness = 0.6;
+usb_board_h = 4.5;
+
+
+
+/* [Button options] */
+// Render buttons
+buttons_mounted = false;
+
+// Distance from PCB center to switch contact surface
+button_contact_r = 32.25;
+
 // mm between the button and the button hole
-button_clearance = 0.1;
+button_side_clearance = 0.1;
+
+// mm between the button and the body
+button_depth_clearance=0.15;
+
+
+/* [Mic grill options] */
+grill_mounted = false;
 
 // Oversize the mic grill to make it stick
 mic_grill_friction_fit = 0.05;
 
-case_thickness = 0.9;
-rim_width = 2.6;
+// Mic hole frame protrusion to meet the mic
+mic_grill_protrude_inside = 0.8;
 
+mic_hole_height = 2.5;
+mic_hole_width = 8;
 
+/* [Hidden] */
 outside_width = 69;
 outside_height = 80;
 outside_max_depth = 17.1;
@@ -60,12 +77,9 @@ top_circle_angle_y = 5;
 top_circle_off_x = 1;
 top_circle_off_y = 1;
 top_circle_off_z_c = 14.5;
-inside_depth_c = top_circle_off_z_c - case_thickness;
+inside_depth_c = top_circle_off_z_c - body_thickness;
 
 
-
-pcb_thickness = 0.6;
-usb_board_h = 4.5;
 
 // The centers of the round radii of the mic hole
 
@@ -80,17 +94,12 @@ mic_hole_xc = 17.34 - 9;
 mic_hole_yc = (mic_hole_y1 + mic_hole_y2) / 2;
 mic_hole_zc = 8;
 
-// Mic hole frame protrusion to meet the mic
-mic_hole_inside_protrude = 0.8;
-
 // Actual opening
-mic_hole_height = 2.5;
 
 // The hole in the case
 mic_hole_cut_height = 4;
 
 // Actual opening
-mic_hole_width = 8;
 mic_hole_cc = mic_hole_width - mic_hole_height;
 
 
@@ -102,8 +111,6 @@ mic_hole_angle_y = 0;  //-5 ish on the OEM design
 mic_hole_distance = 36.4;
 mic_grill_alignment = -1.2;
 //mic_hole_angle_z = atan((mic_hole_y2 - mic_hole_y1) / (mic_hole_x2 - mic_hole_x1));
-
-
 
 
 // Heading to the mic hole from the origin
@@ -233,7 +240,7 @@ module standard_case (cut=false) {
         // the cavity. This doesn't give a uniformly thick end cap,
         // so in slicing it may give a weird effect on the inside surface.
         translate([0, 0, -0.01])
-        standard_cup_shape(outside_width-2*case_thickness, outside_height-2*case_thickness, inside_depth_c, rounding=0.5, cap_radius_modifier=-(case_thickness/2));
+        standard_cup_shape(outside_width-2*body_thickness, outside_height-2*body_thickness, inside_depth_c, rounding=0.5, cap_radius_modifier=-(body_thickness/2));
         
         // Route down the inside cap so it's perfectly flat (compared to the outside)
         inside_top_center() {
@@ -379,12 +386,12 @@ module grill(cc, diameter, thickness, hole_r=2.9, hole_cc=2) {
 
 module mic_cover() {
 
-    total_depth = 1.2 + mic_hole_inside_protrude;
+    total_depth = 1.2 + mic_grill_protrude_inside;
     
     // Print face down
-    translate([0, 0, mic_hole_inside_protrude])
+    translate([0, 0, mic_grill_protrude_inside])
     rotate([180, 0, 0]) {
-         //translate([0, 0, case_thickness-0.5])
+         //translate([0, 0, body_thickness-0.5])
          grill(mic_hole_cc, mic_hole_cut_height+mic_grill_friction_fit, 0.2);
          
 
@@ -398,7 +405,7 @@ module mic_cover() {
                         flat_pill(mic_hole_cc, mic_hole_cut_height+mic_grill_friction_fit);
                         
                         // A stopper to keep it from falling out of the hole
-                        translate([0, 0, mic_hole_inside_protrude-0.4])
+                        translate([0, 0, mic_grill_protrude_inside-0.4])
                         linear_extrude(0.4)
                         flat_pill(mic_hole_cc, mic_hole_cut_height+0.5);
                     }
@@ -420,7 +427,7 @@ module mic_cover() {
                 
                
                     // The small sound hole through the frame
-                    translate([0, 0, -case_thickness])
+                    translate([0, 0, -body_thickness])
                     linear_extrude(rim_width*3)
                     flat_pill(mic_hole_cc, mic_hole_height);
                 }
@@ -442,7 +449,7 @@ module mic_hole(cut=false) {
 
     if (cut) {
          // The big hole in the casing
-         translate([0, 0, -case_thickness])
+         translate([0, 0, -body_thickness])
          linear_extrude(rim_width*3)
          flat_pill(mic_hole_cc, mic_hole_cut_height);
          
@@ -454,7 +461,7 @@ module mic_hole(cut=false) {
             flat_pill(mic_hole_cc, mic_hole_cut_height+0.5);
         }
     
-        if (show_grill && mounted_grill) {
+        if (show_grill && grill_mounted) {
             //rotate([180, 0, 0])
             translate([0, 0, -mic_grill_alignment])
             mic_cover();
@@ -612,7 +619,7 @@ module dummy_pcb() {
 module pcb() {
 
     
-    if (dummy_pcb) {
+    if (pcb_type_dummy) {
         //oem_pcb();
         dummy_pcb();
     } else {
@@ -736,13 +743,12 @@ module keycap(cut=false, type=0, width=2.5, length=7.4, depth=2, backside=0.5, c
 module radial_button(cut=false, angle=180, cap_type=0, distance=32.25, vertical_center=pcb_thickness + 1.7, tipped_down=false) {
 
     guide_wide_end = 4.4;
-    peg_length=0.5;
+    peg_length=0.8;
     guide_length=0.7;
-    guide_clearance=0.15;
-    cap_depth = 2.7;
+    cap_depth = 2.4;
     cap_width = 2.5;
     
-    tip_angle = tipped_down ? -90: 0;
+    tip_angle = tipped_down ? 90: 0;
     
 
     rotate([0, 0, angle])
@@ -758,11 +764,11 @@ module radial_button(cut=false, angle=180, cap_type=0, distance=32.25, vertical_
                 // No more peg, it just builds all the way back.
                 translate([0, 0, -0.6])
                 rotate([0, 90, 0])
-                cylinder(h=peg_length, r1=guide_wide_end/3,r2=guide_wide_end/2, center=false);
+                cylinder(h=peg_length-button_depth_clearance, r1=guide_wide_end/3,r2=guide_wide_end/2, center=false);
 
         
                 // A conical lip to keep the button from falling out
-                translate([peg_length, 0, -0.6])
+                translate([peg_length-button_depth_clearance, 0, -0.6])
                 rotate([0, 90, 0])
                 cylinder(guide_length, guide_wide_end/2, guide_wide_end/2-0.1);
         } else {
@@ -770,7 +776,7 @@ module radial_button(cut=false, angle=180, cap_type=0, distance=32.25, vertical_
             // A lip to keep the button from falling out
             translate([peg_length, 0, -0.6])
             rotate([0, 90, 0])
-            translate([0, 0, -3*guide_length+guide_clearance])
+            translate([0, 0, -3*guide_length])
             cylinder(4*guide_length, guide_wide_end/2+0.3, guide_wide_end/2-0.1);
         }
         
@@ -778,19 +784,20 @@ module radial_button(cut=false, angle=180, cap_type=0, distance=32.25, vertical_
         if (!cut) {
             // The visible button itself
             translate([peg_length, 0, 0])
-            keycap(false, cap_type, width=cap_width, depth=cap_depth+guide_length, backside=peg_length, clearance=button_clearance);
+            keycap(false, cap_type, width=cap_width, depth=cap_depth+guide_length, backside=peg_length, clearance=button_side_clearance);
 
 
         } else {
             translate([peg_length, 0, 0])
-            keycap(true, cap_type, width=cap_width, clearance=button_clearance);
+            keycap(true, cap_type, width=cap_width, clearance=button_side_clearance);
         }
         
         if (!cut && tipped_down) {
             // A little support bar, which helps adhere them.
             // You could add this in your slicer, but that's manual work.
+            rotate([-7, 0, 0])
             translate([0, 0, -1])
-            cube([0.2, 6, 2]);
+            cube([0.2, 7, 2]);
         }
     }    
 }
@@ -814,7 +821,8 @@ module buttons(cut=false, mounted=false, distance=32.25, vertical_center=pcb_thi
             if (!cut) {
                 // The same buttons, but off to the side for printing
                 for (i=[0:1:4]) {
-                    radial_button(false, angle=btn_angle[i], cap_type=i, distance=distance + 8, tipped_down=true);
+                    translate([0, 0, 2.3])
+                    radial_button(false, angle=btn_angle[i], cap_type=i, distance=distance + 10, tipped_down=true);
 
                     
                 }
@@ -894,7 +902,7 @@ module button_box(outer_radius=34.8, height=7, top_angle=180-5.5, bottom_angle=1
         
         
             // Outside face
-            translate([0, 0, case_thickness-rounding]) {
+            translate([0, 0, body_thickness-rounding]) {
             
                 // Cap edge
                 rotate_extrude(angle=bottom_angle - top_angle) {
@@ -919,7 +927,7 @@ module button_box(outer_radius=34.8, height=7, top_angle=180-5.5, bottom_angle=1
             
             // Cap edge
             rotate([0, 0, -5])
-            translate([0, 0, case_thickness-rounding])
+            translate([0, 0, body_thickness-rounding])
             rotate_extrude(angle=bottom_angle - top_angle+25) {
                 translate([outer_radius-10 - rounding, 0, 0])    
                 circle(rounding);
@@ -968,9 +976,9 @@ module usb_box(cut=false) {
     
         translate([0, 0, -9/2])
         translate([0, -top_circle_diameter/2, 0])
-        translate([0, 0, case_thickness])        // Align to the cup on the outside
-        rounded_cube(13.5 + 2*case_thickness,
-                     18+case_thickness,
+        translate([0, 0, body_thickness])        // Align to the cup on the outside
+        rounded_cube(13.5 + 2*body_thickness,
+                     18+body_thickness,
                      9,
                      center=true, radius=1);
     
@@ -1106,15 +1114,18 @@ module pcb_clips() {
             pcb_clip(width=3);
         }
         
-        // Inside the USB box
-        translate([0, -36, 0]) {
-            translate([-12.5/2, 0, 0])
-            rotate([0, 0, -90])
-            pcb_clip(width=2);
-            
-            translate([12.5/2, 0, 0])
-            rotate([0, 0, 90])
-            pcb_clip(width=2);
+        
+        if (cap_type == "usb") {
+            // Inside the USB box
+            translate([0, -36, 0]) {
+                translate([-12.5/2, 0, 0])
+                rotate([0, 0, -90])
+                pcb_clip(width=2);
+                
+                translate([12.5/2, 0, 0])
+                rotate([0, 0, 90])
+                pcb_clip(width=2);
+            }
         }
 }
 
@@ -1145,7 +1156,7 @@ module cup_mod_exterior_features() {
         // All these features are relative to the center of the PCB
         inside_top_center() {
         
-            if (with_usb) {
+            if (cap_type == "usb") {
                 // Casing wraps around the USB port
                 usb_box(false);
             }
@@ -1171,7 +1182,7 @@ module cup_mod_exterior_features() {
 
 module cap_surface_cut() {
     inside_top_center() {
-        translate([0, 0, 5+case_thickness-0.01])
+        translate([0, 0, 5+body_thickness-0.01])
         cube([outside_width, outside_height, 10], center=true);
     }
 }
@@ -1188,7 +1199,7 @@ module cup_mod_cuts() {
 
         inside_top_center() {
         
-            if (with_usb) {
+            if (cap_type == "usb") {
                 usb_box(true);
             }
         }
@@ -1199,7 +1210,7 @@ module cup_mod_cuts() {
     button_box_cut();
             
     // Holes for the buttons
-    buttons(cut=true, mounted=mounted_buttons);
+    buttons(cut=true, mounted=buttons_mounted, distance=button_contact_r);
     
     // Flatten the outside cap perfectly
     cap_surface_cut();
@@ -1230,22 +1241,23 @@ intersection() {
 
     union() {
         if (show_cap) {
-            if (oem_cap) {
+            if (cap_type == "oem") {
                 standard_cup();
             } else {
+                // usb or nousb
                 custom_cup();
             }
         }
                   
         // The buttons
         if (show_buttons) {
-            buttons(cut=false, mounted=mounted_buttons);
+            buttons(cut=false, mounted=buttons_mounted, distance=button_contact_r);
         }
         
             
         // If we're printing the grill outside the cap,
         // Just flop it down outside where it goes normally
-        if (show_grill && !mounted_grill) {
+        if (show_grill && !grill_mounted) {
         
             translate([0, outside_height*0.75, 0])
             mic_cover();
@@ -1254,11 +1266,11 @@ intersection() {
     
     
     {
-        if (test_fit_print) {
-            cube([outside_width*2, outside_height*2, 13], center=true);
+        if (cap_portion == "mount") {
+            cube([outside_width*2, outside_height*2, 12], center=true);
         }
         
-        if (test_clearance_print) {
+        if (cap_portion == "clearance") {
             difference() {
                 cylinder(h=outside_max_depth*3, r=outside_height*2, center=true);
              
@@ -1267,7 +1279,7 @@ intersection() {
             }
         }
     
-        if (half_view) {
+        if (cap_portion == "cutaway") {
             translate([outside_width, 0, 0])
             cube([outside_width*2, outside_height*2, outside_max_depth * 2], center=true);
         }
