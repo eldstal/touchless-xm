@@ -16,7 +16,10 @@ A mod for Sony WH-1000XM2 (experimental), WH-1000XM3, WH-1000XM4 and WH-1000XM5 
 The project is not yet ready for use.
 
 ### Case
-The design has been 3D-printed and test fit against an XM4 headset. The button design and PCB fastening is still undergoing work.
+The design has been 3D-printed and test fit against an XM4 headset. The button design and PCB fastening are still undergoing work. The mic grill looks good but prints awful.
+Could be that we need to use a metal mesh inserted during the print.
+
+STLs will be available both with and without USB ports.
 
 ### PCB
 The design is ready for the first prototype production run, based on a benchtop proof-of-concept.
@@ -76,7 +79,7 @@ If you're getting a pair of XM6 and would like to send me some nice photos of th
 ## Modifications
 
 #### I don't want another USB port on my headset
-That's OK, it's only needed for development (reprogramming the Touchless board without disassembling the headphones). Simply snap the USB connector off from the main board (see perforations) and print yourself a case without a USB block. Set `with_usb=false` in `xm4-cap.scad` to get a case that's closed at the bottom.
+That's OK, it's only needed for development (reprogramming the Touchless board without disassembling the headphones). Simply snap the USB connector off from the main board (see perforations) and print yourself a case without a USB block. Set `cap_type=nousb` in `xm4-cap.scad` to get a case that's closed at the bottom.
 
 
 #### I don't like how you've placed the buttons
