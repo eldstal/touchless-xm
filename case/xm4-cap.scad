@@ -23,7 +23,7 @@ show_grill = true;
 cap_type = "usb";        // [usb, nousb, oem]
 
 // Partial rendering
-cap_portion = "full";       // [full, mount, cutaway, clearance, buttons, grill]
+cap_portion = "full";       // [full, mount, cutaway, clearance, buttons, button-cutaway, grill]
 
 body_thickness = 0.9;
 
@@ -747,34 +747,35 @@ module radial_button(cut=false, angle=180, cap_type=0, distance=32.25, vertical_
     guide_length=0.7;
     cap_depth = 2.4;
     cap_width = 2.5;
+    guide_vertical_offset = -0.6;       // Don't let the conical guide hit the floor
     
     tip_angle = tipped_down ? 90: 0;
     
 
     rotate([0, 0, angle])
-    translate([distance, 0, -vertical_center])
+    translate([distance, 0, 0])
+    translate([0, 0, -vertical_center])
     rotate([0, tip_angle, 0 ])
     {
     
-
-
+    
+        
+        // The "peg" that touches the actual switch
+        translate([0, 0, guide_vertical_offset]) // No hitting the floor
+        rotate([0, 90, 0])
         if (!cut) {
-        
-                
-                // No more peg, it just builds all the way back.
-                translate([0, 0, -0.6])
-                rotate([0, 90, 0])
-                cylinder(h=peg_length-button_depth_clearance, r1=guide_wide_end/3,r2=guide_wide_end/2, center=false);
+            cylinder(h=peg_length-button_depth_clearance, r1=guide_wide_end/3,r2=guide_wide_end/2, center=false);
+        }
 
         
-                // A conical lip to keep the button from falling out
-                translate([peg_length-button_depth_clearance, 0, -0.6])
-                rotate([0, 90, 0])
-                cylinder(guide_length, guide_wide_end/2, guide_wide_end/2-0.1);
+        // A conical guide to keep the button from falling out
+        translate([peg_length, 0, guide_vertical_offset])
+        if (!cut) {
+            translate([-button_depth_clearance, 0, 0])
+            rotate([0, 90, 0])
+            cylinder(guide_length, guide_wide_end/2, guide_wide_end/2-0.1);
+            
         } else {
-        
-            // A lip to keep the button from falling out
-            translate([peg_length, 0, -0.6])
             rotate([0, 90, 0])
             translate([0, 0, -3*guide_length])
             cylinder(4*guide_length, guide_wide_end/2+0.3, guide_wide_end/2-0.1);
@@ -806,23 +807,24 @@ module buttons(cut=false, mounted=false, distance=32.25, vertical_center=pcb_thi
 
     btn_angle = [ 180, 180+10, 180+20, 180+30, 180+40 ];
 
-    inside_top_center()
-    {
-    
-        if (mounted || cut) {
-            
+    if (mounted || cut) {
+        inside_top_center() {
+
             // The buttons in their proper places
             for (i=[0:1:4]) {
                 radial_button(cut, angle=btn_angle[i],    cap_type=i, distance=distance, vertical_center=vertical_center);
             }
-
-        } else {
+        }
         
+    } else {
+        
+        
+        inside_top_center() {
+            translate([0, 0, body_thickness])
             if (!cut) {
                 // The same buttons, but off to the side for printing
                 for (i=[0:1:4]) {
-                    translate([0, 0, 2.3])
-                    radial_button(false, angle=btn_angle[i], cap_type=i, distance=distance + 10, tipped_down=true);
+                    radial_button(false, angle=btn_angle[i], cap_type=i, distance=distance + 10, tipped_down=true, vertical_center=0);
 
                     
                 }
@@ -831,6 +833,7 @@ module buttons(cut=false, mounted=false, distance=32.25, vertical_center=pcb_thi
             }
         }
     }
+
 }
 
 module button_box_cut(outer_radius=34.8, height=7.3, top_angle=180-5.5, bottom_angle=180+46.5) {
@@ -874,14 +877,6 @@ module button_box_cut(outer_radius=34.8, height=7.3, top_angle=180-5.5, bottom_a
 
         translate([0, 0, -rounding])
         sphere(rounding);
-        
-        // Eyebrow trimming on the inside
-        /*
-        #translate([-top_circle_diameter/2, 2, -height-14])
-        sphere(rounding);
-        #translate([-top_circle_diameter/2+5, -20, -height-14])
-        sphere(rounding);
-        */
         
         // Wider angle at the top, so we can insert the PCB
         translate([0, 15, -rounding])
@@ -1067,7 +1062,7 @@ module pcb_clip(width=2, depth=0.8, grab=0.4, clearance=0.05) {
     rotate([-90, 0, 0])
     rotate([0, -90, 0])
     linear_extrude(width, center=true)
-    #polygon([
+    polygon([
         [0,0],                  // Origin, 
         [0, pcb_thickness + clearance - support],     // Below inner corner support
         [support, pcb_thickness + clearance],     // Inner corner
@@ -1127,6 +1122,17 @@ module pcb_clips() {
                 pcb_clip(width=2);
             }
         }
+}
+
+module pie_slice(start_angle, stop_angle, radius) {
+
+    difference() {
+        rotate([0, 0, start_angle])
+        rotate_extrude(angle=stop_angle-start_angle)
+        translate([radius/2, 0])
+        square([radius, 100], center=true);
+        
+    }
 }
 
 module cup_mod_interior_features() {
@@ -1210,7 +1216,7 @@ module cup_mod_cuts() {
     button_box_cut();
             
     // Holes for the buttons
-    buttons(cut=true, mounted=buttons_mounted, distance=button_contact_r);
+    buttons(cut=true, distance=button_contact_r);
     
     // Flatten the outside cap perfectly
     cap_surface_cut();
@@ -1268,20 +1274,39 @@ intersection() {
     {
         if (cap_portion == "mount") {
             cube([outside_width*2, outside_height*2, 12], center=true);
-        }
-        
-        if (cap_portion == "clearance") {
+
+        } else if (cap_portion == "clearance") {
             difference() {
                 cylinder(h=outside_max_depth*3, r=outside_height*2, center=true);
              
                 cylinder(h=outside_max_depth*2, r=outside_width/4, center=true);
                     
             }
-        }
-    
-        if (cap_portion == "cutaway") {
+            
+        } else if (cap_portion == "buttons") {
+            intersection() {
+                pie_slice(165, 235, 80);
+                inside_top_center() {
+                    cube([outside_width*2, outside_height*2, 18], center=true);
+                }
+            }
+            
+        } else if (cap_portion == "cutaway") {
+        
             translate([outside_width, 0, 0])
             cube([outside_width*2, outside_height*2, outside_max_depth * 2], center=true);
+            
+        } else if (cap_portion == "button-cutaway") {
+        
+            intersection() {
+                pie_slice(165, 235, 80);
+                inside_top_center() {
+                    cube([outside_width*2, outside_height*2, 6], center=true);
+                }
+            }
+  
+        } else {
+            cylinder(100, 100, center=true);
         }
     }
 }
