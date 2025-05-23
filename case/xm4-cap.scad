@@ -2,8 +2,12 @@
 // Right outside cup for WH1000-XM4
 //
 
+/* [Quality etc] */
 $fa = 1;
 $fs = 0.2;
+
+
+include_print_supports = true;
 
 /* [Parts included] */
 // Render the main body
@@ -107,7 +111,7 @@ mic_hole_cc = mic_hole_width - mic_hole_height;
 mic_hole_feeler = false;
 mic_hole_angle_x = 31.8;
 mic_hole_angle_z = -1;
-mic_hole_angle_y = 0;  //-5 ish on the OEM design
+mic_hole_angle_y = -5;
 mic_hole_distance = 36.4;
 mic_grill_alignment = -1.2;
 //mic_hole_angle_z = atan((mic_hole_y2 - mic_hole_y1) / (mic_hole_x2 - mic_hole_x1));
@@ -448,10 +452,27 @@ module mic_hole(cut=false) {
     rotate([90, 0, 0])
 
     if (cut) {
-         // The big hole in the casing
-         translate([0, 0, -body_thickness])
-         linear_extrude(rim_width*3)
-         flat_pill(mic_hole_cc, mic_hole_cut_height);
+        // The big hole in the casing
+        translate([0, 0, -body_thickness])
+        linear_extrude(rim_width*3) {
+        
+            difference() {
+                // The general hole that we want
+                flat_pill(mic_hole_cc, mic_hole_cut_height);
+
+                if (include_print_supports && (!grill_mounted || !show_grill)) {
+         
+                    translate([0, mic_hole_cut_height/2, 0]) {
+                    
+                        for (angle = [-41, -33, -20, -7, 7, 20, 33, 41]) {
+                            rotate([0, 0, angle])
+                            square([0.4, 14], center=true);
+                        }
+                    }
+                    
+                }
+            }
+        }
          
     } else {
     
@@ -607,19 +628,12 @@ module dummy_pcb() {
             }
         }
     }
-    /*
-        inside_top_center()
-        translate([-3.25, -6.5, -pcb_thickness/2]) // Offset the board origin
-        rotate([0, 180, 0])
-        linear_extrude(pcb_thickness, center=true)
-        import("../dist/pcb/tobo-outline.svg", center=true);
-    */
 }
 
 module pcb() {
 
     
-    if (pcb_type_dummy) {
+    if (pcb_type_dummy || !$preview) {
         //oem_pcb();
         dummy_pcb();
     } else {
@@ -991,37 +1005,6 @@ module usb_box(cut=false) {
                 // Pulled back by 5mm to also cut the PCB key
                 translate([-cavity_width/2, 0, -usb_board_h*2])
                 cube([cavity_width, cavity_depth, usb_board_h*2], center=false);
-                
-                
-                /*
-                // It goes full depth inside the grooves
-                translate([-(cavity_width-2)/2, 0, -usb_board_h])
-                cube([cavity_width-2, cavity_depth, usb_board_h], center=false);
-            
-                
-                // A shaped cavity at the inside of the USB box, which has grooves
-                // to grab the PCB itself    
-                translate([-cavity_width/2, 0, -pcb_thickness-4*clearance])
-                cube([cavity_width, cavity_depth, pcb_thickness+4*clearance], center=false);
-                */
-                
-                // Cut above the groove
-                //translate([-cavity_width/2, 0, -usb_board_h])
-                //cube([cavity_width, cavity_depth, usb_board_h-pcb_thickness-clearance-0.5], center=false);
-                
-                
-                /*
-                // Round out the ceiling a bit
-                intersection() {
-                    translate([0, cavity_depth, 0])
-                    translate([0, 0, 20-usb_board_h-1])
-                    rotate([90, 0, 0])
-                    cylinder(h=cavity_depth/2, r=20, center=false);
-                    
-                    translate([-cavity_width/2, 0, -usb_board_h*1.3])
-                    cube([cavity_width, cavity_depth, usb_board_h/2], center=false);
-                }
-                */
             }
             
             
@@ -1044,8 +1027,22 @@ module usb_box(cut=false) {
             // Expose the USB port itself
             translate([0, 0, -pcb_thickness-1.65])
             rotate([-90, 0, 0])
-            linear_extrude(14)
-            flat_pill(6, 3.1);
+            linear_extrude(14) {
+            
+                difference() {
+                    flat_pill(6, 3.1);
+                    
+                    if (include_print_supports) {
+                        translate([0, -3.1/2, 0]) {
+                    
+                        for (angle = [-37, -15, 15, 37]) {
+                            rotate([0, 0, angle])
+                            square([0.4, 14], center=true);
+                        }
+                    }
+                    }
+                }
+            }
 
         }    
     }
