@@ -361,7 +361,7 @@ module rounded_cube(w, h, d, center=true, radius=0.2) {
     }
 }
 
-module grill(cc, diameter, thickness, hole_r=2.9, hole_cc=2) {
+module grill(cc, diameter, thickness, hole_r=4.5, hole_cc=2.5) {
 
     n_w = round((cc+diameter) / hole_cc) + 1;
     n_h = round(diameter / hole_cc) + 1;
@@ -390,7 +390,7 @@ module grill(cc, diameter, thickness, hole_r=2.9, hole_cc=2) {
 
 module mic_cover() {
 
-    total_depth = 1.2 + mic_grill_protrude_inside;
+    total_depth = 1 + mic_grill_protrude_inside;
     
     // Print face down
     translate([0, 0, mic_grill_protrude_inside])
@@ -430,7 +430,7 @@ module mic_cover() {
                 union() {
                 
                
-                    // The small sound hole through the frame
+                    // The smaller sound hole inside the cover frame
                     translate([0, 0, -body_thickness])
                     linear_extrude(rim_width*3)
                     flat_pill(mic_hole_cc, mic_hole_height);
