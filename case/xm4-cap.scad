@@ -1265,8 +1265,10 @@ intersection() {
         // Just flop it down outside where it goes normally
         if (show_grill && !grill_mounted) {
         
-            translate([0, outside_height*0.75, 0])
-            mic_cover();
+            inside_top_center() {
+                translate([0, outside_height*0.75, 0])
+                mic_cover();
+            }
         }
     }
     
@@ -1306,7 +1308,7 @@ intersection() {
             }
   
         } else {
-            cylinder(100, 100, center=true);
+            cylinder(h=100, r=100, center=true);
         }
     }
 }
