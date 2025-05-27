@@ -46,7 +46,6 @@ usb_board_h = 4.5;
 
 
 /* [Button options] */
-// Render buttons
 buttons_mounted = false;
 
 // Distance from PCB center to switch contact surface
