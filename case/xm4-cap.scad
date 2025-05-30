@@ -463,7 +463,7 @@ module mic_hole(cut=false) {
          
                     translate([0, mic_hole_cut_height/2, 0]) {
                     
-                        for (angle = [-41, -33, -20, -7, 7, 20, 33, 41]) {
+                        for (angle = [-42, -28, -14, 0, 14, 28, 42]) {
                             rotate([0, 0, angle])
                             square([0.4, 14], center=true);
                         }
@@ -1108,6 +1108,7 @@ module pcb_clips() {
         
         if (cap_type == "usb") {
             // Inside the USB box
+            /*
             translate([0, -36, 0]) {
                 translate([-12.5/2, 0, 0])
                 rotate([0, 0, -90])
@@ -1116,6 +1117,17 @@ module pcb_clips() {
                 translate([12.5/2, 0, 0])
                 rotate([0, 0, 90])
                 pcb_clip(width=2);
+            }
+            */
+            
+            translate([0, -37, 0]) {
+                translate([-12.5/2 + 1, 0, 0])
+                rotate([0, 0, 0])
+                pcb_clip(width=1, clearance=0.1);
+                
+                translate([12.5/2 - 1, 0, 0])
+                rotate([0, 0, 0])
+                pcb_clip(width=1, clearance=0.1);
             }
         }
 }
