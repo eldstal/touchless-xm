@@ -95,6 +95,8 @@ No problem! If you remove the buttons and the USB addition (see above), the touc
 #### The case is fine, but I want to reconfigure the buttons
 Easiest way to do this is in the firmware. Take a look at [buttonmap.cpp](firmware/tobo/src/buttonmap.cpp) to switch and swap however you like. You'll need the included USB port or a serial cable to program the board after you've made your modifications. Instructions are [down below](#step-2-firmware).
 
+#### I want to design my own case
+Great! You can find the dimensions of the PCB [here](doc/tobo-measurements.svg). It's all  relative to the center of the circular area, so if your CAD program supports polar coordinates you'll have an easier time of it. You may also have use for `make vrml` in the pcb directory, which creates a VRML 3D export of the PCB to use as a reference in your model.
 
 #### I want buttons for other features
 That won't be possible, sorry. Touchlæss only works by simulating touches and swipes, so it can only do what the headphones allow you to do with the touch panel.
