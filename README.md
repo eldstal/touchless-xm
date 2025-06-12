@@ -154,7 +154,8 @@ Hook up your serial cable to the tobo:
 | RX | TX |
 | TX | RX |
 | GND | GND |
-| RST | DTR |
+| DTR | DTR (if your cable has it) |
+| RST | RST (if using an arduino) |
 | VCC  | VCC **Only if you don't have the battery plugged in**|
 
 
