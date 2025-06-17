@@ -21,9 +21,7 @@ Could be that we need to use a metal mesh inserted during the print.
 STLs will be available both with and without USB ports.
 
 ### PCB
-The design is ready for the first prototype production run, based on a benchtop proof-of-concept.
-
-A fabrication order is underway with a batch of boards labeled v0.3a.
+v0.3a of the board has been manufactured and will be programmed/tested ASAP.
 
 ### Firmware
 Mostly ready for testing. USB support (only for programming) is already included in the main board. The project uses platform.io and OptiBoot to run an Arduino-based firmware.
