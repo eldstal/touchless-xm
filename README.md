@@ -129,6 +129,16 @@ When you have a fresh board with a factory-stock microcontroller, you'll have to
 1. Connect your programmer to MISO, MOSI, SCK, GND and RST.
 2. Connect **either** the battery or the VCC terminal
 
+
+| tobo | AVRISP 10-pin |Glasgow | BP harness |
+|------|---------------|--------|------------|
+| MOSI | 1             | PURP   | 2 Red
+| VCC  | 2             | ORG    | 1 Brown
+| RST  | 5             | YEL    | 6 Blue
+| SCK  | 7             | PINK   | 8 Grey
+| MISO | 9             | BRN    | 10 Black
+| GND  | 10            | B/W    | 3 Pink
+
 Add the needed environment to `firmware/tobo/platformio.ini` to use your programmer.
 
 **Warning** Ensure that your new environment extends `env:tobo`, so that the frequency and fuses are programmed properly. If you do not, you may need to temporarily connect an external crystal (see PCB markings) in order to recover the board.
