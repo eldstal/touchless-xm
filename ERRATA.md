@@ -11,6 +11,6 @@ To get USB programming working, cut the connections above the RX/TX attachment l
 
 To get more to solder to, you can carefully sand the soldermask down. I used 240 grit sand paper to good effect. Be very careful not to desolder or damage the capacitor nearby.
 
-![Sanding away the solder mask and cutting the two traces](doc/rxtx_cut)
+![Sanding away the solder mask and cutting the two traces](doc/rxtx_cut.jpg)
 
-![Crossing the traces with a pair of very thin copper enamel wires](doc/rxtx_bodge)
+![Crossing the traces with a pair of very thin copper enamel wires](doc/rxtx_bodge.jpg)
