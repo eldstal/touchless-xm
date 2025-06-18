@@ -9,4 +9,8 @@ If you're programming with a serial cable, just swap RX and TX (connect RX on yo
 
 To get USB programming working, cut the connections above the RX/TX attachment loops and connect them to the vias just above with bodge wires.
 
-TODO: A picture of this fix
+To get more to solder to, you can carefully sand the soldermask down. I used 240 grit sand paper to good effect. Be very careful not to desolder or damage the capacitor nearby.
+
+![Sanding away the solder mask and cutting the two traces](doc/rxtx_cut)
+
+![Crossing the traces with a pair of very thin copper enamel wires](doc/rxtx_bodge)
