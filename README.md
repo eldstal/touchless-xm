@@ -25,6 +25,8 @@ v0.3a of the board has been manufactured and will be programmed/tested ASAP.
 
 Errata for the board can be found [Here](ERRATA.md)
 
+Turns out the board doesn't work, and also needs to handle battery voltages as low as 0.7V. Don't build this board yet.
+
 ### Firmware
 Mostly ready for testing. USB support (only for programming) is already included in the main board. The project uses platform.io and OptiBoot to run an Arduino-based firmware.
 
