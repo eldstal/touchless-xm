@@ -16841,7 +16841,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" ""
+		(property "Manufacturer_Part_Number" "CL05A225KO5NQNC"
 			(at 318.77 35.56 0)
 			(effects
 				(font
@@ -16850,7 +16850,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part Number" ""
+		(property "LCSC Part Number" "C170151"
 			(at 318.77 35.56 0)
 			(effects
 				(font
@@ -22493,7 +22493,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" ""
+		(property "Manufacturer_Part_Number" "CL05A226MQ5QUNC"
 			(at 321.31 53.34 0)
 			(effects
 				(font
@@ -22502,7 +22502,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part Number" ""
+		(property "LCSC Part Number" "C105226"
 			(at 321.31 53.34 0)
 			(effects
 				(font

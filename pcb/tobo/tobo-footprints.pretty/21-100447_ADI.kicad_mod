@@ -5,7 +5,7 @@
 	(layer "F.Cu")
 	(tags "MAXM20343AMP+ ")
 	(property "Reference" "REF**"
-		(at 0 0 0)
+		(at 2.5 -2.5 0)
 		(unlocked yes)
 		(layer "F.SilkS")
 		(uuid "c591e307-570f-4538-b16d-a46a35fafa98")
@@ -132,6 +132,17 @@
 		)
 		(layer "F.SilkS")
 		(uuid "3f710907-5ecf-48a2-b64f-c6cd032fe470")
+	)
+	(fp_circle
+		(center -1.5 -1.5)
+		(end -1.4 -1.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "e7e9cc3d-e784-4dbd-b92b-0feebbfd9454")
 	)
 	(fp_poly
 		(pts
@@ -1206,29 +1217,6 @@
 		)
 		(layer "F.Fab")
 		(uuid "fe7c50f6-c912-4dbd-8967-132430a34b43")
-	)
-	(fp_text user "*"
-		(at -2.5654 -1 0)
-		(unlocked yes)
-		(layer "F.SilkS")
-		(uuid "1e98c01d-cb19-4fb4-815c-855bbf59d019")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(fp_text user "*"
-		(at -2.5654 -1 0)
-		(layer "F.SilkS")
-		(uuid "6de4df64-ca28-4726-a35d-c651f8b64daf")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-		)
 	)
 	(fp_text user "${REFERENCE}"
 		(at 0 0 0)
