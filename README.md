@@ -21,11 +21,13 @@ Could be that we need to use a metal mesh inserted during the print.
 STLs will be available both with and without USB ports.
 
 ### PCB
-v0.3a of the board has been manufactured and will be programmed/tested ASAP.
+v0.3a of the board has been manufactured and wasn't quite ready for prime-time.
 
 Errata for the board can be found [Here](ERRATA.md)
 
-Turns out the board doesn't work, and also needs to handle battery voltages as low as 0.7V. Don't build this board yet.
+v0.5a has step-up/step-down converter so that Touchless will work even when the battery voltage dips down to 0.5V.
+
+Something prevents the current board design from working, though. Don't use this yet.
 
 ### Firmware
 Mostly ready for testing. USB support (only for programming) is already included in the main board. The project uses platform.io and OptiBoot to run an Arduino-based firmware.

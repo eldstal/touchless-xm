@@ -14128,7 +14128,7 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" ""
+		(property "Manufacturer_Part_Number" "CL05A226MQ5QUNC"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -14141,7 +14141,7 @@
 				)
 			)
 		)
-		(property "LCSC Part Number" ""
+		(property "LCSC Part Number" "C105226"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -17892,7 +17892,7 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" ""
+		(property "Manufacturer_Part_Number" "CL05A225KO5NQNC"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -17905,7 +17905,7 @@
 				)
 			)
 		)
-		(property "LCSC Part Number" ""
+		(property "LCSC Part Number" "C170151"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -27116,7 +27116,7 @@
 			(justify bottom)
 		)
 	)
-	(gr_text "v0.5"
+	(gr_text "v0.5a"
 		(at 139.267504 75.028047 0)
 		(layer "F.SilkS")
 		(uuid "41301d35-acff-46cf-8303-be8e21358bfe")
