@@ -25,12 +25,16 @@ v0.3a of the board has been manufactured and wasn't quite ready for prime-time.
 
 Errata for the board can be found [Here](ERRATA.md)
 
+Something prevents that board design from working, though. Don't use this yet.
+
 v0.5a has step-up/step-down converter so that Touchless will work even when the battery voltage dips down to 0.5V.
 
-Something prevents the current board design from working, though. Don't use this yet.
+v0.5b uses a different Mux/Bus switch chip with a lower capacitance. This one has worked in bench tests, so hopefully it will be sufficient.
+
+Manufacturing and testing of this reworked design is underway.
 
 ### Firmware
-Mostly ready for testing. USB support (only for programming) is already included in the main board. The project uses platform.io and OptiBoot to run an Arduino-based firmware.
+Ready to go. USB support (only for programming) is already included in the main board. The project uses platform.io and OptiBoot to run an Arduino-based firmware.
 
 
 

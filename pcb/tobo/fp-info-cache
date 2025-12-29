@@ -1,4 +1,4 @@
-26797664445544395
+26799431447495896
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -106427,6 +106427,13 @@ VSSOP SO JEDEC-MO-187-CA Texas_DCU0008A
 0
 8
 8
+tobo-footprints
+VSSOP50P400X100-14N
+US14
+Integrated Circuit
+0
+14
+14
 tobo-footprints
 button_breakout_0.5mm
 
