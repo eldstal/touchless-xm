@@ -14998,9 +14998,9 @@
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "47f6e726-1f0d-481b-a59f-2d4f66bf8a7d")
 		(property "Reference" "C15"
 			(at 216.408 87.376 90)
@@ -15018,7 +15018,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm"
 			(at 213.36 88.9 0)
 			(effects
 				(font
@@ -18042,12 +18042,12 @@
 		(at 215.9 91.44 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "8f930faf-c49d-46c4-8c2e-b67cad95be4a")
 		(property "Reference" "C16"
-			(at 217.932 90.932 0)
+			(at 212.852 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18064,7 +18064,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+		(property "Footprint" "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm"
 			(at 215.9 91.44 0)
 			(effects
 				(font
