@@ -227,6 +227,7 @@
 	)
 	(embedded_fonts no)
 	(model "${KICAD9_3DMODEL_DIR}/Capacitor_THT.3dshapes/C_Disc_D5.0mm_W2.5mm_P2.50mm.step"
+		(hide yes)
 		(offset
 			(xyz 0 0 0)
 		)
