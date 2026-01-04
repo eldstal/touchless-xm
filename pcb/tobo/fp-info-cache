@@ -1,4 +1,4 @@
-26799431447495896
+26801198972499380
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -106392,6 +106392,13 @@ Undefined or Miscellaneous
 0
 1
 1
+tobo-footprints
+C_Disc_D5.0mm_W2.5mm_P2.50mm
+C, Disc series, Radial, pin pitch=2.50mm, diameter*width=5*2.5mm^2, Capacitor, http://cdn-reichelt.de/documents/datenblatt/B300/DS_KERKO_TC.pdf
+C Disc series Radial pin pitch 2.50mm diameter 5mm width 2.5mm Capacitor
+0
+2
+2
 tobo-footprints
 MSOP-10_3x3mm_P0.5mm_narrowpads
 MSOP, 10 Pin (https://www.jedec.org/system/files/docs/mo-187F.pdf variant BA), generated with kicad-footprint-generator ipc_gullwing_generator.py
