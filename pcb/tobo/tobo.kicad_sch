@@ -6692,6 +6692,12 @@
 		(uuid "beb0a012-6ea0-44c0-8ddb-2678f2b15a3a")
 	)
 	(junction
+		(at 391.16 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c053ac6a-5e82-4ff9-9469-206a55f77705")
+	)
+	(junction
 		(at 215.9 83.82)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7223,6 +7229,16 @@
 	)
 	(wire
 		(pts
+			(xy 391.16 40.64) (xy 392.43 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a99f727-e88c-4cde-be52-bfc6b9c1750e")
+	)
+	(wire
+		(pts
 			(xy 193.04 83.82) (xy 194.31 83.82)
 		)
 		(stroke
@@ -7360,6 +7376,16 @@
 			(type default)
 		)
 		(uuid "2a41225e-57ce-48dc-8d97-65f07de2a17b")
+	)
+	(wire
+		(pts
+			(xy 312.42 19.05) (xy 391.16 19.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2a66112b-7263-4187-9591-af78e90fb967")
 	)
 	(wire
 		(pts
@@ -7603,6 +7629,16 @@
 	)
 	(wire
 		(pts
+			(xy 312.42 40.64) (xy 312.42 19.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "386da972-0869-48bd-86e4-d49d8870ac39")
+	)
+	(wire
+		(pts
 			(xy 226.06 19.05) (xy 226.06 29.21)
 		)
 		(stroke
@@ -7780,6 +7816,16 @@
 			(type default)
 		)
 		(uuid "4551dda1-4a2e-4ed4-9047-2a9c06bc11bd")
+	)
+	(wire
+		(pts
+			(xy 330.2 40.64) (xy 312.42 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4558ce29-2764-44cc-92e0-abf7a974fb88")
 	)
 	(wire
 		(pts
@@ -8443,7 +8489,7 @@
 	)
 	(wire
 		(pts
-			(xy 381 40.64) (xy 392.43 40.64)
+			(xy 381 40.64) (xy 391.16 40.64)
 		)
 		(stroke
 			(width 0)
@@ -9890,6 +9936,16 @@
 			(type default)
 		)
 		(uuid "d15996a3-ea35-4f09-b137-9d5ee4b8ff98")
+	)
+	(wire
+		(pts
+			(xy 391.16 19.05) (xy 391.16 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d1ad20cf-5aad-422c-ad59-7912a6b15406")
 	)
 	(wire
 		(pts
@@ -14689,7 +14745,7 @@
 	)
 	(symbol
 		(lib_id "power:+BATT")
-		(at 397.51 40.64 270)
+		(at 318.77 50.8 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -14698,7 +14754,7 @@
 		(dnp no)
 		(uuid "44fcb07c-14b2-4e5b-aed9-78a17a8e415e")
 		(property "Reference" "#PWR033"
-			(at 393.7 40.64 0)
+			(at 322.58 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14707,7 +14763,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 402.59 40.64 0)
+			(at 313.69 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14715,7 +14771,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 397.51 40.64 0)
+			(at 318.77 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14724,7 +14780,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 397.51 40.64 0)
+			(at 318.77 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14733,7 +14789,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+BATT\""
-			(at 397.51 40.64 0)
+			(at 318.77 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18268,7 +18324,7 @@
 	)
 	(symbol
 		(lib_id "power:+BATT")
-		(at 318.77 50.8 90)
+		(at 397.51 40.64 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -18277,7 +18333,7 @@
 		(fields_autoplaced yes)
 		(uuid "9838127c-4d90-473b-ab14-4121c9ff5d91")
 		(property "Reference" "#PWR032"
-			(at 322.58 50.8 0)
+			(at 393.7 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18286,7 +18342,7 @@
 			)
 		)
 		(property "Value" "+BATT"
-			(at 314.96 50.7999 90)
+			(at 401.32 40.6399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18295,7 +18351,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 318.77 50.8 0)
+			(at 397.51 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18304,7 +18360,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 318.77 50.8 0)
+			(at 397.51 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18313,7 +18369,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+BATT\""
-			(at 318.77 50.8 0)
+			(at 397.51 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
