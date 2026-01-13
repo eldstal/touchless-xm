@@ -27,9 +27,10 @@ Errata for the board can be found [Here](ERRATA.md)
 
 Something prevents that board design from working, though. Don't use this yet.
 
-v0.5a has step-up/step-down converter so that Touchless will work even when the battery voltage dips down to 0.5V.
-
-v0.5b uses a different Mux/Bus switch chip with a lower capacitance. This one has worked in bench tests, so hopefully it will be sufficient.
+The following changes have been made for v0.5:
+- Added a step-up/step-down converter so that Touchless will work even when the battery voltage dips down to 0.5V.
+- Use a different Mux/Bus switch chip with a lower capacitance. This one has worked in bench tests, so hopefully it will be sufficient.
+- Leave space for through-hole capacitors on the 8th and unused control channel, so it's possible to experiment with capacitance for fine tuning
 
 Manufacturing and testing of this reworked design is underway.
 
