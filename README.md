@@ -18,21 +18,14 @@ The project is not yet ready for use.
 The design has been 3D-printed and test fit against an XM4 headset. The button design and PCB fastening are still undergoing work. The mic grill looks good but prints awful.
 Could be that we need to use a metal mesh inserted during the print.
 
+The buttons need to be reworked to be easier to differentiate by feel.
+
 STLs will be available both with and without USB ports.
 
 ### PCB
-v0.3a of the board has been manufactured and wasn't quite ready for prime-time.
+v0.5c of the board has been manufactured and works great!
 
-Errata for the board can be found [Here](ERRATA.md)
-
-Something prevents that board design from working, though. Don't use this yet.
-
-The following changes have been made for v0.5:
-- Added a step-up/step-down converter so that Touchless will work even when the battery voltage dips down to 0.5V.
-- Use a different Mux/Bus switch chip with a lower capacitance. This one has worked in bench tests, so hopefully it will be sufficient.
-- Leave space for through-hole capacitors on the 8th and unused control channel, so it's possible to experiment with capacitance for fine tuning
-
-Manufacturing and testing of this reworked design is underway.
+I've installed it in my own headset for some day-to-day testing.
 
 ### Firmware
 Ready to go. USB support (only for programming) is already included in the main board. The project uses platform.io and OptiBoot to run an Arduino-based firmware.
@@ -103,6 +96,11 @@ No problem! If you remove the buttons and the USB addition (see above), the touc
 #### The case is fine, but I want to reconfigure the buttons
 Easiest way to do this is in the firmware. Take a look at [buttonmap.cpp](firmware/tobo/src/buttonmap.cpp) to switch and swap however you like. You'll need the included USB port or a serial cable to program the board after you've made your modifications. Instructions are [down below](#step-2-firmware).
 
+#### Any tips for software modifications?
+The board itself works as its own development board, of sorts. If you're going to be flashing new software via USB while testing, I recommend connecting the USB V (+5v) pad to the VCC test point as shown in [this photo](doc/usbpower.png). If you also short out the "LED" solder bridge you get LED indications of which touch points are currently being "touched".
+
+**Please disconnect the USB power jumper before installing in the headset and connecting a battery**
+
 #### I want to design my own case
 Great! You can find the dimensions of the PCB [here](doc/tobo-measurements.svg). It's all  relative to the center of the circular area, so if your CAD program supports polar coordinates you'll have an easier time of it. You may also have use for `make vrml` in the pcb directory, which creates a VRML 3D export of the PCB to use as a reference in your model.
 
@@ -123,7 +121,9 @@ That's great! I won't ask for any royalties or whatever. If you do set something
 
 ## How to program
 
-⚠️**WARNING**⚠️ The VCC loop on the PCB is directly connected to the headphone battery. **Do not** connect an external supply to this hook while the battery is connected. It is only needed in order to program and test the board without a headset connected.
+**Note:** The VCC loop on the PCB is powered by the headset battery via a step up/step down converter configured for 3.3V. **Do not** connect an external supply to this hook while the battery is connected. The loop is only needed in order to program and test the board without a headset connected.
+
+The board will not take power from the USB connector by default. If you want to power it via USB while programming, connect a jumper between the USB V test point and the VCC test point as illustrated [here](doc/usbpower.png). Disconnect that jumper again before connecting a battery, please.
 
 ### Step 1: Bootloader
 **This only needs to be done once per board**
@@ -138,7 +138,7 @@ When you have a fresh board with a factory-stock microcontroller, you'll have to
 ...or anything else supported by avrdude or [platform.io](https://platformio.org/). Install [the platform.io tools](https://platformio.org/install/cli) and let's go!
 
 1. Connect your programmer to MISO, MOSI, SCK, GND and RST.
-2. Connect **either** the battery or the VCC terminal
+2. Connect the battery or the VCC terminal
 
 
 | tobo | AVRISP 10-pin |Glasgow | BP harness |
@@ -150,7 +150,7 @@ When you have a fresh board with a factory-stock microcontroller, you'll have to
 | MISO | 9             | BRN    | 10 Brown
 | GND  | 10            | B/W    | 1 Black
 
-Add the needed environment to `firmware/tobo/platformio.ini` to use your programmer.
+If you're using a new kind of programmer, add the needed environment to `firmware/tobo/platformio.ini` to use your programmer.
 
 **Warning** Ensure that your new environment extends `env:tobo`, so that the frequency and fuses are programmed properly. If you do not, you may need to temporarily connect an external crystal (see PCB markings) in order to recover the board.
 
