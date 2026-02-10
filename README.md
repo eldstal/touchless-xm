@@ -143,12 +143,12 @@ When you have a fresh board with a factory-stock microcontroller, you'll have to
 
 | tobo | AVRISP 10-pin |Glasgow | BP harness |
 |------|---------------|--------|------------|
-| MOSI | 1             | PURP   | 2 Red
-| VCC  | 2             | ORG    | 1 Brown
-| RST  | 5             | YEL    | 6 Blue
-| SCK  | 7             | PINK   | 8 Grey
-| MISO | 9             | BRN    | 10 Black
-| GND  | 10            | B/W    | 3 Pink
+| MOSI | 1             | PURP   | 8 Pink
+| VCC  | 2             | ORG    | 2 White
+| RST  | 5             | YEL    | 6 Green
+| SCK  | 7             | PINK   | 7 Yellow
+| MISO | 9             | BRN    | 10 Brown
+| GND  | 10            | B/W    | 1 Black
 
 Add the needed environment to `firmware/tobo/platformio.ini` to use your programmer.
 
