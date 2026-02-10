@@ -12,7 +12,7 @@ A mod for Sony WH-1000XM2 (experimental), WH-1000XM3, WH-1000XM4 and WH-1000XM5 
 <img src="doc/preview_inside.png" alt="Inside view" width="45%"> <img src="doc/preview_outside.png" alt="Outside view" width="45%">
 
 ## Status
-The project is not yet ready for use.
+The project is feature-complete and the electronics are functional. I'd call it a Beta product, since I'm the only user and still tweaking the design details.
 
 ### Case
 The design has been 3D-printed and test fit against an XM4 headset. The button design and PCB fastening are still undergoing work. The mic grill looks good but prints awful.
