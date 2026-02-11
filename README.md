@@ -4,7 +4,7 @@ A mod for Sony WH-1000XM2 (experimental), WH-1000XM3, WH-1000XM4 and WH-1000XM5 
 
 - [Project Status](#Status)
 - [Compatible headsets](#compatibility)
-- [Modifications](#modifications)
+- [Modifications](#modifications-and-faq)
 - [How to program your board](#how-to-program)
 - [Notes on ordering PCBs](#fabrication-notes)
 - [License](#license)
@@ -77,7 +77,12 @@ If you're getting a pair of XM6 and would like to send me some nice photos of th
 **Highly** unlikely. At the very least, you'll need to figure out the pinout for the touch sensor board. Most likely there will be other things that need tuning as well. If you want to make something like touchless for a different headset, take a look at the [technical documentation](doc/README.md) for some pointers on how Touchless works.
 
 
-## Modifications
+## Modifications and FAQ
+
+#### Will it drain my battery?
+Not really. When idle, the board draws about 0.02 mA. When you're actively pressing/holding buttons it peaks at just under 13mA. This is on the order of one LED, and only when you're actively pushing buttons.
+
+The DC converter on the board will stop working once the battery drops below about 0.7V, which is quite a bit before the headphones actually stop working. That means the buttons won't work when your battery is very low.
 
 #### I don't want another USB port on my headset
 That's OK, it's only needed for development (reprogramming the Touchless board without disassembling the headphones). Simply snap the USB connector off from the main board (see perforations) and print yourself a case without a USB block. Set `cap_type=nousb` in `xm4-cap.scad` to get a case that's closed at the bottom.
