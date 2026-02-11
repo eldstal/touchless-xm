@@ -1,5 +1,8 @@
 # ERRATA
 
+## PCB v0.5c
+This board revision works as-is!
+
 ## PCB v0.3a
 The RX and TX lines are mislabeled on the serial programming interface,
 and the connections to the CH340 are incorrect.
