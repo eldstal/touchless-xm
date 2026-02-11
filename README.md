@@ -186,11 +186,16 @@ pio run --target upload
 If all went well, you're ready to go!
 
 ## Fabrication Notes
-I'm currently in the process or ordering a first batch of boards from PCBWay. These are caveats of the design:
+I've had the board produced by PCBWay with no issues. The following facts are useful while setting up an order:
 
 - Order a 0.6mm PCB, to maximize the clearance inside the cap
 - The smallest drilled hole is just over 0.2mm
 - The XM4/XM5 connector footprints have narrow spacing between pads. This is a problem for the "Matte black" solder mask, but apparently possible with green/blue/red solder mask. If you want a matte black board, you have to allow for gaps in the solder mask at these connectors, and that may lead to shorts. Go with green or blue or red.
+
+
+## Cost
+The total cost for production, components and assembly of 5 boards was about $280 including shipping to Europe and VAT. That works out to about $56 per board.
+You can reduce the BOM cost some by removing the USB port, USB-Serial circuitry and the LEDs. You could also save a bit by not populating the test loops, but it will make it more difficult to program the board.
 
 ## License
 Touchlæss XM © 2025 by Albin Eldstål-Ahrens is licensed under Creative Commons BY-SA 4.0 
@@ -200,3 +205,4 @@ This means you are free to use, modify, distribute, remix, redesign the project 
 2. Release your own modified work under a similar CC license
 
 If you want to make and sell kits of this, feel free! If you make money from my work, please consider making a donation to a charitable organization as a thank you!
+
