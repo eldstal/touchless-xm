@@ -22,6 +22,9 @@ show_buttons = true;
 // Render microphone grill
 show_grill = true;
 
+// Render the logo on the cap
+show_logo = true;
+
 /* [Body options] */
 cap_type = "usb";        // [usb, nousb, oem]
 
@@ -38,10 +41,8 @@ rim_width = 2.6;
 /* [Logo options] */
 logo_mounted = false;
 
-show_logo = true;
-
 // Include the mount for the logo amulet on the outside of the cap
-with_logo = "true";
+with_logo = true;
 
 
 
@@ -184,6 +185,15 @@ module inside_top_center() {
         translate([top_circle_off_x, top_circle_off_y, inside_depth_c])
         rotate([top_circle_angle_x, top_circle_angle_y, 0])
         children();
+}
+
+// Position an element relative to the center of the circular outside
+// of the cap, i.e. the middle of the visible side.
+module outside_top_center() {
+    translate([top_circle_off_x, top_circle_off_y, 0])
+    translate([0, 0, top_circle_off_z_c])
+    rotate([top_circle_angle_x, top_circle_angle_y, 0])
+    children();
 }
 
 module top_circle() {
@@ -1180,6 +1190,84 @@ module pcb_clips_and_blocks() {
         }
 }
 
+module logo_frame() {
+
+    import("logo_border.svg", center=true, convexity=4);
+}
+
+module logo_fill() {
+    offset(-0.02)
+    difference() {
+        import("logo_fill.svg", center=true, convexity=8);
+        import("logo_inlay.svg", center=true, convexity=8);
+    }
+}
+
+module logo_inlay() {
+    import("logo_inlay.svg", center=true, convexity=8);
+}
+
+module logo_mount(cut=false) {
+
+    depth = cut ? 0.75 : 0.6;
+    girth = cut ? 1.5 : 1.45;
+
+    translate([0, 8.8, -depth])
+    cube([girth, girth, depth*2]);
+    
+    translate([0, -10.2, -depth])
+    cube([girth, girth, depth*2]);    
+}
+
+module logo(cut=false, mounted=true, inlay=false, fill=false) {
+
+    if (mounted || cut) {
+    
+        outside_top_center()
+        if (cut) {
+            logo_mount(cut=true);
+        } else if (inlay) {
+        
+            linear_extrude(1, convexity=3)
+            logo_inlay();
+            
+        } else if (fill) {
+        
+            linear_extrude(0.8, convexity=3)
+            logo_fill();
+        
+        } else {
+            linear_extrude(1, convexity=3)
+                logo_frame();
+            logo_mount(cut=false);
+        }
+        
+    } else {
+        if (inlay) {
+        
+            translate([30, 0, 0])
+            rotate([0, 180, 0]) {
+                linear_extrude(1, convexity=3)
+                logo_inlay();
+            }
+            
+        } else if (fill) {
+
+            translate([60, 0, 0])        
+            rotate([0, 180, 0])
+            linear_extrude(0.8, convexity=3)
+            logo_fill();
+        
+        } else {
+            rotate([0, 180, 0]) {
+                linear_extrude(1, convexity=3)
+                    logo_frame();
+                logo_mount(cut=false);
+            }
+        }
+    }
+}
+
 
 module pie_slice(start_angle, stop_angle, radius) {
 
@@ -1268,6 +1356,11 @@ module cup_mod_cuts() {
         }
     }
     
+    // Mounting holes for the logo amulet
+    if (with_logo) {
+        logo(cut=true, mounted=true);
+    }
+    
 
     inside_top_center() 
     button_box_cut();
@@ -1315,6 +1408,17 @@ intersection() {
         // The buttons
         if (show_buttons) {
             buttons(cut=false, mounted=buttons_mounted, distance=button_contact_r);
+        }
+        
+        if (with_logo && show_logo) {
+            color("#252525")
+            logo(cut=false, mounted=logo_mounted, inlay=false, fill=false);
+            
+            color("#DEDEDE")
+            logo(cut=false, mounted=logo_mounted, inlay=false, fill=true);
+            
+            color("#252525")
+            logo(cut=false, mounted=logo_mounted, inlay=true, fill=false);
         }
         
             

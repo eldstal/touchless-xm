@@ -70,7 +70,7 @@
             "cap_type": "nousb",
             "gasket_thickness": "1.75",
             "grill_mounted": "true",
-            "logo_mounted": "true",
+            "logo_mounted": "false",
             "mic_grill_friction_fit": "0.050000000000000003",
             "mic_grill_protrude_inside": "2.5",
             "mic_hole_height": "2.5",
@@ -193,7 +193,7 @@
             "show_buttons": "true",
             "show_cap": "false",
             "show_grill": "true",
-            "show_logo": "false",
+            "show_logo": "true",
             "show_pcb": "false",
             "usb_board_h": "4.5",
             "with_logo": "true"
