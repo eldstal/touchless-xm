@@ -1,4 +1,4 @@
-MODELS:=xm4-oem xm4-usb xm4-nousb xm4-parts xm4-test-mount xm4-test-clearance xm4-test-buttons dummy-pcb
+MODELS:=xm4-oem xm4-nologo-nousb xm4-usb xm4-nologo-nousb xm4-nousb xm4-nologo-parts xm4-parts xm4-test-mount xm4-test-clearance xm4-test-buttons dummy-pcb
 OUTDIR:=$(PWD)/../dist/case
 DOCDIR:=$(PWD)/../doc
 

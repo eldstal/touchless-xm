@@ -14,6 +14,7 @@
             "gasket_thickness": "1.75",
             "grill_mounted": "true",
             "include_print_supports": "false",
+            "logo_mounted": "true",
             "mic_grill_friction_fit": "0.050000000000000003",
             "mic_grill_protrude_inside": "2.5",
             "mic_hole_height": "2.5",
@@ -24,8 +25,10 @@
             "show_buttons": "true",
             "show_cap": "true",
             "show_grill": "true",
+            "show_logo": "true",
             "show_pcb": "true",
-            "usb_board_h": "4.5"
+            "usb_board_h": "4.5",
+            "with_logo": "true"
         },
         "xm4-oem": {
             "$fa": "1",
@@ -39,6 +42,7 @@
             "cap_type": "oem",
             "gasket_thickness": "1.75",
             "grill_mounted": "false",
+            "logo_mounted": "false",
             "mic_grill_friction_fit": "0.050000000000000003",
             "mic_grill_protrude_inside": "2.5",
             "mic_hole_height": "2.5",
@@ -49,8 +53,10 @@
             "show_buttons": "false",
             "show_cap": "true",
             "show_grill": "false",
+            "show_logo": "false",
             "show_pcb": "false",
-            "usb_board_h": "4.5"
+            "usb_board_h": "4.5",
+            "with_logo": "false"
         },
         "xm4-nousb": {
             "$fa": "1",
@@ -64,6 +70,7 @@
             "cap_type": "nousb",
             "gasket_thickness": "1.75",
             "grill_mounted": "true",
+            "logo_mounted": "true",
             "mic_grill_friction_fit": "0.050000000000000003",
             "mic_grill_protrude_inside": "2.5",
             "mic_hole_height": "2.5",
@@ -74,8 +81,38 @@
             "show_buttons": "false",
             "show_cap": "true",
             "show_grill": "false",
+            "show_logo": "false",
             "show_pcb": "false",
-            "usb_board_h": "4.5"
+            "usb_board_h": "4.5",
+            "with_logo": "true"
+        },
+        "xm4-nologo-nousb": {
+            "$fa": "1",
+            "$fs": "0.20000000000000001",
+            "body_thickness": "0.90000000000000002",
+            "button_contact_r": "32.25",
+            "button_depth_clearance": "0.14999999999999999",
+            "button_side_clearance": "0.10000000000000001",
+            "buttons_mounted": "false",
+            "cap_portion": "full",
+            "cap_type": "nousb",
+            "gasket_thickness": "1.75",
+            "grill_mounted": "true",
+            "logo_mounted": "true",
+            "mic_grill_friction_fit": "0.050000000000000003",
+            "mic_grill_protrude_inside": "2.5",
+            "mic_hole_height": "2.5",
+            "mic_hole_width": "8",
+            "pcb_thickness": "0.59999999999999998",
+            "pcb_type_dummy": "false",
+            "rim_width": "2.6000000000000001",
+            "show_buttons": "false",
+            "show_cap": "true",
+            "show_grill": "false",
+            "show_logo": "false",
+            "show_pcb": "false",
+            "usb_board_h": "4.5",
+            "with_logo": "false"
         },
         "xm4-usb": {
             "$fa": "1",
@@ -89,6 +126,7 @@
             "cap_type": "usb",
             "gasket_thickness": "1.75",
             "grill_mounted": "false",
+            "logo_mounted": "false",
             "mic_grill_friction_fit": "0.050000000000000003",
             "mic_grill_protrude_inside": "2.5",
             "mic_hole_height": "2.5",
@@ -99,8 +137,38 @@
             "show_buttons": "false",
             "show_cap": "true",
             "show_grill": "false",
+            "show_logo": "false",
             "show_pcb": "false",
-            "usb_board_h": "4.5"
+            "usb_board_h": "4.5",
+            "with_logo": "true"
+        },
+        "xm4-nologo-usb": {
+            "$fa": "1",
+            "$fs": "0.20000000000000001",
+            "body_thickness": "0.90000000000000002",
+            "button_contact_r": "32.25",
+            "button_depth_clearance": "0.14999999999999999",
+            "button_side_clearance": "0.10000000000000001",
+            "buttons_mounted": "false",
+            "cap_portion": "full",
+            "cap_type": "usb",
+            "gasket_thickness": "1.75",
+            "grill_mounted": "false",
+            "logo_mounted": "false",
+            "mic_grill_friction_fit": "0.050000000000000003",
+            "mic_grill_protrude_inside": "2.5",
+            "mic_hole_height": "2.5",
+            "mic_hole_width": "8",
+            "pcb_thickness": "0.59999999999999998",
+            "pcb_type_dummy": "false",
+            "rim_width": "2.6000000000000001",
+            "show_buttons": "false",
+            "show_cap": "true",
+            "show_grill": "false",
+            "show_logo": "false",
+            "show_pcb": "false",
+            "usb_board_h": "4.5",
+            "with_logo": "false"
         },
         "xm4-parts": {
             "$fa": "1",
@@ -114,6 +182,7 @@
             "cap_type": "usb",
             "gasket_thickness": "1.75",
             "grill_mounted": "false",
+            "logo_mounted": "false",
             "mic_grill_friction_fit": "0.050000000000000003",
             "mic_grill_protrude_inside": "2.5",
             "mic_hole_height": "2.5",
@@ -124,8 +193,38 @@
             "show_buttons": "true",
             "show_cap": "false",
             "show_grill": "true",
+            "show_logo": "false",
             "show_pcb": "false",
-            "usb_board_h": "4.5"
+            "usb_board_h": "4.5",
+            "with_logo": "true"
+        },
+        "xm4-nologo-parts": {
+            "$fa": "1",
+            "$fs": "0.20000000000000001",
+            "body_thickness": "0.90000000000000002",
+            "button_contact_r": "32.25",
+            "button_depth_clearance": "0.14999999999999999",
+            "button_side_clearance": "0.10000000000000001",
+            "buttons_mounted": "false",
+            "cap_portion": "full",
+            "cap_type": "usb",
+            "gasket_thickness": "1.75",
+            "grill_mounted": "false",
+            "logo_mounted": "false",
+            "mic_grill_friction_fit": "0.050000000000000003",
+            "mic_grill_protrude_inside": "2.5",
+            "mic_hole_height": "2.5",
+            "mic_hole_width": "8",
+            "pcb_thickness": "0.59999999999999998",
+            "pcb_type_dummy": "false",
+            "rim_width": "2.6000000000000001",
+            "show_buttons": "true",
+            "show_cap": "false",
+            "show_grill": "true",
+            "show_logo": "true",
+            "show_pcb": "false",
+            "usb_board_h": "4.5",
+            "with_logo": "false"
         },
         "xm4-test-mount": {
             "$fa": "1",
@@ -139,6 +238,7 @@
             "cap_type": "usb",
             "gasket_thickness": "1.75",
             "grill_mounted": "true",
+            "logo_mounted": "true",
             "mic_grill_friction_fit": "0.050000000000000003",
             "mic_grill_protrude_inside": "2.5",
             "mic_hole_height": "2.5",
@@ -149,8 +249,10 @@
             "show_buttons": "false",
             "show_cap": "true",
             "show_grill": "false",
+            "show_logo": "false",
             "show_pcb": "false",
-            "usb_board_h": "4.5"
+            "usb_board_h": "4.5",
+            "with_logo": "true"
         },
         "xm4-test-clearance": {
             "$fa": "1",
@@ -164,6 +266,7 @@
             "cap_type": "usb",
             "gasket_thickness": "1.75",
             "grill_mounted": "false",
+            "logo_mounted": "false",
             "mic_grill_friction_fit": "0.050000000000000003",
             "mic_grill_protrude_inside": "2.5",
             "mic_hole_height": "2.5",
@@ -174,8 +277,10 @@
             "show_buttons": "false",
             "show_cap": "true",
             "show_grill": "false",
+            "show_logo": "false",
             "show_pcb": "false",
-            "usb_board_h": "4.5"
+            "usb_board_h": "4.5",
+            "with_logo": "false"
         },
         "dummypcb": {
             "$fa": "1",
@@ -189,6 +294,7 @@
             "cap_type": "nousb",
             "gasket_thickness": "1.75",
             "grill_mounted": "false",
+            "logo_mounted": "false",
             "mic_grill_friction_fit": "0.050000000000000003",
             "mic_grill_protrude_inside": "2.5",
             "mic_hole_height": "2.5",
@@ -199,8 +305,10 @@
             "show_buttons": "false",
             "show_cap": "false",
             "show_grill": "false",
+            "show_logo": "false",
             "show_pcb": "true",
-            "usb_board_h": "4.5"
+            "usb_board_h": "4.5",
+            "with_logo": "false"
         },
         "xm4-test-buttons": {
             "$fa": "1",
@@ -214,6 +322,7 @@
             "cap_type": "nousb",
             "gasket_thickness": "1.75",
             "grill_mounted": "false",
+            "logo_mounted": "false",
             "mic_grill_friction_fit": "0.050000000000000003",
             "mic_grill_protrude_inside": "2.5",
             "mic_hole_height": "2.5",
@@ -224,8 +333,10 @@
             "show_buttons": "true",
             "show_cap": "true",
             "show_grill": "false",
+            "show_logo": "false",
             "show_pcb": "false",
-            "usb_board_h": "4.5"
+            "usb_board_h": "4.5",
+            "with_logo": "false"
         },
         "xm4-test-button-cutaway": {
             "$fa": "1",
@@ -239,6 +350,7 @@
             "cap_type": "nousb",
             "gasket_thickness": "1.75",
             "grill_mounted": "false",
+            "logo_mounted": "false",
             "mic_grill_friction_fit": "0.050000000000000003",
             "mic_grill_protrude_inside": "2.5",
             "mic_hole_height": "2.5",
@@ -249,8 +361,10 @@
             "show_buttons": "true",
             "show_cap": "true",
             "show_grill": "false",
+            "show_logo": "false",
             "show_pcb": "false",
-            "usb_board_h": "4.5"
+            "usb_board_h": "4.5",
+            "with_logo": "false"
         }
     }
 }

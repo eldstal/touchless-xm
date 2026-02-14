@@ -22,7 +22,6 @@ show_buttons = true;
 // Render microphone grill
 show_grill = true;
 
-
 /* [Body options] */
 cap_type = "usb";        // [usb, nousb, oem]
 
@@ -35,6 +34,16 @@ gasket_thickness=1.75;
 
 // Width of the flat rim around the bottom
 rim_width = 2.6;
+
+/* [Logo options] */
+logo_mounted = false;
+
+show_logo = true;
+
+// Include the mount for the logo amulet on the outside of the cap
+with_logo = "true";
+
+
 
 
 /* [PCB options] */
