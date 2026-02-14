@@ -360,6 +360,17 @@ module flat_pill(cc, diameter) {
     }
 }
 
+module round_pill(cc, diameter, thickness) {
+    resize([-1, -1, thickness], false)
+    hull() {
+        translate([cc/2, 0, 0])
+        sphere(d = diameter);
+
+        translate([-cc/2, 0, 0])
+        sphere(d = diameter);
+    }
+}
+
 module rounded_cube(w, h, d, center=true, radius=0.2) {
 
     minkowski() {
@@ -564,7 +575,7 @@ module oem_pcb() {
         union() {
         
             // Cutout for key
-            #translate([0, (-53/2) +0.1, 0]) {
+            translate([0, (-53/2) +0.1, 0]) {
                 translate([0, -(5 - 0.8), 0])
                 cube([27, 10, 4], true);
                 
@@ -735,18 +746,29 @@ module keycap(cut=false, type=0, width=2.5, length=7.4, depth=2, backside=0.5, c
                     translate([backside_diff/2, 0, -backside])
                     linear_extrude(0.01)
                     flat_pill((length-(width)) - backside_diff, (width-clearance));
-                }         
+                }
+           
+                // Some sort of texture
+                if (type == 2) {
+                    translate([0, 0, depth-0.01])
+                    linear_extrude(0.6) {
+                    
+                        translate([0.3*length, 0, 0])
+                        flat_pill(length/2-(width), width/3);
+                        
+                        translate([-0.3*length, 0, 0])
+                        flat_pill(length/2-(width), width/3);
+                    }
+                }     
+                
+                if (type == 1 || type == 3) {
+                    translate([0, 0, depth])
+                    round_pill(length-(width), width-clearance, thickness=1);        
+                }     
             }
             
-            // Some sort of texture
-            /*
-            if (type == 2) {
-                for (x = [ -6:1:6 ])
-                    translate([x*0.7, 0, depth-0.1])
-                    cube([0.4, radius*2, 0.4], center=true);
+
             
-            }
-            */
             
         }
         
@@ -1080,7 +1102,42 @@ module pcb_clip(width=2, depth=0.8, grab=0.4, clearance=0.05) {
 
 }
 
-module pcb_clips() {
+
+module pcb_block(degrees=5, depth=0.8, height=1.2, radius=25.5, clearance=0.05) {
+
+    // A simple circle segment
+    translate([0, radius, -height])    
+    difference() {
+        cylinder(h=height, r=radius+depth);
+        
+        translate([0, 0, -0.01])
+        union() {
+
+            cylinder(h=height+2*0.01, r=radius+clearance);
+            
+            
+            rotate([0, 0, -90])
+            translate([0, -1.5*radius, 0])
+            cube(3*radius);
+            
+            rotate([0, 0, -degrees/2])
+            cube(2*radius);
+            
+            rotate([0, 0, 90+degrees/2])
+            cube(2*radius);
+            
+            
+        }
+    }
+
+
+}
+
+
+// A sturdier design for holding the PCB in place
+// Most of the supports are just lateral blocks,
+// and then at the top and bottom there are clips to hold it down
+module pcb_clips_and_blocks() {
         
         // Bottom rear
         translate([-10, -22.5, 0])
@@ -1099,35 +1156,17 @@ module pcb_clips() {
         pcb_clip(width=10);
         
         // Front edge
-        for (a=[-1:1:1]) {
-            rotate([0, 0, 30*a])
-            translate([25.5, 0, 0])
-            rotate([0, 0, 90])
-            pcb_clip(width=3);
-        }
+        rotate([0, 0, -90])
+        translate([0, -25.5, 0.01])
+        pcb_block(degrees=80);
         
         // Rear edge
-        for (a=[-25, -40]) {
-            rotate([0, 0, a])
-            translate([-25.5, 0, 0])
-            rotate([0, 0, -90])
-            pcb_clip(width=3);
-        }
+        rotate([0, 0, 55])
+        translate([0, -25.5, 0.01])
+        pcb_block(degrees=25);
         
         
         if (cap_type == "usb") {
-            // Inside the USB box
-            /*
-            translate([0, -36, 0]) {
-                translate([-12.5/2, 0, 0])
-                rotate([0, 0, -90])
-                pcb_clip(width=2);
-                
-                translate([12.5/2, 0, 0])
-                rotate([0, 0, 90])
-                pcb_clip(width=2);
-            }
-            */
             
             translate([0, -37, 0]) {
                 translate([-12.5/2 + 1, 0, 0])
@@ -1140,6 +1179,7 @@ module pcb_clips() {
             }
         }
 }
+
 
 module pie_slice(start_angle, stop_angle, radius) {
 
@@ -1166,7 +1206,7 @@ module cup_mod_interior_features() {
         }
         */
         
-        pcb_clips();
+        pcb_clips_and_blocks();
     }
     
 
