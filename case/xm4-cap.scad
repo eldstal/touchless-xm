@@ -1411,13 +1411,13 @@ intersection() {
         }
         
         if (with_logo && show_logo) {
-            color("#252525")
+            //color("#252525")
             logo(cut=false, mounted=logo_mounted, inlay=false, fill=false);
             
-            color("#DEDEDE")
+            //color("#DEDEDE")
             logo(cut=false, mounted=logo_mounted, inlay=false, fill=true);
             
-            color("#252525")
+            //color("#252525")
             logo(cut=false, mounted=logo_mounted, inlay=true, fill=false);
         }
         
