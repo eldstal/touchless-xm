@@ -417,12 +417,15 @@ module grill(cc, diameter, thickness, hole_r=8, hole_cc=2.5, off_x=0) {
     }
 }
 
-module mic_cover() {
+module mic_cover(mounted=true) {
 
     total_depth = 1 + mic_grill_protrude_inside;
     
+    // When not mounted, place the printing surface on the XY plane
+    origin_z = mounted ? 0 : -mic_grill_protrude_inside;
+    
     // Print face down
-    translate([0, 0, mic_grill_protrude_inside])
+    translate([0, 0, origin_z + mic_grill_protrude_inside])
     rotate([180, 0, 0]) {
          //translate([0, 0, body_thickness-0.5])
          translate([0, 0, 0.0])
@@ -877,8 +880,8 @@ module buttons(cut=false, mounted=false, distance=32.25, vertical_center=pcb_thi
     } else {
         
         
-        inside_top_center() {
-            translate([0, 0, body_thickness])
+        /*inside_top_center()*/ {
+            //translate([0, 0, body_thickness])
             if (!cut) {
                 // The same buttons, but off to the side for printing
                 for (i=[0:1:4]) {
@@ -1225,6 +1228,10 @@ module logo_mount(cut=false) {
 
 module logo(cut=false, mounted=true, inlay=false, fill=false) {
 
+    frame_thickness = 1;
+    fill_thickness = 0.8;
+    inlay_thickness = 1;
+
     if (mounted || cut) {
     
         outside_top_center()
@@ -1249,22 +1256,22 @@ module logo(cut=false, mounted=true, inlay=false, fill=false) {
     } else {
         if (inlay) {
         
-            translate([30, 0, 0])
+            translate([30, 0, -frame_thickness])
             rotate([0, 0, 0]) {
-                linear_extrude(1, convexity=3)
+                linear_extrude(frame_thickness, convexity=3)
                 logo_inlay();
             }
             
         } else if (fill) {
 
-            translate([60, 0, 0])        
+            translate([60, 0, -fill_thickness])        
             //rotate([0, 180, 0])
-            linear_extrude(0.8, convexity=3)
+            linear_extrude(fill_thickness, convexity=3)
             logo_fill();
         
         } else {
-            rotate([0, 0, 0]) {
-                linear_extrude(1, convexity=3)
+            translate([0, 0, -inlay_thickness]){
+                linear_extrude(inlay_thickness, convexity=3)
                     logo_frame();
                 logo_mount(cut=false);
             }
@@ -1430,10 +1437,11 @@ intersection() {
         // Just flop it down outside where it goes normally
         if (show_grill && !grill_mounted) {
         
-            inside_top_center() {
-                translate([0, outside_height*0.75, 0])
-                mic_cover();
-            }
+            //inside_top_center() {
+            //    translate([0, outside_height*0.75, 0])
+                translate([0, 30, 0])
+                mic_cover(mounted=false);
+            //}
         }
     }
     
