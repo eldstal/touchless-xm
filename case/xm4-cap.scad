@@ -390,7 +390,7 @@ module rounded_cube(w, h, d, center=true, radius=0.2) {
     }
 }
 
-module grill(cc, diameter, thickness, hole_r=4.5, hole_cc=2.5) {
+module grill(cc, diameter, thickness, hole_r=8, hole_cc=2.5, off_x=0) {
 
     n_w = round((cc+diameter) / hole_cc) + 1;
     n_h = round(diameter / hole_cc) + 1;
@@ -400,7 +400,7 @@ module grill(cc, diameter, thickness, hole_r=4.5, hole_cc=2.5) {
             
         union() {
             for (y = [ -round(n_h/2):1:round(n_h/2) ]) {
-                translate([0, y*hole_cc, 0])
+                translate([off_x, y*hole_cc, 0])
                 for (x = [ -round(n_w/2):1:round(n_w/2) ]) {
                     translate([ x*hole_cc, 0, 0 ])
                     rotate([0, 0, 45])
@@ -425,7 +425,11 @@ module mic_cover() {
     translate([0, 0, mic_grill_protrude_inside])
     rotate([180, 0, 0]) {
          //translate([0, 0, body_thickness-0.5])
+         translate([0, 0, 0.0])
          grill(mic_hole_cc, mic_hole_cut_height+mic_grill_friction_fit, 0.2);
+         
+         translate([0, 0, 0.2])
+         grill(mic_hole_cc, mic_hole_cut_height+mic_grill_friction_fit, 0.2, off_x=3.75);
          
 
          
@@ -1246,7 +1250,7 @@ module logo(cut=false, mounted=true, inlay=false, fill=false) {
         if (inlay) {
         
             translate([30, 0, 0])
-            rotate([0, 180, 0]) {
+            rotate([0, 0, 0]) {
                 linear_extrude(1, convexity=3)
                 logo_inlay();
             }
@@ -1254,12 +1258,12 @@ module logo(cut=false, mounted=true, inlay=false, fill=false) {
         } else if (fill) {
 
             translate([60, 0, 0])        
-            rotate([0, 180, 0])
+            //rotate([0, 180, 0])
             linear_extrude(0.8, convexity=3)
             logo_fill();
         
         } else {
-            rotate([0, 180, 0]) {
+            rotate([0, 0, 0]) {
                 linear_extrude(1, convexity=3)
                     logo_frame();
                 logo_mount(cut=false);
