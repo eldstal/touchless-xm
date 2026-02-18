@@ -31,7 +31,7 @@ cap_type = "usb";        // [usb, nousb, oem]
 // Partial rendering
 cap_portion = "full";       // [full, mount, cutaway, clearance, buttons, button-cutaway, grill]
 
-body_thickness = 1.2;
+body_thickness = 1.4;
 
 gasket_thickness=1.75;
 
@@ -231,7 +231,7 @@ module standard_cup_shape (width, height, depth_c=top_circle_off_z_c, rounding=1
             bottom_outer_edge();
  
         
-        top_circle_with_rounding(rounding*1.25, depth_c, cap_radius_modifier=cap_radius_modifier);
+        top_circle_with_rounding(rounding, depth_c, cap_radius_modifier=cap_radius_modifier);
        
     }
 }
@@ -262,7 +262,7 @@ module standard_case (cut=false) {
         // the cavity. This doesn't give a uniformly thick end cap,
         // so in slicing it may give a weird effect on the inside surface.
         translate([0, 0, -0.01])
-        standard_cup_shape(outside_width-2*body_thickness, outside_height-2*body_thickness, inside_depth_c, rounding=0.5, cap_radius_modifier=-(body_thickness/2));
+        standard_cup_shape(outside_width-2*body_thickness, outside_height-2*body_thickness, inside_depth_c, rounding=0.5, cap_radius_modifier=-(body_thickness/3));
         
         // Route down the inside cap so it's perfectly flat (compared to the outside)
         inside_top_center() {
@@ -1256,7 +1256,7 @@ module logo(cut=false, mounted=true, inlay=false, fill=false) {
     } else {
         if (inlay) {
         
-            translate([30, 0, -frame_thickness])
+            translate([50, 30, -frame_thickness])
             rotate([0, 0, 0]) {
                 linear_extrude(frame_thickness, convexity=3)
                 logo_inlay();
@@ -1264,13 +1264,13 @@ module logo(cut=false, mounted=true, inlay=false, fill=false) {
             
         } else if (fill) {
 
-            translate([60, 0, -fill_thickness])        
+            translate([50, 0, -fill_thickness])        
             //rotate([0, 180, 0])
             linear_extrude(fill_thickness, convexity=3)
             logo_fill();
         
         } else {
-            translate([0, 0, -inlay_thickness]){
+            translate([50, -30, -inlay_thickness]){
                 linear_extrude(inlay_thickness, convexity=3)
                     logo_frame();
                 logo_mount(cut=false);
@@ -1439,7 +1439,7 @@ intersection() {
         
             //inside_top_center() {
             //    translate([0, outside_height*0.75, 0])
-                translate([0, 30, 0])
+                translate([0, 50, 0])
                 mic_cover(mounted=false);
             //}
         }
