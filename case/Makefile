@@ -1,14 +1,49 @@
-MODELS:=xm4-oem xm4-nologo-nousb xm4-usb xm4-nologo-nousb xm4-nousb xm4-nologo-parts xm4-parts xm4-test-mount xm4-test-clearance xm4-test-buttons dummy-pcb
+
 OUTDIR:=$(PWD)/../dist/case
+RELEASEDIR=$(PWD)/../release/case
 DOCDIR:=$(PWD)/../doc
 
+MODELS_CAP_LOGO:=\
+		xm4-usb \
+		xm4-nousb
+
+MODELS_CAP_NOLOGO:=\
+		xm4-oem \
+		xm4-nologo-nousb \
+		xm4-nologo-usb
+
+MODELS_PARTS:=\
+		xm4-nologo-parts \
+		xm4-parts
+
+MODELS_TEST:=\
+		xm4-test-mount \
+		xm4-test-clearance \
+		xm4-test-buttons \
+		dummy-pcb
+
+MODELS:=$(MODELS_CAP_LOGO) $(MODELS_CAP_NOLOGO) $(MODELS_PARTS) $(MODELS_TEST)
+
+CAPS:=$(filter-out %-test% %dummy-% %-parts%,$(MODELS))
+
 all: $(MODELS) screenshots
+
+release: $(models)
 
 .PHONY: $(MODELS)
 $(MODELS):
 	mkdir -p $(OUTDIR)
 	openscad --backend=manifold -o $(OUTDIR)/$@.stl -p xm4-cap.json -P $@ xm4-cap.scad
 
+.PHONY: release
+release:
+	mkdir -p "$(RELEASEDIR)"
+	for CAP in $(MODELS_CAP_NOLOGO); do \
+		zip --junk-paths $(RELEASEDIR)/case-$${CAP}.zip $(OUTDIR)/xm4-nologo-parts.stl $(OUTDIR)/$${CAP}.stl; \
+	done
+	for CAP in $(MODELS_CAP_LOGO); do \
+		zip --junk-paths $(RELEASEDIR)/case-$${CAP}.zip $(OUTDIR)/xm4-parts.stl $(OUTDIR)/$${CAP}.stl; \
+	done
 
 .PHONY: screenshots
 screenshots:
