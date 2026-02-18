@@ -31,7 +31,7 @@ cap_type = "usb";        // [usb, nousb, oem]
 // Partial rendering
 cap_portion = "full";       // [full, mount, cutaway, clearance, buttons, button-cutaway, grill]
 
-body_thickness = 0.9;
+body_thickness = 1.2;
 
 gasket_thickness=1.75;
 
@@ -231,7 +231,7 @@ module standard_cup_shape (width, height, depth_c=top_circle_off_z_c, rounding=1
             bottom_outer_edge();
  
         
-        top_circle_with_rounding(rounding, depth_c, cap_radius_modifier=cap_radius_modifier);
+        top_circle_with_rounding(rounding*1.25, depth_c, cap_radius_modifier=cap_radius_modifier);
        
     }
 }

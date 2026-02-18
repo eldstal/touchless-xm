@@ -4,7 +4,7 @@
         "xm4-preview": {
             "$fa": "1",
             "$fs": "0.20000000000000001",
-            "body_thickness": "0.90000000000000002",
+            "body_thickness": "1.2",
             "button_contact_r": "32.25",
             "button_depth_clearance": "0.14999999999999999",
             "button_side_clearance": "0.10000000000000001",
@@ -313,7 +313,7 @@
         "xm4-test-buttons": {
             "$fa": "1",
             "$fs": "0.20000000000000001",
-            "body_thickness": "0.90000000000000002",
+            "body_thickness": "1.2",
             "button_contact_r": "32.25",
             "button_depth_clearance": "0.14999999999999999",
             "button_side_clearance": "0.10000000000000001",
