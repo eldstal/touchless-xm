@@ -806,7 +806,7 @@ module radial_button(cut=false, angle=180, cap_type=0, distance=32.25, vertical_
     guide_wide_end = 4.4;
     peg_length=0.8;
     guide_length=0.7;
-    cap_depth = 2.4;
+    cap_depth = 1.9;
     cap_width = 2.5;
     guide_vertical_offset = -0.6;       // Don't let the conical guide hit the floor
     
