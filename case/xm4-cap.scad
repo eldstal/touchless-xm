@@ -51,6 +51,7 @@ with_logo = true;
 // Replace the fancy render with a placeholder for test fits
 pcb_type_dummy = false;
 pcb_thickness = 0.6;
+pcb_clearance = 0.1;
 usb_board_h = 4.5;
 
 
@@ -428,7 +429,7 @@ module mic_cover(mounted=true) {
     translate([0, 0, origin_z + mic_grill_protrude_inside])
     rotate([180, 0, 0]) {
          //translate([0, 0, body_thickness-0.5])
-         translate([0, 0, 0.0])
+         translate([0, 0, 0])
          grill(mic_hole_cc, mic_hole_cut_height+mic_grill_friction_fit, 0.2);
          
          translate([0, 0, 0.2])
@@ -768,13 +769,13 @@ module keycap(cut=false, type=0, width=2.5, length=7.4, depth=2, backside=0.5, c
                 // Some sort of texture
                 if (type == 2) {
                     translate([0, 0, depth-0.01])
-                    linear_extrude(0.6) {
+                    linear_extrude(0.8) {
                     
                         translate([0.3*length, 0, 0])
-                        flat_pill(length/2-(width), width/3);
+                        flat_pill(length/2.5-(width), width/3);
                         
                         translate([-0.3*length, 0, 0])
-                        flat_pill(length/2-(width), width/3);
+                        flat_pill(length/2.5-(width), width/3);
                     }
                 }     
                 
@@ -858,8 +859,8 @@ module radial_button(cut=false, angle=180, cap_type=0, distance=32.25, vertical_
             // A little support bar, which helps adhere them.
             // You could add this in your slicer, but that's manual work.
             rotate([-7, 0, 0])
-            translate([0, 0, -1])
-            cube([0.2, 7, 2]);
+            translate([0, 0, -2])
+            cube([0.2, 7, 3]);
         }
     }    
 }
@@ -1159,28 +1160,28 @@ module pcb_clips_and_blocks() {
         // Bottom rear
         translate([-10, -22.5, 0])
         rotate([0, 0, 0])
-        pcb_clip();
+        pcb_clip(clearance=pcb_clearance);
         
         // Bottom front
         translate([10, -22.5, 0])
         rotate([0, 0, 0])
-        pcb_clip();
+        pcb_clip(clearance=pcb_clearance);
         
         
         // Top
-        translate([0, 24, 0])
+        translate([0, 24 + 2*pcb_clearance, 0])
         rotate([0, 0, 180])
-        pcb_clip(width=10);
+        pcb_clip(width=10,clearance=pcb_clearance);
         
         // Front edge
         rotate([0, 0, -90])
         translate([0, -25.5, 0.01])
-        pcb_block(degrees=80);
+        pcb_block(radius=25.5, clearance=pcb_clearance, degrees=70);
         
         // Rear edge
         rotate([0, 0, 55])
         translate([0, -25.5, 0.01])
-        pcb_block(degrees=25);
+        pcb_block(radius=25.5, clearance=pcb_clearance, degrees=25);
         
         
         if (cap_type == "usb") {
@@ -1439,7 +1440,9 @@ intersection() {
         
             //inside_top_center() {
             //    translate([0, outside_height*0.75, 0])
-                translate([0, 50, 0])
+                // Attach it to the button supports
+                translate([-27.4, -34, 0])
+                rotate([0, 0, 45])
                 mic_cover(mounted=false);
             //}
         }
