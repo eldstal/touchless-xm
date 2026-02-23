@@ -88,7 +88,7 @@ outside_max_depth = 17.1;
 top_circle_diameter = 57.5;
 top_circle_angle_x = 1.9;
 top_circle_angle_y = 5;
-top_circle_off_x = 1;
+top_circle_off_x = 2;
 top_circle_off_y = 1;
 top_circle_off_z_c = 14.5;
 inside_depth_c = top_circle_off_z_c - body_thickness;
@@ -186,6 +186,17 @@ module inside_top_center() {
         translate([top_circle_off_x, top_circle_off_y, inside_depth_c])
         rotate([top_circle_angle_x, top_circle_angle_y, 0])
         children();
+}
+
+// Position an element relative to the center of the PCB itself
+// on the inside of the cap. This is different from inside_top_center()
+// because the PCB isn't at the exact center anymore.
+module inside_pcb_center() {
+    inside_top_center()
+    // Offset the PCB so that the buttons don't become
+    // the thing the headset rests on
+    translate([1, 1, 0])
+    children();
 }
 
 // Position an element relative to the center of the circular outside
@@ -618,7 +629,7 @@ module cad_pcb() {
 module dummy_pcb() {
 
     color("#037A5E")
-    inside_top_center()
+    inside_pcb_center()
     translate([0, 0, -pcb_thickness-0.01])
     
     union() {
@@ -675,7 +686,7 @@ module pcb() {
         dummy_pcb();
     } else {
     
-        inside_top_center()
+        inside_pcb_center()
         translate([-3.25, -6.5, -pcb_thickness/2]) // Offset the board origin
         rotate([0, 180, 0])
         cad_pcb();
@@ -736,7 +747,7 @@ module standard_cup() {
 
 }
 
-module keycap(cut=false, type=0, width=2.5, length=7.4, depth=2, backside=0.5, clearance=0.1) {
+module keycap(cut=false, type=0, width=2.5, length=5.4, depth=2, backside=0.5, clearance=0.1) {
 
     //pill_rot = [ -15, -10, 0, 10, 15 ];
     pill_rot = [ 0, 0, 0, 0, 0 ];
@@ -769,7 +780,7 @@ module keycap(cut=false, type=0, width=2.5, length=7.4, depth=2, backside=0.5, c
                 // Some sort of texture
                 if (type == 2) {
                     translate([0, 0, depth-0.01])
-                    linear_extrude(0.8) {
+                    linear_extrude(0.6) {
                     
                         translate([0.3*length, 0, 0])
                         flat_pill(length/2.5-(width), width/3);
@@ -870,7 +881,8 @@ module buttons(cut=false, mounted=false, distance=32.25, vertical_center=pcb_thi
     btn_angle = [ 180, 180+10, 180+20, 180+30, 180+40 ];
 
     if (mounted || cut) {
-        inside_top_center() {
+        // Button locations are relative to the PCB
+        inside_pcb_center() {
 
             // The buttons in their proper places
             for (i=[0:1:4]) {
@@ -881,7 +893,7 @@ module buttons(cut=false, mounted=false, distance=32.25, vertical_center=pcb_thi
     } else {
         
         
-        /*inside_top_center()*/ {
+        /*inside_pcb_center()*/ {
             //translate([0, 0, body_thickness])
             if (!cut) {
                 // The same buttons, but off to the side for printing
@@ -898,7 +910,11 @@ module buttons(cut=false, mounted=false, distance=32.25, vertical_center=pcb_thi
 
 }
 
-module button_box_cut(outer_radius=34.8, height=7.3, top_angle=180-5.5, bottom_angle=180+46.5) {
+module button_box_outside_cut(outer_radius=34.8, height=7.3, top_angle=180-5.5, bottom_angle=180+46.5) {
+
+}
+
+module button_box_inside_cut(outer_radius=34.8, height=7.3, top_angle=180-5.5, bottom_angle=180+46.5) {
     
     rounding = 0.2;
     
@@ -947,7 +963,7 @@ module button_box_cut(outer_radius=34.8, height=7.3, top_angle=180-5.5, bottom_a
     }
 }
 
-module button_box(outer_radius=34.8, height=7, top_angle=180-5.5, bottom_angle=180+46.5) {
+module button_box(outer_radius=34.8, height=5.5, top_angle=180-5.5, bottom_angle=180+46.5) {
     
  
     rounding = 1;
@@ -1296,7 +1312,8 @@ module cup_mod_interior_features() {
     // Added features on the inside of the cup
     
     
-    inside_top_center() {
+    // This is relative to the PCB's location
+    inside_pcb_center() {
     
         // An origin pin
         /*
@@ -1312,12 +1329,18 @@ module cup_mod_interior_features() {
 
 }
 
-module cup_mod_exterior_features() {
+// Shapes added to the standard cup exterior, before any cuts are made
+module cup_mod_exterior_additions() {
+    inside_pcb_center() {
+        // Casing around the button cluster
+        //button_box();
+    }
+
     difference() {
     
     
         // All these features are relative to the center of the PCB
-        inside_top_center() {
+        inside_pcb_center() {
         
             if (cap_type == "usb") {
                 // Casing wraps around the USB port
@@ -1343,6 +1366,14 @@ module cup_mod_exterior_features() {
 
 }
 
+// Shapes added to the standard cup exterior, after cuts are made into it
+module cup_mod_exterior_features() {
+    inside_pcb_center() {
+        // Casing around the button cluster
+        //button_box();
+    }
+}
+
 module cap_surface_cut() {
     inside_top_center() {
         translate([0, 0, 5+body_thickness-0.01])
@@ -1352,30 +1383,35 @@ module cap_surface_cut() {
 
 
 
-module cup_mod_cuts() {
+module cup_mod_pre_cuts() {
 
     
 
     
     // The hole for the USB board
-    {
-
-        inside_top_center() {
-        
-            if (cap_type == "usb") {
-                usb_box(true);
-            }
+    inside_pcb_center() {
+    
+        if (cap_type == "usb") {
+            usb_box(true);
         }
     }
+
+    // Cut a hole in the casing to get a clean button box
+    inside_pcb_center() 
+    button_box_outside_cut();
     
+}
+
+module cup_mod_post_cuts() {
+
+
     // Mounting holes for the logo amulet
     if (with_logo) {
         logo(cut=true, mounted=true);
     }
-    
 
-    inside_top_center() 
-    button_box_cut();
+    inside_pcb_center() 
+    button_box_inside_cut();
             
     // Holes for the buttons
     buttons(cut=true, distance=button_contact_r);
@@ -1388,16 +1424,25 @@ module cup_mod_cuts() {
 
 
 module custom_cup() {
+
     difference() {
         union() {
-            standard_cup();
+            difference() {
+                union() {
+                    standard_cup();
+                    cup_mod_exterior_additions();
+                }
+                
+                // Cuts into the standard cup
+                cup_mod_pre_cuts();
+            }
+           
             cup_mod_exterior_features();
         }
         
-        // Cuts into the standard cup
-        cup_mod_cuts();
-   }
-               
+        cup_mod_post_cuts();
+    }
+    
     // Added features
     cup_mod_interior_features();
     
@@ -1464,7 +1509,7 @@ intersection() {
         } else if (cap_portion == "buttons") {
             intersection() {
                 pie_slice(165, 235, 80);
-                inside_top_center() {
+                inside_pcb_center() {
                     cube([outside_width*2, outside_height*2, 18], center=true);
                 }
             }
@@ -1478,7 +1523,7 @@ intersection() {
         
             intersection() {
                 pie_slice(165, 235, 80);
-                inside_top_center() {
+                inside_pcb_center() {
                     cube([outside_width*2, outside_height*2, 6], center=true);
                 }
             }
