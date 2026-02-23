@@ -104,7 +104,7 @@ mic_hole_x2 = 11.96;
 mic_hole_y2 = 37.49;
 
 //mic_hole_xc = (mic_hole_x1 + mic_hole_x2) / 2;
-mic_hole_xc = 17.34 - 9;
+mic_hole_xc = 17.34 - 8.5;
 mic_hole_yc = (mic_hole_y1 + mic_hole_y2) / 2;
 mic_hole_zc = 8;
 
@@ -120,7 +120,7 @@ mic_hole_cc = mic_hole_width - mic_hole_height;
 // Set mic_hole_feeler and tweak until the red panel just breaks the outside edge of the casing
 mic_hole_feeler = false;
 mic_hole_angle_x = 31.8;
-mic_hole_angle_z = -1;
+mic_hole_angle_z = 1;
 mic_hole_angle_y = -5;
 mic_hole_distance = 36.4;
 mic_grill_alignment = -1.2;
