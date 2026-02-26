@@ -88,7 +88,7 @@ outside_max_depth = 17.1;
 top_circle_diameter = 57.5;
 top_circle_angle_x = 1.9;
 top_circle_angle_y = 5;
-top_circle_off_x = 2;
+top_circle_off_x = 2;       // More like 1 for the OEM, but we needed more button space
 top_circle_off_y = 1;
 top_circle_off_z_c = 14.5;
 inside_depth_c = top_circle_off_z_c - body_thickness;
@@ -136,7 +136,7 @@ module bottom_outer_edge() {
     import("xm4-cap-outline-centered.svg", center=true);
 }
 
-module edge_with_rounding(radius) {
+module edge_with_rounding(radius=1.75) {
     
     difference() {
         minkowski() {
@@ -196,6 +196,7 @@ module inside_pcb_center() {
     // Offset the PCB so that the buttons don't become
     // the thing the headset rests on
     translate([1, 1, 0])
+    rotate([0, 0, -15])
     children();
 }
 
@@ -227,16 +228,20 @@ module top_circle_with_rounding(radius, off_z_c, cap_radius_modifier=0) {
     }
 }
 
+module case_shoulder(width=outside_width, height=outside_height, rounding=1.75) {
+        // Slightly smaller, to prevent interference with hinge fork
+        resize([width-0.2, height-0.2, 0], true)
+        translate([0, 0, 3.1])
+            edge_with_rounding();
+}
+
 
 module standard_cup_shape (width, height, depth_c=top_circle_off_z_c, rounding=1.75, cap_radius_modifier=0){
 
     
     hull() {
     
-        // Slightly smaller, to prevent interference with hinge fork
-        resize([width-0.2, height-0.2, 0], true)
-        translate([0, 0, 3.1])
-            edge_with_rounding(1.75);
+        case_shoulder(width, height, rounding);
     
         resize([width, height, 0], true)
         linear_extrude(0.01, center=false)
@@ -717,7 +722,9 @@ module standard_cup() {
                     fork();
                     
                     // A little quirky pi shape that helps locate the PCB
-                    pcb_key();
+                    if (cap_type == "oem") {
+                        pcb_key();
+                    }
 
                 }
                 
@@ -747,7 +754,7 @@ module standard_cup() {
 
 }
 
-module keycap(cut=false, type=0, width=2.5, length=5.4, depth=2, backside=0.5, clearance=0.1) {
+module keycap(cut=false, type=0, width=2.5, length=6.4, depth=2, backside=0.5, clearance=0.1) {
 
     //pill_rot = [ -15, -10, 0, 10, 15 ];
     pill_rot = [ 0, 0, 0, 0, 0 ];
@@ -893,7 +900,7 @@ module buttons(cut=false, mounted=false, distance=32.25, vertical_center=pcb_thi
     } else {
         
         
-        /*inside_pcb_center()*/ {
+        {
             //translate([0, 0, body_thickness])
             if (!cut) {
                 // The same buttons, but off to the side for printing
@@ -914,10 +921,137 @@ module button_box_outside_cut(outer_radius=34.8, height=7.3, top_angle=180-5.5, 
 
 }
 
-module button_box_inside_cut(outer_radius=34.8, height=7.3, top_angle=180-5.5, bottom_angle=180+46.5) {
+module sweep_hull(top_angle, bottom_angle, steps=20, max_radius=100) {
+
+    delta = (bottom_angle - top_angle) / (steps);
+    for (s = [1:steps] ) {
+        hull() {
+            intersection() {
+                inside_pcb_center()
+                pie_slice(top_angle+(s-1)*delta, top_angle+s*delta, max_radius, outside_max_depth*2, center=true);
+                union() {
+                    children();
+                }
+            }
+            
+        }
+    }
+}
+
+module button_box_reinforcement(outer_radius=34.8, height=6.5, top_angle=180-5.5, bottom_angle=180+46.5) {
+    rounding = 1;
+    
+    inside_pcb_center() {
+    
+        hull() {
+        
+            
+            rotate([0, 0, top_angle])
+            {
+            
+            
+                // Outside face
+                translate([0, 0, body_thickness-rounding]) {
+                
+                    // Outside cap
+                    rotate_extrude(angle=bottom_angle - top_angle) {
+                        translate([outer_radius - rounding, 0, 0])    
+                        circle(rounding);
+                    }
+                    
+                    // Outside opening
+                    translate([0, 0, -height-rounding])
+                    rotate_extrude(angle=bottom_angle - top_angle) {
+                        translate([outer_radius - rounding, 0, 0])    
+                        circle(rounding);
+                    }
+                    
+                    // Inside cap
+                    rotate_extrude(angle=bottom_angle - top_angle) {
+                        translate([outer_radius - rounding - 5, 0, 0])    
+                        circle(rounding);
+                    }
+                    
+                    // Inside opening
+                    translate([0, 0, -height-rounding])
+                    rotate_extrude(angle=bottom_angle - top_angle) {
+                        translate([outer_radius - rounding - 5, 0, 0])    
+                        circle(rounding);
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+module button_box(outer_radius=34.8, height=6.5, top_angle=180-5.5, bottom_angle=180+46.5) {
+    
+ 
+    rounding = 1;
+    
+    inside_pcb_center() {
+    
+        hull() {
+        
+            
+            rotate([0, 0, top_angle])
+            {
+            
+            
+                // Outside face
+                translate([0, 0, body_thickness-rounding]) {
+                
+                    // Cap edge
+                    rotate_extrude(angle=bottom_angle - top_angle) {
+                        translate([outer_radius - rounding, 0, 0])    
+                        circle(rounding);
+                    }
+                    
+                    // Inside edge
+                    translate([0, 0, -height-rounding])
+                    rotate_extrude(angle=bottom_angle - top_angle) {
+                        translate([outer_radius - rounding, 0, 0])    
+                        circle(rounding);
+                    }
+
+                }
+            }
+            
+
+            // Imaginary corners inside the case, to make it less boxy
+             rotate([0, 0, top_angle-10])
+            {      
+                
+                // Cap edge
+                rotate([0, 0, -5])
+                translate([0, 0, body_thickness-rounding])
+                rotate_extrude(angle=bottom_angle - top_angle+25) {
+                    translate([outer_radius-10 - rounding, 0, 0])    
+                    circle(rounding);
+                }
+
+
+                // Inside edge
+                rotate([0, 16, 0])
+                translate([0, 0, -height+1.5-rounding])
+                rotate_extrude(angle=bottom_angle - top_angle+15) {
+                    translate([outer_radius-5 - rounding, 0, 0])    
+                    circle(rounding);
+                }
+                
+
+            }
+        }
+    }
+}
+
+
+module button_box_inside_cut(outer_radius=34.8, height=8, top_angle=180-5.5, bottom_angle=180+46.5) {
     
     rounding = 0.2;
     
+    inside_pcb_center() 
     hull() {
     
         
@@ -963,79 +1097,6 @@ module button_box_inside_cut(outer_radius=34.8, height=7.3, top_angle=180-5.5, b
     }
 }
 
-module button_box(outer_radius=34.8, height=5.5, top_angle=180-5.5, bottom_angle=180+46.5) {
-    
- 
-    rounding = 1;
-    hull() {
-    
-        
-        rotate([0, 0, top_angle])
-        {
-        
-        
-            // Outside face
-            translate([0, 0, body_thickness-rounding]) {
-            
-                // Cap edge
-                rotate_extrude(angle=bottom_angle - top_angle) {
-                    translate([outer_radius - rounding, 0, 0])    
-                    circle(rounding);
-                }
-                
-                // Inside edge
-                translate([0, 0, -height-rounding])
-                rotate_extrude(angle=bottom_angle - top_angle) {
-                    translate([outer_radius - rounding, 0, 0])    
-                    circle(rounding);
-                }
-
-            }
-        }
-        
-
-        // Imaginary corners inside the case, to make it less boxy
-         rotate([0, 0, top_angle-10])
-        {      
-            
-            // Cap edge
-            rotate([0, 0, -5])
-            translate([0, 0, body_thickness-rounding])
-            rotate_extrude(angle=bottom_angle - top_angle+25) {
-                translate([outer_radius-10 - rounding, 0, 0])    
-                circle(rounding);
-            }
-
-
-            // Inside edge
-            rotate([0, 16, 0])
-            translate([0, 0, -height+1.5-rounding])
-            rotate_extrude(angle=bottom_angle - top_angle+15) {
-                translate([outer_radius-5 - rounding, 0, 0])    
-                circle(rounding);
-            }
-            
-            // Bottom ball cap
-            //rotate([0, 0, bottom_angle - top_angle+30])
-            //translate([outer_radius-10, 0, -5])
-            //sphere(5.5);
-            /*
-            rotate([0, 0, bottom_angle - top_angle+30])
-            translate([30, 0, -10])
-            rotate([0, -20, 0])
-            linear_extrude(10)
-                circle(0.5);
-            */
-            /*
-            // Top ball cap
-            rotate([0, 0, 0])
-            translate([outer_radius-10, 0, -5])
-            sphere(5.5);
-            */
-
-        }
-    }
-}
 
 module usb_box(cut=false) {
 
@@ -1297,60 +1358,49 @@ module logo(cut=false, mounted=true, inlay=false, fill=false) {
 }
 
 
-module pie_slice(start_angle, stop_angle, radius) {
+module pie_slice(start_angle, stop_angle, radius, height=100, center=true) {
 
+
+    off_z = center ? 0 : -height/2;
+    
+    translate([0, 0, off_z])
     difference() {
         rotate([0, 0, start_angle])
         rotate_extrude(angle=stop_angle-start_angle)
         translate([radius/2, 0])
-        square([radius, 100], center=true);
+        square([radius, height], center=true);
         
     }
 }
 
-module cup_mod_interior_features() {
-    // Added features on the inside of the cup
-    
-    
-    // This is relative to the PCB's location
-    inside_pcb_center() {
-    
-        // An origin pin
-        /*
-        if (show_pcb) {
-            translate([0, 0, -1.5])
-            cylinder(3, 0.2, 0.2, center=true);
-        }
-        */
+module pie_sector(start_angle, stop_angle, inner_radius, outer_radius, height, center=true) {
+
+    difference() {
+        pie_slice(start_angle, stop_angle, outer_radius, height, center);
         
-        pcb_clips_and_blocks();
+        translate([0, 0, -0.5])
+        pie_slice(start_angle-1, stop_angle+1, inner_radius, height+1, center);
     }
-    
 
 }
+
 
 // Shapes added to the standard cup exterior, before any cuts are made
 module cup_mod_exterior_additions() {
-    inside_pcb_center() {
-        // Casing around the button cluster
-        //button_box();
-    }
-
     difference() {
     
     
-        // All these features are relative to the center of the PCB
-        inside_pcb_center() {
-        
+        union() {
+           
             if (cap_type == "usb") {
                 // Casing wraps around the USB port
+                inside_pcb_center()
                 usb_box(false);
             }
             
-            
             // Casing around the button cluster
             button_box();
-
+           
         }
         
         
@@ -1365,22 +1415,6 @@ module cup_mod_exterior_additions() {
     }
 
 }
-
-// Shapes added to the standard cup exterior, after cuts are made into it
-module cup_mod_exterior_features() {
-    inside_pcb_center() {
-        // Casing around the button cluster
-        //button_box();
-    }
-}
-
-module cap_surface_cut() {
-    inside_top_center() {
-        translate([0, 0, 5+body_thickness-0.01])
-        cube([outside_width, outside_height, 10], center=true);
-    }
-}
-
 
 
 module cup_mod_pre_cuts() {
@@ -1402,6 +1436,25 @@ module cup_mod_pre_cuts() {
     
 }
 
+// Shapes added to the standard cup exterior, after cuts are made into it
+module cup_mod_exterior_features() {
+    
+    // A blocky bit to the inside of the button box
+    // so the buttons have some more material to sit inside
+    button_box_reinforcement();
+
+}
+
+module cap_surface_cut() {
+    inside_top_center() {
+        translate([0, 0, 5+body_thickness-0.01])
+        cube([outside_width, outside_height, 10], center=true);
+    }
+}
+
+
+
+
 module cup_mod_post_cuts() {
 
 
@@ -1410,7 +1463,7 @@ module cup_mod_post_cuts() {
         logo(cut=true, mounted=true);
     }
 
-    inside_pcb_center() 
+    
     button_box_inside_cut();
             
     // Holes for the buttons
@@ -1421,6 +1474,26 @@ module cup_mod_post_cuts() {
 }
 
 
+module cup_mod_interior_features() {
+    // Added features on the inside of the cup
+    
+    
+    // This is relative to the PCB's location
+    inside_pcb_center() {
+    
+        // An origin pin
+        /*
+        if (show_pcb) {
+            translate([0, 0, -1.5])
+            cylinder(3, 0.2, 0.2, center=true);
+        }
+        */
+        
+        pcb_clips_and_blocks();
+    }
+    
+
+}
 
 
 module custom_cup() {
@@ -1508,7 +1581,7 @@ intersection() {
             
         } else if (cap_portion == "buttons") {
             intersection() {
-                pie_slice(165, 235, 80);
+                pie_slice(150, 220, 80);
                 inside_pcb_center() {
                     cube([outside_width*2, outside_height*2, 18], center=true);
                 }
@@ -1522,7 +1595,7 @@ intersection() {
         } else if (cap_portion == "button-cutaway") {
         
             intersection() {
-                pie_slice(165, 235, 80);
+                pie_slice(150, 220, 80);
                 inside_pcb_center() {
                     cube([outside_width*2, outside_height*2, 6], center=true);
                 }
