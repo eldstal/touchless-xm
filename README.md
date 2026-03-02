@@ -15,12 +15,12 @@ A mod for Sony WH-1000XM2 (experimental), WH-1000XM3, WH-1000XM4 and WH-1000XM5 
 The project is feature-complete and the electronics are functional. I'd call it a Beta product, since I'm the only user and still tweaking the design details.
 
 ### Case
-The design has been 3D-printed and test fit against an XM4 headset. The button design and PCB fastening are still undergoing work. The mic grill looks good but prints awful.
+The design has been 3D-printed and test fit against an XM4 headset. The mic grill looks good but prints awful.
 Could be that we need to use a metal mesh inserted during the print.
 
-The buttons need to be reworked to be easier to differentiate by feel.
+The buttons have different top surfaces, so you can feel which is which. They've also been relocated to be less likely to be accidentally actuated.
 
-STLs will be available both with and without USB ports.
+STLs will be available both with and without USB ports, with and without the Æ logo.
 
 ### PCB
 v0.5c of the board has been manufactured and works great!
@@ -148,12 +148,12 @@ When you have a fresh board with a factory-stock microcontroller, you'll have to
 
 | tobo | AVRISP 10-pin |Glasgow | BP harness |
 |------|---------------|--------|------------|
-| MOSI | 1             | PURP   | 8 Pink
-| VCC  | 2             | ORG    | 2 White
-| RST  | 5             | YEL    | 6 Green
-| SCK  | 7             | PINK   | 7 Yellow
-| MISO | 9             | BRN    | 10 Brown
-| GND  | 10            | B/W    | 1 Black
+| MOSI | 1             | PURP   | 8 Pink     |
+| VCC  | 2             | ORG    | 2 White    |
+| RST  | 5             | YEL    | 6 Green    |
+| SCK  | 7             | PINK   | 7 Yellow   |
+| MISO | 9             | BRN    | 10 Brown   |
+| GND  | 10            | B/W    | 1 Black    |
 
 If you're using a new kind of programmer, add the needed environment to `firmware/tobo/platformio.ini` to use your programmer.
 
@@ -203,11 +203,12 @@ The total cost for production, components and assembly of 5 boards was about $28
 You can reduce the BOM cost some by removing the USB port, USB-Serial circuitry and the LEDs. You could also save a bit by not populating the test loops, but it will make it more difficult to program the board.
 
 ## License
-Touchlæss XM © 2025 by Albin Eldstål-Ahrens is licensed under Creative Commons BY-SA 4.0 
+Touchlæss XM © 2026 by Albin Eldstål-Ahrens is licensed under Creative Commons BY-SA 4.0 
 
 This means you are free to use, modify, distribute, remix, redesign the project however you wish as long as you
 1. Credit the original work where relevant
 2. Release your own modified work under a similar CC license
 
 If you want to make and sell kits of this, feel free! If you make money from my work, please consider making a donation to a charitable organization as a thank you!
+
 
